@@ -8,10 +8,7 @@ import com.thoughtworks.xstream.io.xml.XppDriver;
 import org.dom4j.Document;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
-import org.liyou.qixiaobo.entities.response.MusicMessage;
-import org.liyou.qixiaobo.entities.response.NewsMessage;
-import org.liyou.qixiaobo.entities.response.TextMessage;
-import org.liyou.qixiaobo.entities.response.Article;
+import org.liyou.qixiaobo.entities.response.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.InputStream;
@@ -115,6 +112,16 @@ public class MessageUtil {
         inputStream = null;
 
         return map;
+    }
+    /**
+     * 消息对象转换成xml
+     *
+     * @param message 文本消息对象
+     * @return xml
+     */
+    public static String messageToXml(BaseMessage message) {
+        xstream.alias("xml", message.getClass());
+        return xstream.toXML(message);
     }
 
     /**
