@@ -80,7 +80,7 @@ public class WeiChatUtil<T> {
      * @param textMessage 文本消息对象
      * @return xml
      */
-    public static String textMessageToXml (TextMessage textMessage) {
+    public static String textMessageToXml (TextResponseMessage textMessage) {
         xstream.alias ("xml", textMessage.getClass ());
         return xstream.toXML (textMessage);
     }
@@ -91,7 +91,7 @@ public class WeiChatUtil<T> {
      * @param musicMessage 音乐消息对象
      * @return xml
      */
-    public static String musicMessageToXml (MusicMessage musicMessage) {
+    public static String musicMessageToXml (MusicResponseMessage musicMessage) {
         xstream.alias ("xml", musicMessage.getClass ());
         return xstream.toXML (musicMessage);
     }
@@ -102,7 +102,7 @@ public class WeiChatUtil<T> {
      * @param newsMessage 图文消息对象
      * @return xml
      */
-    public static String newsMessageToXml (NewsMessage newsMessage) {
+    public static String newsMessageToXml (NewsResponseMessage newsMessage) {
         xstream.alias ("xml", newsMessage.getClass ());
         xstream.alias ("item", new Article ().getClass ());
         return xstream.toXML (newsMessage);

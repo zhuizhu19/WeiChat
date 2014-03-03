@@ -3,7 +3,7 @@ package org.liyou.qixiaobo.entities.request;
 /**
  * Created by Administrator on 14-3-1.
  */
-public class LinkMessage extends BaseMessage {
+public class LinkRequestMessage extends BaseRequestMessage {
     // 消息标题
     private String Title;
     // 消息描述
@@ -33,5 +33,14 @@ public class LinkMessage extends BaseMessage {
 
     public void setUrl(String url) {
         Url = url;
+    }
+
+    @Override
+    public String toString () {
+        return "LinkRequestMessage{" +
+                "Title='" + Title + '\'' +
+                ", Description='" + Description + '\'' +
+                ", Url='" + Url + '\'' +
+                "} " + super.toString ();
     }
 }

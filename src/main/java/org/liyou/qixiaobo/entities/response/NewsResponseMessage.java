@@ -7,8 +7,8 @@ import java.util.List;
 /**
  * Created by Administrator on 14-3-1.
  */
-public class NewsMessage extends BaseMessage {
-    public NewsMessage () {
+public class NewsResponseMessage extends BaseResponseMessage {
+    public NewsResponseMessage () {
         this.setMsgType (MessageUtil.RESP_MESSAGE_TYPE_NEWS);
     }
 

@@ -3,7 +3,7 @@ package org.liyou.qixiaobo.entities.response;
 /**
  * Created by Administrator on 14-3-1.
  */
-public class BaseMessage {
+public class BaseResponseMessage {
     // 接收方帐号（收到的OpenID）
     private String ToUserName;
     // 开发者微信号

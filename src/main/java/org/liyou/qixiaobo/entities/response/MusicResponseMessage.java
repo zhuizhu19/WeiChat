@@ -5,11 +5,11 @@ import org.liyou.qixiaobo.utils.MessageUtil;
 /**
  * Created by Administrator on 14-3-1.
  */
-public class MusicMessage extends BaseMessage  {
+public class MusicResponseMessage extends BaseResponseMessage {
     // 音乐
     private Music music;
 
-    public MusicMessage () {
+    public MusicResponseMessage () {
         this.setMsgType (MessageUtil.RESP_MESSAGE_TYPE_MUSIC);
     }
 

@@ -3,7 +3,7 @@ package org.liyou.qixiaobo.entities.request;
 /**
  * Created by Administrator on 14-3-1.
  */
-public class LocationMessage extends  BaseMessage{
+public class LocationRequestMessage extends BaseRequestMessage {
     // 地理位置维度
     private String Location_X;
     // 地理位置经度
@@ -43,5 +43,15 @@ public class LocationMessage extends  BaseMessage{
 
     public void setLabel(String label) {
         Label = label;
+    }
+
+    @Override
+    public String toString () {
+        return "LocationRequestMessage{" +
+                "Location_X='" + Location_X + '\'' +
+                ", Location_Y='" + Location_Y + '\'' +
+                ", Scale='" + Scale + '\'' +
+                ", Label='" + Label + '\'' +
+                "} " + super.toString ();
     }
 }

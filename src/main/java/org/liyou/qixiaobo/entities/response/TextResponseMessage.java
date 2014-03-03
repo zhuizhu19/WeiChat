@@ -5,11 +5,11 @@ import org.liyou.qixiaobo.utils.MessageUtil;
 /**
  * Created by Administrator on 14-3-1.
  */
-public class TextMessage extends  BaseMessage {
+public class TextResponseMessage extends BaseResponseMessage {
     // 回复的消息内容
     private String Content;
 
-    public TextMessage () {
+    public TextResponseMessage () {
         this.setMsgType (MessageUtil.RESP_MESSAGE_TYPE_TEXT);
     }
 

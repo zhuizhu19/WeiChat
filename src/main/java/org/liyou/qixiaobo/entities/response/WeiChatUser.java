@@ -14,14 +14,14 @@ public class WeiChatUser {
     private String province;
     private String language;
     private String headimgurl;
-    private long subscribetime;
+    private long subscribe_time;
 
-    public byte getSubscribe () {
-        return subscribe;
+    public long getSubscribe_time () {
+        return subscribe_time;
     }
 
-    public void setSubscribe (byte subscribe) {
-        this.subscribe = subscribe;
+    public void setSubscribe_time (long subscribe_time) {
+        this.subscribe_time = subscribe_time;
     }
 
     public String getOpneid () {
@@ -88,11 +88,11 @@ public class WeiChatUser {
         this.headimgurl = headimgurl;
     }
 
-    public long getSubscribetime () {
-        return subscribetime;
+    public byte getSubscribe () {
+        return subscribe;
     }
 
-    public void setSubscribetime (long subscribetime) {
-        this.subscribetime = subscribetime;
+    public void setSubscribe (byte subscribe) {
+        this.subscribe = subscribe;
     }
 }

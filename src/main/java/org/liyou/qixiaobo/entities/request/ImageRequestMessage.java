@@ -3,7 +3,7 @@ package org.liyou.qixiaobo.entities.request;
 /**
  * Created by Administrator on 14-3-1.
  */
-public class ImageMessage extends BaseMessage {
+public class ImageRequestMessage extends BaseRequestMessage {
     // 图片链接
     private String PicUrl;
 
@@ -13,5 +13,12 @@ public class ImageMessage extends BaseMessage {
 
     public void setPicUrl(String picUrl) {
         PicUrl = picUrl;
+    }
+
+    @Override
+    public String toString () {
+        return "ImageRequestMessage{" +
+                "PicUrl='" + PicUrl + '\'' +
+                "} " + super.toString ();
     }
 }

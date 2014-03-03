@@ -77,6 +77,17 @@ public class MessageUtil {
     public static final String EVENT_TYPE_UNSUBSCRIBE = "unsubscribe";
 
     /**
+     * 事件类型：scan(扫描二维码)
+     */
+    public static final String EVENT_TYPE_SCAN = "SCAN";
+
+    /**
+     * 事件类型：location(定时位置上报)
+     */
+    public static final String EVENT_TYPE_LOCATION= "LOCATION";
+
+
+    /**
      * 事件类型：CLICK(自定义菜单点击事件)
      */
     public static final String EVENT_TYPE_CLICK = "CLICK";
@@ -116,11 +127,14 @@ public class MessageUtil {
     /**
      * 消息对象转换成xml
      *
-     * @param message 文本消息对象
+     * @param message 消息对象
      * @return xml
      */
-    public static String messageToXml(BaseMessage message) {
+    public static String messageToXml(BaseResponseMessage message) {
         xstream.alias("xml", message.getClass());
+        if(message instanceof NewsResponseMessage){
+            xstream.alias("item", Article.class);
+        }
         return xstream.toXML(message);
     }
 
@@ -130,7 +144,7 @@ public class MessageUtil {
      * @param textMessage 文本消息对象
      * @return xml
      */
-    public static String textMessageToXml(TextMessage textMessage) {
+    public static String textMessageToXml(TextResponseMessage textMessage) {
         xstream.alias("xml", textMessage.getClass());
         return xstream.toXML(textMessage);
     }
@@ -141,7 +155,7 @@ public class MessageUtil {
      * @param musicMessage 音乐消息对象
      * @return xml
      */
-    public static String musicMessageToXml(MusicMessage musicMessage) {
+    public static String musicMessageToXml(MusicResponseMessage musicMessage) {
         xstream.alias("xml", musicMessage.getClass());
         return xstream.toXML(musicMessage);
     }
@@ -152,9 +166,9 @@ public class MessageUtil {
      * @param newsMessage 图文消息对象
      * @return xml
      */
-    public static String newsMessageToXml(NewsMessage newsMessage) {
+    public static String newsMessageToXml(NewsResponseMessage newsMessage) {
         xstream.alias("xml", newsMessage.getClass());
-        xstream.alias("item", new Article ().getClass());
+        xstream.alias("item", Article.class);
         return xstream.toXML(newsMessage);
     }
 

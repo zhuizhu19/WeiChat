@@ -1,9 +1,9 @@
 package org.liyou.qixiaobo.entities.request;
 
 /**
- * Created by Administrator on 14-3-1.
+ * Created by Administrator on 14-3-2.
  */
-public class BaseMessage {
+public class BaseEvent {
     // 开发者微信号
     private String ToUserName;
     // 发送方帐号（一个OpenID）
@@ -12,8 +12,6 @@ public class BaseMessage {
     private long CreateTime;
     // 消息类型（text/image/location/link）
     private String MsgType;
-    // 消息id，64位整型
-    private long MsgId;
 
     public String getToUserName () {
         return ToUserName;
@@ -47,11 +45,13 @@ public class BaseMessage {
         MsgType = msgType;
     }
 
-    public long getMsgId () {
-        return MsgId;
-    }
-
-    public void setMsgId (long msgId) {
-        MsgId = msgId;
+    @Override
+    public String toString () {
+        return "BaseEvent{" +
+                "ToUserName='" + ToUserName + '\'' +
+                ", FromUserName='" + FromUserName + '\'' +
+                ", CreateTime=" + CreateTime +
+                ", MsgType='" + MsgType + '\'' +
+                '}';
     }
 }
