@@ -1,4 +1,4 @@
-package org.liyou.qixiaobo.entities;
+package org.liyou.qixiaobo.entities.weichat;
 
 /**
  * Created by Administrator on 14-3-2.
