@@ -1,15 +1,19 @@
 package org.liyou.qixiaobo.services;
 
 import org.apache.log4j.Logger;
-import org.liyou.qixiaobo.entities.request.*;
-import org.liyou.qixiaobo.entities.response.Article;
-import org.liyou.qixiaobo.entities.response.BaseResponseMessage;
-import org.liyou.qixiaobo.entities.response.TextResponseMessage;
+import org.liyou.qixiaobo.entities.weichat.request.*;
+import org.liyou.qixiaobo.entities.weichat.response.Article;
+import org.liyou.qixiaobo.entities.weichat.response.BaseResponseMessage;
+import org.liyou.qixiaobo.entities.weichat.response.NewsResponseMessage;
+import org.liyou.qixiaobo.entities.weichat.response.TextResponseMessage;
 import org.liyou.qixiaobo.utils.MessageUtil;
+import org.liyou.qixiaobo.utils.YoYoUtil;
 
 import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 import static org.liyou.qixiaobo.utils.MessageUtil.*;
@@ -48,8 +52,49 @@ public class CoreService {
             logger.info (baseEvent.toString ());
             if (baseEvent instanceof BaseRequestMessage) {
                 if (baseEvent instanceof TextRequestMessage) {
-                    responseMessage = new TextResponseMessage ();
-                    ((TextResponseMessage) responseMessage).setContent ("我的李尤！！！");
+                    TextRequestMessage textRequestMessage = (TextRequestMessage) baseEvent;
+                    responseMessage = new NewsResponseMessage ();
+                    List<Article> articles = new ArrayList<Article> ();
+                    NewsResponseMessage newsResponseMessage = (NewsResponseMessage) responseMessage;
+                    List<DotaService.DotaModel> models = DotaService.searchHeros (textRequestMessage.getContent ());
+                    if (DotaService.complete && models != null && models.size () != 0) {
+                        if (models.size () == 1) {
+                            DotaService.DotaModel model = models.get (0);
+                            Article article = new Article ();
+                            article.setTitle (model.getName ());
+                            article.setPicUrl (model.getImgUrl ());
+                            article.setUrl (model.getUrl ());
+                            article.setDescription (model.getDes ());
+                            articles.add (article);
+                            for (DotaService.Skill skill : model.getSkills ()) {
+                                Article art = new Article ();
+                                art.setTitle (skill.getSkillName ());
+                                art.setUrl (skill.getSkillUrl ());
+                                art.setPicUrl (skill.getSkillImgUrl ());
+                                art.setDescription (skill.getSkillDesc ());
+                                articles.add (art);
+                            }
+                        }else{
+                            for(DotaService.DotaModel model:models){
+                                Article article = new Article ();
+                                article.setTitle (model.getName ());
+                                article.setPicUrl (model.getImgUrl ());
+                                article.setUrl (model.getUrl ());
+                                article.setDescription (model.getDes ());
+                                articles.add (article);
+                            }
+                        }
+
+                    } else {
+                        Article article = new Article ();
+                        article.setTitle ("我的女神");
+                        article.setPicUrl (YoYoUtil.PIC_SUFFIX + "015064.jpg");
+                        article.setUrl (YoYoUtil.PIC_SUFFIX + "015064.jpg");
+                        article.setDescription ("魔镜魔镜哎，谁最美啊——当然尤尤啊！！！");
+                        articles.add (article);
+                    }
+
+                    newsResponseMessage.setArticles (articles);
                 } else {
                     responseMessage = new TextResponseMessage ();
                 }

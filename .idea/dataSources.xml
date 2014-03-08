@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="4140871011">
+    <data-source source="LOCAL" name="hibernate.cfg.xml" uuid="ad87a953-78dd-4d1b-a3ce-657179d465a6">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost/fight_game?characterEncoding=utf-8</jdbc-url>
+      <user-name>root</user-name>
+      <user-password>dfd8dfc5dfc5dfde</user-password>
+      <libraries>
+        <library>
+          <url>file://G:\.m2\repository\mysql\mysql-connector-java\5.1.29\mysql-connector-java-5.1.29.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+  </component>
+</project>
+

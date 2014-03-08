@@ -11,8 +11,8 @@ import org.apache.log4j.Logger;
 import org.dom4j.Document;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
-import org.liyou.qixiaobo.entities.AccessToken;
-import org.liyou.qixiaobo.entities.response.*;
+import org.liyou.qixiaobo.AccessToken;
+import org.liyou.qixiaobo.entities.weichat.response.*;
 
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;

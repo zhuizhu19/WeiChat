@@ -8,7 +8,7 @@ import com.thoughtworks.xstream.io.xml.XppDriver;
 import org.dom4j.Document;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
-import org.liyou.qixiaobo.entities.response.*;
+import org.liyou.qixiaobo.entities.weichat.response.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.InputStream;

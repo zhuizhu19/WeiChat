@@ -29,6 +29,7 @@
             </list>
         </property>
     </bean>
+    <import resource = "datasource.xml"/>
     <mvc:annotation-driven/>
     <context:spring-configured/>
     <context:component-scan base-package = "org.liyou.qixiaobo"/>
