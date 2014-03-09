@@ -6,13 +6,11 @@
  */
 package org.liyou.qixiaobo.daos;
 
-import org.hibernate.Criteria;
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
+import org.hibernate.*;
 import org.liyou.qixiaobo.execptions.NotOneException;
 
 import javax.annotation.Resource;
+import javax.transaction.Transactional;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -28,17 +26,23 @@ public class BaseDao<T> {
     private final static DateFormat dateFormatWithDay = new SimpleDateFormat ("yyyy-MM-dd");
     private final static DateFormat dateFormatWithDayAndTime = new SimpleDateFormat ("MM-dd HH:mm");
 
+    @Transactional
     public T insert (T t) {
         Session session = sessionFacotry.getCurrentSession ();
+        Transaction tx = session.beginTransaction();
         session.save (t);
         session.flush ();
+        tx.commit();
         return t;
     }
 
+    @Transactional
     public T update (T t) {
         Session session = sessionFacotry.getCurrentSession ();
+        Transaction tx = session.beginTransaction();
         session.update (t);
         session.flush ();
+        tx.commit ();
         return t;
     }
 
@@ -71,21 +75,28 @@ public class BaseDao<T> {
         return dateFormatWithDay;
     }
 
+    @Transactional
     public void delete (T t) {
         Session session = sessionFacotry.getCurrentSession ();
+        Transaction tx = session.beginTransaction();
         session.delete (t);
         session.flush ();
+        tx.commit ();
     }
 
+    @Transactional
     public T query (Class<T> clazz, int id) {
         Session session = sessionFacotry.getCurrentSession ();
+        Transaction tx = session.beginTransaction();
         Object t = session.get (clazz, id);
+        tx.commit ();
         if (t == null)
             return null;
         return (T) t;
 
     }
 
+    @Transactional
     @SuppressWarnings("unchecked")
     public List<T> query (String queryString) {
         Session session = sessionFacotry.getCurrentSession ();
@@ -93,12 +104,13 @@ public class BaseDao<T> {
         return query.list ();
     }
 
-
+    @Transactional
     @SuppressWarnings("unchecked")
     protected List<T> query (Criteria criteria) {
         return criteria.list ();
     }
 
+    @Transactional
     @SuppressWarnings("unchecked")
     protected T query4One (Criteria criteria) throws NotOneException {
         List<T> list = criteria.list ();
@@ -111,6 +123,7 @@ public class BaseDao<T> {
         return list.get (0);
     }
 
+    @Transactional
     protected int queryNums (Class<T> t, String whereClause) {
         StringBuilder sb = new StringBuilder ();
         sb.append ("select count(*) from ").append (t.getSimpleName ());
@@ -127,6 +140,7 @@ public class BaseDao<T> {
      * <font color='red'>该方法只支持mysql</font>
      * **
      */
+    @Transactional
     protected List<T> query4Page (Class<T> t, String orderClause,
                                   String whereClause, boolean userLimit, int firstRecord, int limit) {
         StringBuilder sb = new StringBuilder ();

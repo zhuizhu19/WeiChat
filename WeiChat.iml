@@ -21,8 +21,8 @@
     <facet type="hibernate" name="Hibernate">
       <configuration>
         <datasource-map>
-          <unit-entry name="hibernate.cfg.xml" value="ad87a953-78dd-4d1b-a3ce-657179d465a6" />
-          <unit-entry name="sessionFactory" value="dataSource" />
+          <unit-entry name="hibernate.cfg.xml" value="a610faab-fc12-4e3e-8bd5-7b97933ef113" />
+          <unit-entry name="sessionFactory" value="a610faab-fc12-4e3e-8bd5-7b97933ef113" />
         </datasource-map>
         <naming-strategy-map />
         <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/main/resources/hibernate.cfg.xml" />
@@ -41,23 +41,22 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="library" exported="" name="Tomcat 8.0.3" level="application_server_libraries" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:3.2.3.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-beans:3.2.3.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-core:3.2.3.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:4.0.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-beans:4.0.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-core:4.0.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: commons-logging:commons-logging:1.1.1" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-context:3.2.3.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-aop:3.2.3.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-context:4.0.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-aop:4.0.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: aopalliance:aopalliance:1.0" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-expression:3.2.3.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-web:3.2.3.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-expression:4.0.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-web:4.0.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: log4j:log4j:1.2.16" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-instrument:3.2.3.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-jdbc:3.2.3.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-tx:3.2.3.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-orm:3.2.3.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-aspects:3.2.3.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-instrument:4.0.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-jdbc:4.0.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-tx:4.0.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-orm:4.0.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-aspects:4.0.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.7.0" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-context-support:3.2.3.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.29" level="project" />
     <orderEntry type="library" name="Maven: org.apache.camel:camel-ibatis:2.10.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.camel:camel-core:2.10.0" level="project" />
@@ -109,6 +108,8 @@
     <orderEntry type="library" name="Maven: org.javassist:javassist:3.18.1-GA" level="project" />
     <orderEntry type="library" name="Maven: antlr:antlr:2.7.7" level="project" />
     <orderEntry type="library" name="Maven: org.jboss:jandex:1.1.0.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.hibernate:hibernate-ehcache:4.3.4.Final" level="project" />
+    <orderEntry type="library" name="Maven: net.sf.ehcache:ehcache-core:2.4.3" level="project" />
   </component>
 </module>
 

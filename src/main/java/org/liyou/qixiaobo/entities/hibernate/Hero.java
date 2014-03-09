@@ -1,17 +1,16 @@
 package org.liyou.qixiaobo.entities.hibernate;
 
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import java.io.Serializable;
+import javax.persistence.*;
 import java.util.List;
 
 /**
  * Created by Administrator on 14-3-8.
  */
 @Entity
-@Table(name ="t_heros")
-public class Hero  implements Serializable {
+@Table(name = "t_heros")
+public class Hero {
+    private int id;
     private String name;
     private String shortName;
     private String imgUrl;
@@ -19,6 +18,17 @@ public class Hero  implements Serializable {
     private String url;
     private String des;
 
+    @Id
+    @GeneratedValue
+    public int getId () {
+        return id;
+    }
+
+    public void setId (int id) {
+        this.id = id;
+    }
+
+    @Column(length = 65535)
     public String getDes () {
         return des;
     }
@@ -27,6 +37,7 @@ public class Hero  implements Serializable {
         this.des = des;
     }
 
+    @Column(unique = true, nullable = false, length = 30)
     public String getName () {
         return name;
     }
@@ -35,6 +46,7 @@ public class Hero  implements Serializable {
         this.name = name;
     }
 
+    @Column(nullable = false, length = 30)
     public String getShortName () {
         return shortName;
     }
@@ -51,6 +63,7 @@ public class Hero  implements Serializable {
         this.imgUrl = imgUrl;
     }
 
+    @OneToMany(cascade = { CascadeType.ALL } , fetch = FetchType.LAZY)
     public List<Skill> getSkills () {
         return skills;
     }

@@ -4,7 +4,15 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.liyou.qixiaobo.daos.HeroDao;
+import org.liyou.qixiaobo.daos.SkillDao;
+import org.liyou.qixiaobo.entities.hibernate.Hero;
+import org.liyou.qixiaobo.entities.hibernate.Skill;
+import org.springframework.context.ApplicationListener;
+import org.springframework.context.event.ContextRefreshedEvent;
+import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,27 +20,24 @@ import java.util.List;
 /**
  * Created by Administrator on 14-3-3.
  */
-public class DotaService {
+@Component
+public class DotaService implements ApplicationListener<ContextRefreshedEvent> {
     public static final String dota_website_url = "http://dota.db.766.com/index.php/index/";
     public static final String dota_heroes_url = dota_website_url + "herolist/0/0/";
-    static List<DotaModel> models;
+    static List<Hero> models;
     static boolean complete = false;
+    @Resource
+    private SkillDao skillDao;
+    @Resource
+    private HeroDao heroDao;
 
-    static {
-        new Thread (new Runnable () {
-            @Override
-            public void run () {
-                initModel ();
-            }
-        }).start ();
-    }
 
-    public static List<DotaModel> searchHeros (String name) {
+    public static List<Hero> searchHeros (String name) {
         if (!complete || name == null || name.trim ().equals ("")) {
             return null;
         }
-        List<DotaModel> heros = new ArrayList<DotaModel> (2);
-        for (DotaModel model : models) {
+        List<Hero> heros = new ArrayList<Hero> (2);
+        for (Hero model : models) {
             if (model.getName ().contains (name) || model.getShortName ().toLowerCase ().contains (name.toLowerCase ())) {
                 heros.add (model);
             }
@@ -40,13 +45,13 @@ public class DotaService {
         return heros;
     }
 
-    public static void initModel () {
+    public void initModel () {
         if (models != null || complete) {
             //that means complete or running
             return;
         }
         if (models == null) {
-            models = new ArrayList<DotaModel> (110);
+            models = new ArrayList<Hero> (110);
         }
         for (int i = 1; i <= 6; i++) {
             try {
@@ -68,7 +73,7 @@ public class DotaService {
                                 Element name = tds.get (1);
                                 Element shortName = tds.get (2);
                                 Element skills = tds.get (4);
-                                DotaModel hero = new DotaModel ();
+                                Hero hero = new Hero ();
                                 hero.setUrl (icon.child (0).attr ("href"));
                                 hero.setImgUrl (icon.child (0).child (0).attr ("src"));
                                 hero.setName (name.text ());
@@ -103,9 +108,11 @@ public class DotaService {
                                         }
                                         skill.setSkillDesc (des);
                                     }
+                                    skill = skillDao.insert (skill);
                                     skillList.add (skill);
                                 }
                                 hero.setSkills (skillList);
+                                hero = heroDao.insert (hero);
                                 models.add (hero);
                             }
                         }
@@ -118,111 +125,16 @@ public class DotaService {
         complete = true;
     }
 
-    public static class DotaModel {
-        private String name;
-        private String shortName;
-        private String imgUrl;
-        private List<Skill> skills;
-        private String url;
-        private String des;
-
-        public String getDes () {
-            return des;
+    @Override
+    public void onApplicationEvent (ContextRefreshedEvent contextRefreshedEvent) {
+        if(contextRefreshedEvent.getApplicationContext().getParent() == null){//root application context 没有parent，他就是老大.
+            new Thread (new Runnable () {
+                @Override
+                public void run () {
+                    initModel ();
+                }
+            }).start ();
         }
 
-        public void setDes (String des) {
-            this.des = des;
-        }
-
-        public String getName () {
-            return name;
-        }
-
-        public void setName (String name) {
-            this.name = name;
-        }
-
-        public String getShortName () {
-            return shortName;
-        }
-
-        public void setShortName (String shortName) {
-            this.shortName = shortName;
-        }
-
-        public String getImgUrl () {
-            return imgUrl;
-        }
-
-        public void setImgUrl (String imgUrl) {
-            this.imgUrl = imgUrl;
-        }
-
-        public List<Skill> getSkills () {
-            return skills;
-        }
-
-        public void setSkills (List<Skill> skills) {
-            this.skills = skills;
-        }
-
-        public String getUrl () {
-            return url;
-        }
-
-        public void setUrl (String url) {
-            this.url = url;
-        }
-    }
-
-    public static class Skill {
-        public Skill () {
-
-        }
-
-        public Skill (String skillName, String skillUrl, String skillImgUrl, String skillDesc) {
-            this.skillName = skillName;
-            this.skillUrl = skillUrl;
-            this.skillImgUrl = skillImgUrl;
-            this.skillDesc = skillDesc;
-        }
-
-        private String skillName;
-        private String skillUrl;
-        private String skillImgUrl;
-
-        public String getSkillDesc () {
-            return skillDesc;
-        }
-
-        public void setSkillDesc (String skillDesc) {
-            this.skillDesc = skillDesc;
-        }
-
-        private String skillDesc;
-
-        public String getSkillName () {
-            return skillName;
-        }
-
-        public void setSkillName (String skillName) {
-            this.skillName = skillName;
-        }
-
-        public String getSkillUrl () {
-            return skillUrl;
-        }
-
-        public void setSkillUrl (String skillUrl) {
-            this.skillUrl = skillUrl;
-        }
-
-        public String getSkillImgUrl () {
-            return skillImgUrl;
-        }
-
-        public void setSkillImgUrl (String skillImgUrl) {
-            this.skillImgUrl = skillImgUrl;
-        }
     }
 }

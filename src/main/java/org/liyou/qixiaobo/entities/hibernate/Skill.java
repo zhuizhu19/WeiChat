@@ -1,29 +1,30 @@
 package org.liyou.qixiaobo.entities.hibernate;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by Administrator on 14-3-8.
  */
 @Entity
-@Table(name ="t_skills")
+@Table(name = "t_skills")
 public class Skill {
-    public Skill () {
-
-    }
-
-    public Skill (String skillName, String skillUrl, String skillImgUrl, String skillDesc) {
-        this.skillName = skillName;
-        this.skillUrl = skillUrl;
-        this.skillImgUrl = skillImgUrl;
-        this.skillDesc = skillDesc;
-    }
-
+    private int id;
     private String skillName;
     private String skillUrl;
     private String skillImgUrl;
+    private String skillDesc;
 
+    @Id
+    @GeneratedValue
+    public int getId () {
+        return id;
+    }
+
+    public void setId (int id) {
+        this.id = id;
+    }
+
+    @Column(length = 65535)
     public String getSkillDesc () {
         return skillDesc;
     }
@@ -32,8 +33,7 @@ public class Skill {
         this.skillDesc = skillDesc;
     }
 
-    private String skillDesc;
-
+    @Column(nullable = false, length = 30)
     public String getSkillName () {
         return skillName;
     }

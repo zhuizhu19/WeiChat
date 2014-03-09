@@ -1,6 +1,6 @@
 package org.liyou.qixiaobo.daos;
 
-import org.liyou.qixiaobo.entities.hibernate.Skill;
+import org.liyou.qixiaobo.entities.hibernate.Hero;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -10,5 +10,5 @@ import javax.transaction.Transactional;
  */
 @Service
 @Transactional
-public class SkillDao extends BaseDao<Skill>{
+public class HeroDao extends BaseDao<Hero>{
 }

@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="4140871011">
-    <data-source source="LOCAL" name="hibernate.cfg.xml" uuid="ad87a953-78dd-4d1b-a3ce-657179d465a6">
+  <component name="DataSourceManagerImpl" format="xml" hash="3326644889">
+    <data-source source="LOCAL" name="MySQL - iloveliyou@localhost" uuid="a610faab-fc12-4e3e-8bd5-7b97933ef113">
       <driver-ref>mysql</driver-ref>
+      <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost/fight_game?characterEncoding=utf-8</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/iloveliyou</jdbc-url>
       <user-name>root</user-name>
-      <user-password>dfd8dfc5dfc5dfde</user-password>
-      <libraries>
-        <library>
-          <url>file://G:\.m2\repository\mysql\mysql-connector-java\5.1.29\mysql-connector-java-5.1.29.jar</url>
-        </library>
-      </libraries>
+      <user-password>dfdbdf9bdf99df9adf9ddf99df9edf9fdf9bdf9edf9bdf98</user-password>
+      <driver-properties>
+        <property name="zeroDateTimeBehavior" value="convertToNull" />
+        <property name="tinyInt1isBit" value="false" />
+      </driver-properties>
+      <libraries />
     </data-source>
   </component>
 </project>

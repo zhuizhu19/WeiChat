@@ -1,6 +1,8 @@
 package org.liyou.qixiaobo.services;
 
 import org.apache.log4j.Logger;
+import org.liyou.qixiaobo.entities.hibernate.Hero;
+import org.liyou.qixiaobo.entities.hibernate.Skill;
 import org.liyou.qixiaobo.entities.weichat.request.*;
 import org.liyou.qixiaobo.entities.weichat.response.Article;
 import org.liyou.qixiaobo.entities.weichat.response.BaseResponseMessage;
@@ -56,17 +58,17 @@ public class CoreService {
                     responseMessage = new NewsResponseMessage ();
                     List<Article> articles = new ArrayList<Article> ();
                     NewsResponseMessage newsResponseMessage = (NewsResponseMessage) responseMessage;
-                    List<DotaService.DotaModel> models = DotaService.searchHeros (textRequestMessage.getContent ());
+                    List<Hero> models = DotaService.searchHeros (textRequestMessage.getContent ());
                     if (DotaService.complete && models != null && models.size () != 0) {
                         if (models.size () == 1) {
-                            DotaService.DotaModel model = models.get (0);
+                            Hero model = models.get (0);
                             Article article = new Article ();
                             article.setTitle (model.getName ());
                             article.setPicUrl (model.getImgUrl ());
                             article.setUrl (model.getUrl ());
                             article.setDescription (model.getDes ());
                             articles.add (article);
-                            for (DotaService.Skill skill : model.getSkills ()) {
+                            for (Skill skill : model.getSkills ()) {
                                 Article art = new Article ();
                                 art.setTitle (skill.getSkillName ());
                                 art.setUrl (skill.getSkillUrl ());
@@ -74,8 +76,8 @@ public class CoreService {
                                 art.setDescription (skill.getSkillDesc ());
                                 articles.add (art);
                             }
-                        }else{
-                            for(DotaService.DotaModel model:models){
+                        } else {
+                            for (Hero model : models) {
                                 Article article = new Article ();
                                 article.setTitle (model.getName ());
                                 article.setPicUrl (model.getImgUrl ());
