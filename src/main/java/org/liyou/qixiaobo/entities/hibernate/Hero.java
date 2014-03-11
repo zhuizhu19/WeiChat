@@ -63,7 +63,7 @@ public class Hero {
         this.imgUrl = imgUrl;
     }
 
-    @OneToMany(cascade = { CascadeType.ALL } , fetch = FetchType.LAZY)
+    @OneToMany(cascade = { CascadeType.ALL } , fetch = FetchType.EAGER)
     public List<Skill> getSkills () {
         return skills;
     }

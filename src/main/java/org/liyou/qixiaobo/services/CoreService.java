@@ -1,6 +1,7 @@
 package org.liyou.qixiaobo.services;
 
 import org.apache.log4j.Logger;
+import org.liyou.qixiaobo.controllers.CardController;
 import org.liyou.qixiaobo.entities.hibernate.Hero;
 import org.liyou.qixiaobo.entities.hibernate.Skill;
 import org.liyou.qixiaobo.entities.weichat.request.*;
@@ -10,19 +11,19 @@ import org.liyou.qixiaobo.entities.weichat.response.NewsResponseMessage;
 import org.liyou.qixiaobo.entities.weichat.response.TextResponseMessage;
 import org.liyou.qixiaobo.utils.MessageUtil;
 import org.liyou.qixiaobo.utils.YoYoUtil;
+import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static org.liyou.qixiaobo.utils.MessageUtil.*;
 
 /**
  * Created by Administrator on 14-3-1.
  */
+@Component
 public class CoreService {
     /**
      * 处理微信发来的请求
@@ -33,6 +34,9 @@ public class CoreService {
 
     private static Article sArticle;
     private static Logger logger = Logger.getLogger (CoreService.class);
+    @Resource
+    private DotaService dotaService;
+    private Random random = new Random ();
 
     static {
         sArticle = new Article ();
@@ -42,7 +46,7 @@ public class CoreService {
         sArticle.setUrl ("http://weibo.com/2791610843/profile?rightmod=1&wvr=5&mod=personinfo");
     }
 
-    public static String processRequest (HttpServletRequest request) {
+    public String processRequest (HttpServletRequest request) {
         String respMessage = null;
         try {
             // 默认返回的文本消息内容
@@ -58,7 +62,7 @@ public class CoreService {
                     responseMessage = new NewsResponseMessage ();
                     List<Article> articles = new ArrayList<Article> ();
                     NewsResponseMessage newsResponseMessage = (NewsResponseMessage) responseMessage;
-                    List<Hero> models = DotaService.searchHeros (textRequestMessage.getContent ());
+                    List<Hero> models = dotaService.searchHeros (textRequestMessage.getContent ());
                     if (DotaService.complete && models != null && models.size () != 0) {
                         if (models.size () == 1) {
                             Hero model = models.get (0);
@@ -86,13 +90,16 @@ public class CoreService {
                                 articles.add (article);
                             }
                         }
-
                     } else {
+                        int size = CardController.cards.size ();
+                        int randomNum = random.nextInt ();
+                        randomNum = Math.abs (randomNum) % size;
+                        String card = CardController.cards.get (randomNum);
                         Article article = new Article ();
-                        article.setTitle ("我的女神");
-                        article.setPicUrl (YoYoUtil.PIC_SUFFIX + "015064.jpg");
-                        article.setUrl (YoYoUtil.PIC_SUFFIX + "015064.jpg");
-                        article.setDescription ("魔镜魔镜哎，谁最美啊——当然尤尤啊！！！");
+                        article.setTitle (textRequestMessage.getContent ()+"の"+card+"卡");
+                        article.setPicUrl (YoYoUtil.WEBSITE_URL + "cards/"+card);
+                        article.setUrl (YoYoUtil.WEBSITE_URL + "cards/"+card+"/"+textRequestMessage.getContent ()+"/"+System.currentTimeMillis ());
+                        article.setDescription (textRequestMessage.getContent ()+"の"+card+"卡");
                         articles.add (article);
                     }
 

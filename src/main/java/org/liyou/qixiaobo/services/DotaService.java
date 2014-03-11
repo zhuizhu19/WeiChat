@@ -24,34 +24,34 @@ import java.util.List;
 public class DotaService implements ApplicationListener<ContextRefreshedEvent> {
     public static final String dota_website_url = "http://dota.db.766.com/index.php/index/";
     public static final String dota_heroes_url = dota_website_url + "herolist/0/0/";
-    static List<Hero> models;
     static boolean complete = false;
+    static boolean needUpdate = false;
     @Resource
     private SkillDao skillDao;
     @Resource
     private HeroDao heroDao;
 
 
-    public static List<Hero> searchHeros (String name) {
+    public List<Hero> searchHeros (String name) {
         if (!complete || name == null || name.trim ().equals ("")) {
             return null;
         }
-        List<Hero> heros = new ArrayList<Hero> (2);
-        for (Hero model : models) {
-            if (model.getName ().contains (name) || model.getShortName ().toLowerCase ().contains (name.toLowerCase ())) {
-                heros.add (model);
-            }
-        }
+        List<Hero> heros = heroDao.queryByHeroNameOrShortname (name);
+
         return heros;
     }
 
-    public void initModel () {
-        if (models != null || complete) {
+    private void initModel () {
+        if (!needUpdate && complete) {
             //that means complete or running
             return;
         }
-        if (models == null) {
-            models = new ArrayList<Hero> (110);
+        complete = false;
+        if (!needUpdate) {
+            if (heroDao.queryHeroNums () > 100) {
+                complete = true;
+                return;
+            }
         }
         for (int i = 1; i <= 6; i++) {
             try {
@@ -108,12 +108,26 @@ public class DotaService implements ApplicationListener<ContextRefreshedEvent> {
                                         }
                                         skill.setSkillDesc (des);
                                     }
-                                    skill = skillDao.insert (skill);
+                                    Skill skillTemp = skillDao.queryBySkillName (skill.getSkillName ());
+                                    if (skillTemp != null) {
+                                        if (needUpdate) {
+                                            skill = skillDao.update (skillTemp);
+                                        }
+                                    } else {
+                                        skill = skillDao.insert (skill);
+                                    }
                                     skillList.add (skill);
                                 }
                                 hero.setSkills (skillList);
-                                hero = heroDao.insert (hero);
-                                models.add (hero);
+                                Hero heroTemp = heroDao.queryByHeroName (hero.getName ());
+                                if (heroTemp != null) {
+                                    if (needUpdate) {
+                                        hero = heroDao.update (hero);
+                                    }
+                                } else {
+                                    hero = heroDao.insert (hero);
+                                }
+
                             }
                         }
                     }
@@ -127,7 +141,7 @@ public class DotaService implements ApplicationListener<ContextRefreshedEvent> {
 
     @Override
     public void onApplicationEvent (ContextRefreshedEvent contextRefreshedEvent) {
-        if(contextRefreshedEvent.getApplicationContext().getParent() == null){//root application context 没有parent，他就是老大.
+        if (contextRefreshedEvent.getApplicationContext ().getParent () == null) {//root application context
             new Thread (new Runnable () {
                 @Override
                 public void run () {

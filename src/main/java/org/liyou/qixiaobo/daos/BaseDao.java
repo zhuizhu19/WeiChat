@@ -21,7 +21,7 @@ import java.util.List;
  */
 public class BaseDao<T> {
     @Resource
-    private SessionFactory sessionFacotry;
+    SessionFactory sessionFacotry;
     private final static DateFormat dateFormat = new SimpleDateFormat ("HH:mm");
     private final static DateFormat dateFormatWithDay = new SimpleDateFormat ("yyyy-MM-dd");
     private final static DateFormat dateFormatWithDayAndTime = new SimpleDateFormat ("MM-dd HH:mm");
@@ -29,20 +29,30 @@ public class BaseDao<T> {
     @Transactional
     public T insert (T t) {
         Session session = sessionFacotry.getCurrentSession ();
-        Transaction tx = session.beginTransaction();
-        session.save (t);
-        session.flush ();
-        tx.commit();
+        Transaction tx = session.beginTransaction ();
+        try {
+            session.save (t);
+            session.flush ();
+            tx.commit ();
+        } catch (HibernateException ex) {
+            tx.rollback ();
+        }
+        session.close ();
         return t;
     }
 
     @Transactional
     public T update (T t) {
         Session session = sessionFacotry.getCurrentSession ();
-        Transaction tx = session.beginTransaction();
-        session.update (t);
-        session.flush ();
-        tx.commit ();
+        Transaction tx = session.beginTransaction ();
+        try {
+            session.update (t);
+            session.flush ();
+            tx.commit ();
+        } catch (HibernateException ex) {
+            tx.rollback ();
+        }
+        session.close ();
         return t;
     }
 
@@ -78,18 +88,22 @@ public class BaseDao<T> {
     @Transactional
     public void delete (T t) {
         Session session = sessionFacotry.getCurrentSession ();
-        Transaction tx = session.beginTransaction();
-        session.delete (t);
-        session.flush ();
-        tx.commit ();
+        Transaction tx = session.beginTransaction ();
+        try {
+            session.delete (t);
+            session.flush ();
+            tx.commit ();
+        } catch (HibernateException ex) {
+            tx.rollback ();
+        }
+        session.close ();
     }
 
     @Transactional
     public T query (Class<T> clazz, int id) {
-        Session session = sessionFacotry.getCurrentSession ();
-        Transaction tx = session.beginTransaction();
+        Session session = sessionFacotry.openSession ();
         Object t = session.get (clazz, id);
-        tx.commit ();
+        session.close ();
         if (t == null)
             return null;
         return (T) t;
@@ -99,9 +113,11 @@ public class BaseDao<T> {
     @Transactional
     @SuppressWarnings("unchecked")
     public List<T> query (String queryString) {
-        Session session = sessionFacotry.getCurrentSession ();
+        Session session = sessionFacotry.openSession ();
         Query query = session.createQuery (queryString);
-        return query.list ();
+        List<T> list = query.list ();
+        session.close ();
+        return list;
     }
 
     @Transactional
@@ -131,8 +147,9 @@ public class BaseDao<T> {
             sb.append (" where ").append (whereClause);
         }
         String hql = sb.toString ();
-        Session session = sessionFacotry.getCurrentSession ();
+        Session session = sessionFacotry.openSession ();
         Number count = (Number) session.createQuery (hql).uniqueResult ();
+        session.close ();
         return count.intValue ();
     }
 
@@ -151,7 +168,7 @@ public class BaseDao<T> {
         if (orderClause != null) {
             sb.append (" order by").append (orderClause);
         }
-        Session session = sessionFacotry.getCurrentSession ();
+        Session session = sessionFacotry.openSession ();
         Query query = session.createQuery (sb.toString ());
         if (userLimit) {
             query.setFirstResult (firstRecord);
@@ -159,6 +176,22 @@ public class BaseDao<T> {
         }
         @SuppressWarnings("unchecked")
         List<T> ts = query.list ();
+        session.close ();
         return ts;
+    }
+
+    public String matchAnyWhere (String pattern) {
+        if (pattern == null) {
+            return "";
+        } else {
+            pattern = pattern.trim ();
+            StringBuilder stringBuilder = new StringBuilder ();
+            stringBuilder.append ("%");
+            for (int i = 0; i < pattern.length (); i++) {
+                stringBuilder.append (pattern.charAt (i));
+                stringBuilder.append ("%");
+            }
+            return stringBuilder.toString ();
+        }
     }
 }
