@@ -98,7 +98,7 @@ public class CoreService {
                         Article article = new Article ();
                         article.setTitle (textRequestMessage.getContent ()+"の"+card+"卡");
                         article.setPicUrl (YoYoUtil.WEBSITE_URL + "cards/"+card);
-                        article.setUrl (YoYoUtil.WEBSITE_URL + "cards/"+card+"/"+textRequestMessage.getContent ()+"/"+System.currentTimeMillis ());
+                        article.setUrl (YoYoUtil.WEBSITE_URL + "cards/loveuu/"+card+"/"+textRequestMessage.getContent ()+"/"+System.currentTimeMillis ());
                         article.setDescription (textRequestMessage.getContent ()+"の"+card+"卡");
                         articles.add (article);
                     }

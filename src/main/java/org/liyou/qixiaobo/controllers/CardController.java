@@ -5,6 +5,7 @@ import org.liyou.qixiaobo.common.StringUtils;
 import org.liyou.qixiaobo.utils.IWeiChat;
 import org.liyou.qixiaobo.utils.ImageUtils;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.context.ContextLoader;
@@ -65,6 +66,19 @@ public class CardController extends BaseController {
         }
     }
 
+    @RequestMapping(value = { "/loveuu/{cardName}/{name}" })
+    public String showCard (Model model, @PathVariable String cardName, @PathVariable String name) {
+        return forward ("/cards/loveuu" + cardName + "/" + name + "/" + System.currentTimeMillis ());
+    }
+
+    @RequestMapping(value = { "/loveuu/{cardName}/{name}/{time}" })
+    public String showCard (Model model, @PathVariable String cardName, @PathVariable String name, @PathVariable String time) {
+        model.addAttribute ("cardName", cardName);
+        model.addAttribute ("name", name);
+        model.addAttribute ("time", time);
+        return "showPicture";
+    }
+
     @RequestMapping(value = { "/{cardName}/{name}/{time}" })
     public void showCard (HttpServletRequest request, HttpServletResponse response, @PathVariable String cardName, @PathVariable String name, @PathVariable String time) {
         if (cardName == null) {
@@ -116,7 +130,9 @@ public class CardController extends BaseController {
 
     @RequestMapping(value = { "/{cardName}/{name}" })
     public String showCard (HttpServletRequest request, HttpServletResponse response, @PathVariable String cardName, @PathVariable String name) {
-        return forward  ("/cards/" + cardName + "/" + name + "/" + System.currentTimeMillis ());
+        return forward ("/cards/" + cardName + "/" + name + "/" + System.currentTimeMillis ());
 
     }
+
+
 }
