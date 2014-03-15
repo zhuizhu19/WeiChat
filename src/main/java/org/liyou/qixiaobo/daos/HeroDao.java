@@ -1,6 +1,7 @@
 package org.liyou.qixiaobo.daos;
 
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.MatchMode;
@@ -37,7 +38,7 @@ public class HeroDao extends BaseDao<Hero> {
         Criteria criteria = session.createCriteria (Hero.class);
         criteria.add (Restrictions.or (Restrictions.like ("name", matchAnyWhere (name), MatchMode.EXACT),
                 (Restrictions.like ("shortName", name, MatchMode.ANYWHERE))));
-        criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
+        criteria.setResultTransformer (Criteria.DISTINCT_ROOT_ENTITY);
         List<Hero> heros = criteria.list ();
         session.close ();
         if (heros == null || heros.size () == 0)
@@ -47,6 +48,26 @@ public class HeroDao extends BaseDao<Hero> {
 
     public int queryHeroNums () {
         return queryNums (Hero.class, null);
+    }
+
+    /**
+     * @param showSkills whether show skills
+     * */
+    @Transactional
+    public List<Hero> queryAllHeros (boolean showSkills) {
+        List<Hero> heros = null;
+        Session session = sessionFacotry.getCurrentSession ();
+        Transaction tx = session.beginTransaction ();
+        if (!showSkills) {
+            String hql = "select new Hero(id, name,shortName,imgUrl,url, des) from Hero";
+            Query query = session.createQuery (hql);
+            heros = query.list ();
+        } else {
+            Criteria criteria = session.createCriteria (Hero.class);
+            heros = criteria.list ();
+        }
+        tx.commit ();
+        return heros;
     }
 
 

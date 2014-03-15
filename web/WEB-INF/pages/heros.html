@@ -1,0 +1,22 @@
+<@liyou.html title="Dota 英雄大全">
+<div class=" medium-12 columns">
+    <div class=" medium-block-grid-2 large-block-grid-4">
+        <#list heros as hero>
+            <div class="medium-4 columns">
+                <div class="medium-12 columns">
+                    <div class="medium-3 columns">
+                        <img src=" ${hero.imgUrl}" onclick="window.location.href='${hero.url}'"
+                             alt="${hero.name}">
+                    </div>
+                    <div class="medium-9 columns">
+                        <h3><strong>${hero.name}</strong><sub>${hero.shortName}</sub></h3>
+                    </div>
+                </div>
+                <div class="description">
+                    <p> ${hero.des}</p>
+                </div>
+            </div>
+        </#list>
+    </div>
+</div>
+</@liyou.html>

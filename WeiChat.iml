@@ -66,6 +66,7 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-orm:4.0.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-aspects:4.0.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.7.0" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-context-support:4.0.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.29" level="project" />
     <orderEntry type="library" name="Maven: org.apache.camel:camel-ibatis:2.10.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.camel:camel-core:2.10.0" level="project" />
@@ -123,6 +124,7 @@
     <orderEntry type="library" name="Maven: org.apache.taglibs:taglibs-standard-jstlel:1.2.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.taglibs:taglibs-standard-spec:1.2.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.taglibs:taglibs-standard-impl:1.2.1" level="project" />
+    <orderEntry type="library" name="Maven: org.freemarker:freemarker:2.3.20" level="project" />
   </component>
 </module>
 

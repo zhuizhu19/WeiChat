@@ -2,17 +2,69 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1a64b6c-8aa1-4b69-a0b2-5ae33d7103b7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jstl_jstl_1_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_taglibs_taglibs_standard_impl_1_2_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_taglibs_taglibs_standard_jstlel_1_2_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_taglibs_taglibs_standard_spec_1_2_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/pages/showPicture.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/controllers/CardController.java" afterPath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/controllers/CardController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/img/icons/apple-touch-icon-114x114-precomposed.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/img/icons/apple-touch-icon-144x144-precomposed.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/img/icons/apple-touch-icon-72x72-precomposed.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/img/icons/apple-touch-icon-precomposed.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/img/icons/favicon.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/img/.gitkeep" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/controllers/DotaController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_freemarker_freemarker_2_3_20.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_4_0_2_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/css/docs.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/js/vendor/fastclick.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/pages/macro/foot.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/js/foundation/foundation.abide.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/js/foundation/foundation.accordion.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/js/foundation/foundation.alert.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/js/foundation/foundation.clearing.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/css/foundation.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/js/foundation/foundation.dropdown.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/js/foundation/foundation.equalizer.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/js/foundation/foundation.interchange.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/js/foundation/foundation.joyride.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/js/foundation/foundation.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/js/foundation/foundation.magellan.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/css/foundation.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/js/foundation.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/js/foundation/foundation.offcanvas.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/js/foundation/foundation.orbit.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/js/foundation/foundation.reveal.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/js/foundation/foundation.slider.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/js/foundation/foundation.tab.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/js/foundation/foundation.tooltip.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/js/foundation/foundation.topbar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/pages/macro/head.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/pages/heros.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/js/vendor/jquery.cookie.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/js/vendor/jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/pages/macro/layout.ftl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/js/modernizr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/js/vendor/modernizr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/css/normalize.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/js/vendor/placeholder.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/pages/showPicture.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/pages/macro/spring.ftl" />
+      <change type="DELETED" beforePath="F:\workspace\WeiChat\web\WEB-INF\pages\showPicture.jsp" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/cards/clean.jpg" afterPath="$PROJECT_DIR$/web/WEB-INF/cards/clean.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/cards/cleancard.jpg" afterPath="$PROJECT_DIR$/web/WEB-INF/cards/cleancard.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/cards/cloth.jpg" afterPath="$PROJECT_DIR$/web/WEB-INF/cards/cloth.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/cards/clothcard.jpg" afterPath="$PROJECT_DIR$/web/WEB-INF/cards/clothcard.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/cards/dinner.jpg" afterPath="$PROJECT_DIR$/web/WEB-INF/cards/dinner.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/cards/dinnercard.jpg" afterPath="$PROJECT_DIR$/web/WEB-INF/cards/dinnercard.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/cards/joke.jpg" afterPath="$PROJECT_DIR$/web/WEB-INF/cards/joke.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/cards/jokecard.jpg" afterPath="$PROJECT_DIR$/web/WEB-INF/cards/jokecard.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/cards/shopping.jpg" afterPath="$PROJECT_DIR$/web/WEB-INF/cards/shopping.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/cards/shoppingcard.jpg" afterPath="$PROJECT_DIR$/web/WEB-INF/cards/shoppingcard.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/cards/travel.jpg" afterPath="$PROJECT_DIR$/web/WEB-INF/cards/travel.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/cards/travelcard.jpg" afterPath="$PROJECT_DIR$/web/WEB-INF/cards/travelcard.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java" afterPath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/hibernate/Hero.java" afterPath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/hibernate/Hero.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/daos/HeroDao.java" afterPath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/daos/HeroDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WeiChat.iml" afterPath="$PROJECT_DIR$/WeiChat.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/WeiChat_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/WeiChat_war_exploded.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/YoYoUtil.java" afterPath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/YoYoUtil.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/dispatcher.xml" afterPath="$PROJECT_DIR$/src/main/resources/dispatcher.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.jsp" afterPath="$PROJECT_DIR$/web/index.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -82,82 +134,57 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CardController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/controllers/CardController.java">
+      <file leaf-file-name="DotaController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/controllers/DotaController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="5" selection-start="3029" selection-end="3029" vertical-scroll-proportion="0.0" vertical-offset="1253" max-vertical-offset="3456">
+            <state line="22" column="5" selection-start="662" selection-end="662" vertical-scroll-proportion="0.0" vertical-offset="189" max-vertical-offset="810">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="heros.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/heros.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="39" selection-start="740" selection-end="740" vertical-scroll-proportion="0.8455115" vertical-offset="0" max-vertical-offset="729">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+      <file leaf-file-name="HeroDao.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/daos/HeroDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="173" column="45" selection-start="6314" selection-end="6314" vertical-scroll-proportion="-7.9166665" vertical-offset="4386" max-vertical-offset="5238">
+            <state line="55" column="18" selection-start="1844" selection-end="1844" vertical-scroll-proportion="0.0" vertical-offset="975" max-vertical-offset="1890">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dispatcher.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/dispatcher.xml">
+      <file leaf-file-name="showPicture.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/showPicture.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="40" selection-start="906" selection-end="906" vertical-scroll-proportion="0.39457202" vertical-offset="324" max-vertical-offset="864">
+            <state line="2" column="0" selection-start="77" selection-end="91" vertical-scroll-proportion="-1.5" vertical-offset="0" max-vertical-offset="243">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CoreService.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java">
+      <file leaf-file-name="Hero.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/hibernate/Hero.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="103" column="21" selection-start="5053" selection-end="5053" vertical-scroll-proportion="0.0" vertical-offset="810" max-vertical-offset="8424">
+            <state line="18" column="23" selection-start="224" selection-end="382" vertical-scroll-proportion="0.0" vertical-offset="84" max-vertical-offset="1917">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/index.jsp">
+      <file leaf-file-name="DotaService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/DotaService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="9" selection-start="275" selection-end="275" vertical-scroll-proportion="-8.25" vertical-offset="0" max-vertical-offset="594">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="showPicture.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/showPicture.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="11" selection-start="246" selection-end="246" vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="594">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ImageUtils.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/ImageUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="149" column="25" selection-start="5713" selection-end="5713" vertical-scroll-proportion="0.0" vertical-offset="3602" max-vertical-offset="5940">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StringUtils.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/common/StringUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="141" column="25" selection-start="3807" selection-end="3807" vertical-scroll-proportion="0.0" vertical-offset="3427" max-vertical-offset="3942">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/common/BaseController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="230" column="7" selection-start="7048" selection-end="7048" vertical-scroll-proportion="0.0" vertical-offset="5292" max-vertical-offset="6237">
+            <state line="75" column="44" selection-start="2910" selection-end="2910" vertical-scroll-proportion="0.0" vertical-offset="1434" max-vertical-offset="3780">
               <folding />
             </state>
           </provider>
@@ -176,19 +203,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/response/TextMessage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/response/WeiChatUser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/request/BaseEvent.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/request/ClickEvent.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/request/ImageMessage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/request/LinkMessage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/request/LocationEvent.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/request/LocationMessage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/request/PushEvent.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/request/QREvent.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/request/TextMessage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/request/VoiceMessage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/response/BaseMessage.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/response/BaseResponseMessage.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/request/BaseMessage.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/request/BaseRequestMessage.java" />
@@ -198,7 +212,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/log4j.xml" />
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/AccessToken.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/MessageUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/YoYoUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/execptions/NotOneException.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/daos/DotaDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/weichat/AccessToken.java" />
@@ -208,9 +221,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/hibernate/Skill.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/daos/SkillDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/hibernate/Hero.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/daos/BaseDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/daos/HeroDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/IWeiChat.java" />
         <option value="$PROJECT_DIR$/src/test/java/TestPic.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/controllers/WeiChatController.java" />
@@ -222,11 +233,27 @@
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/common/BaseController.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/showPicture.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/pages/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/pages/showPicture.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/controllers/CardController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/YoYoUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/pages/head.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/pages/foot.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/pages/showPicture.jsp" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/pages/head.html" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/pages/foot.html" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/pages/macro/spring.ftl" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/pages/macro/layout.html" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/pages/layout.html" />
         <option value="$PROJECT_DIR$/src/main/resources/dispatcher.xml" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/pages/showPicture.html" />
+        <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/hibernate/Hero.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/daos/HeroDao.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/pages/macro/heros.html" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/pages/macro/head.html" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/pages/macro/layout.ftl" />
+        <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/controllers/DotaController.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/pages/heros.html" />
       </list>
     </option>
   </component>
@@ -394,6 +421,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -406,12 +434,22 @@
               <option name="myItemId" value="External Libraries" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Tomcat 8.0.3" />
+              <option name="myItemId" value="WeiChat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven: org.springframework:spring-webmvc:4.0.2.RELEASE" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="servlet-api.jar" />
+              <option name="myItemId" value="spring-webmvc-4.0.2.RELEASE.jar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -425,11 +463,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Tomcat 8.0.3" />
+              <option name="myItemId" value="Maven: org.springframework:spring-webmvc:4.0.2.RELEASE" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="servlet-api.jar" />
+              <option name="myItemId" value="spring-webmvc-4.0.2.RELEASE.jar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -447,11 +485,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Tomcat 8.0.3" />
+              <option name="myItemId" value="Maven: org.springframework:spring-webmvc:4.0.2.RELEASE" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="servlet-api.jar" />
+              <option name="myItemId" value="spring-webmvc-4.0.2.RELEASE.jar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -459,7 +497,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="http" />
+              <option name="myItemId" value="view" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -473,35 +511,23 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Tomcat 8.0.3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WeiChat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WeiChat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: commons-lang:commons-lang:2.5" />
+              <option name="myItemId" value="Maven: org.springframework:spring-webmvc:4.0.2.RELEASE" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="commons-lang-2.5.jar" />
+              <option name="myItemId" value="spring-webmvc-4.0.2.RELEASE.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="servlet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="freemarker" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -544,6 +570,136 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WeiChat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WeiChat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resource" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WeiChat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WeiChat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resource" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WeiChat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WeiChat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resource" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WeiChat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WeiChat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resource" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="icons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WeiChat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WeiChat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resource" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -566,6 +722,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WeiChat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WeiChat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="macro" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -628,36 +810,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="qixiaobo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WeiChat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WeiChat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="qixiaobo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="utils" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -781,7 +933,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="daos" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -811,13 +963,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -861,6 +1012,8 @@
     <property name="last_opened_file_path" value="$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.29/mysql-connector-java-5.1.29.jar" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
+    <property name="LayoutCode.rearrangeEntriesHTML" value="false" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -868,15 +1021,16 @@
       <recent name="org.liyou.qixiaobo.servlets" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\workspace\WeiChat\src\main\java\org\liyou\qixiaobo\common" />
-      <recent name="F:\workspace\WeiChat\web\WEB-INF\cards" />
-      <recent name="F:\workspace\WeiChat\src\main\java\org\liyou\qixiaobo\execptions" />
-      <recent name="F:\workspace\WeiChat\src\main\resources" />
-      <recent name="F:\workspace\WeiChat\web\WEB-INF\resources\liyou" />
+      <recent name="F:\workspace\WeiChat\web\WEB-INF\resource\js" />
+      <recent name="F:\workspace\WeiChat\web\WEB-INF\resource\css" />
+      <recent name="F:\workspace\WeiChat\web\WEB-INF\resource\img\icons" />
+      <recent name="F:\workspace\WeiChat\web\WEB-INF\pages\macro" />
+      <recent name="F:\workspace\WeiChat\web\WEB-INF\resource" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\workspace\WeiChat\web" />
       <recent name="F:\workspace\WeiChat\web\WEB-INF\pages" />
+      <recent name="F:\workspace\WeiChat\web\WEB-INF\pages\macro" />
+      <recent name="F:\workspace\WeiChat\web" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.WeiChat">
@@ -1225,6 +1379,12 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
+      <option name="VM_PARAMETERS" value="" />
+      <option name="USER_CFG_CLASS" />
+      <option name="CONTEXT_PROVIDER" />
+      <method />
+    </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -1242,12 +1402,6 @@
       <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <method />
-    </configuration>
-    <configuration default="true" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
-      <option name="VM_PARAMETERS" value="" />
-      <option name="USER_CFG_CLASS" />
-      <option name="CONTEXT_PROVIDER" />
       <method />
     </configuration>
     <configuration default="false" name="WeiChat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.3" ALTERNATIVE_JRE_ENABLED="false" ALTERNATIVE_JRE_PATH="">
@@ -1323,17 +1477,12 @@
           <option name="PROGRAM_PARAMETERS" value="" />
         </SHUTDOWN>
       </ConfigurationWrapper>
-      <method>
-        <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="WeiChat:war exploded" />
-        </option>
-      </method>
+      <method />
     </configuration>
     <list size="3">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.TestPic" />
-      <item index="1" class="java.lang.String" itemvalue="Maven.WeiChat [install]" />
-      <item index="2" class="java.lang.String" itemvalue="Tomcat Server.WeiChat" />
+      <item index="0" class="java.lang.String" itemvalue="Tomcat Server.WeiChat" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.TestPic" />
+      <item index="2" class="java.lang.String" itemvalue="Maven.WeiChat [install]" />
     </list>
     <recent_temporary>
       <list size="2">
@@ -1392,7 +1541,10 @@
       <workItem from="1394459829431" duration="157000" />
       <workItem from="1394460242223" duration="897000" />
       <workItem from="1394541200738" duration="6571000" />
-      <workItem from="1394626125973" duration="5467000" />
+      <workItem from="1394626125973" duration="8828000" />
+      <workItem from="1394714948225" duration="6100000" />
+      <workItem from="1394852763730" duration="288000" />
+      <workItem from="1394857615503" duration="12804000" />
     </task>
     <task id="LOCAL-00001" summary="newsmessage">
       <created>1393762558085</created>
@@ -1418,11 +1570,15 @@
       <created>1394547184270</created>
       <updated>1394547184270</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="cards&#10;">
+      <created>1394631710024</created>
+      <updated>1394631710024</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112771000" />
+    <option name="totallyTimeSpent" value="135324000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1445,7 +1601,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1508,100 +1664,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/4.3.4.Final/hibernate-core-4.3.4.Final-sources.jar!/org/hibernate/criterion/MatchMode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="4" selection-start="1765" selection-end="1765" vertical-scroll-proportion="0.0" vertical-offset="901" max-vertical-offset="1944" />
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/4.3.4.Final/hibernate-core-4.3.4.Final-sources.jar!/org/hibernate/criterion/Restrictions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="148" column="5" selection-start="4515" selection-end="4515" vertical-scroll-proportion="0.0" vertical-offset="2953" max-vertical-offset="18306" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/daos/BaseDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="182" column="31" selection-start="5315" selection-end="5328" vertical-scroll-proportion="0.0" vertical-offset="4134" max-vertical-offset="5022" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="117" column="23" selection-start="4030" selection-end="4030" vertical-scroll-proportion="0.46126762" vertical-offset="2766" max-vertical-offset="3861" />
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/lang/ThreadLocal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="147" column="34" selection-start="4965" selection-end="4965" vertical-scroll-proportion="0.55728155" vertical-offset="3034" max-vertical-offset="17982" />
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/4.3.4.Final/hibernate-core-4.3.4.Final-sources.jar!/org/hibernate/criterion/CriteriaSpecification.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="42" selection-start="2143" selection-end="2143" vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="1863" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/daos/HeroDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="66" selection-start="1470" selection-end="1470" vertical-scroll-proportion="0.0" vertical-offset="462" max-vertical-offset="1350" />
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/io/OutputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="22" selection-start="878" selection-end="878" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="3699" />
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/io/FileOutputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="27" selection-start="3212" selection-end="3228" vertical-scroll-proportion="0.0" vertical-offset="2055" max-vertical-offset="12501" />
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/awt/image/BufferedImage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="26" selection-start="1820" selection-end="1833" vertical-scroll-proportion="0.0" vertical-offset="597" max-vertical-offset="42984" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/cards/clothcard.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/cards/dinnercard.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/cards/travel.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/cards/clean.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/awt/Font.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="557" column="65" selection-start="21024" selection-end="21028" vertical-scroll-proportion="-14.038835" vertical-offset="20676" max-vertical-offset="70632" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/WeiChatUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="0" selection-start="2556" selection-end="2556" vertical-scroll-proportion="0.0" vertical-offset="1782" max-vertical-offset="7587">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/IWeiChat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="40" selection-start="498" selection-end="507" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="648">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/awt/Color.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="412" column="11" selection-start="11969" selection-end="11969" vertical-scroll-proportion="1.5902913" vertical-offset="9576" max-vertical-offset="32967" />
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/awt/Graphics2D.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="858" column="25" selection-start="38625" selection-end="38625" vertical-scroll-proportion="0.33266932" vertical-offset="22081" max-vertical-offset="32562" />
@@ -1612,21 +1674,9 @@
         <state line="10" column="100" selection-start="317" selection-end="317" vertical-scroll-proportion="0.5378486" vertical-offset="0" max-vertical-offset="594" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/hibernate/Hero.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="0" selection-start="796" selection-end="796" vertical-scroll-proportion="0.0" vertical-offset="781" max-vertical-offset="1620">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/common/CookieUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="24" selection-start="2256" selection-end="2256" vertical-scroll-proportion="0.0" vertical-offset="1621" max-vertical-offset="6588">
-          <folding>
-            <element signature="e#0#8122#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
+        <state line="77" column="24" selection-start="2256" selection-end="2256" vertical-scroll-proportion="0.0" vertical-offset="1621" max-vertical-offset="6588" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/cards/cloth.jpg">
@@ -1705,13 +1755,6 @@
         <state line="37" column="13" selection-start="472" selection-end="472" vertical-scroll-proportion="0.0" vertical-offset="504" max-vertical-offset="5724" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/ImageUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="149" column="25" selection-start="5713" selection-end="5713" vertical-scroll-proportion="0.0" vertical-offset="3602" max-vertical-offset="5940">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/util/Date.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="174" column="11" selection-start="6774" selection-end="6774" vertical-scroll-proportion="0.5747573" vertical-offset="3484" max-vertical-offset="35181">
@@ -1721,28 +1764,12 @@
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/util/Random.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="237" column="15" selection-start="8723" selection-end="8723" vertical-scroll-proportion="0.0" vertical-offset="5391" max-vertical-offset="15174">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/YoYoUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="71" selection-start="331" selection-end="331" vertical-scroll-proportion="0.24324325" vertical-offset="0" max-vertical-offset="888">
-          <folding />
-        </state>
+        <state line="237" column="15" selection-start="8723" selection-end="8723" vertical-scroll-proportion="0.0" vertical-offset="5391" max-vertical-offset="15174" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="21" selection-start="640" selection-end="640" vertical-scroll-proportion="0.19014084" vertical-offset="243" max-vertical-offset="2133">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/DotaService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="30" selection-start="1066" selection-end="1066" vertical-scroll-proportion="-0.4560811" vertical-offset="783" max-vertical-offset="3780">
           <folding />
         </state>
       </provider>
@@ -1756,21 +1783,60 @@
     </entry>
     <entry file="dbDummy://db-console:/31f3f3c4/a610faab-fc12-4e3e-8bd5-7b97933ef113/">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="437">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="437" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="9" selection-start="275" selection-end="275" vertical-scroll-proportion="-8.25" vertical-offset="0" max-vertical-offset="594" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/IWeiChat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="40" selection-start="498" selection-end="507" vertical-scroll-proportion="0.63076925" vertical-offset="63" max-vertical-offset="648">
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/YoYoUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="44" selection-start="427" selection-end="440" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.0.2.RELEASE/spring-webmvc-4.0.2.RELEASE.jar!/org/springframework/web/servlet/view/freemarker/FreeMarkerConfigurer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="190" selection-end="190" vertical-scroll-proportion="-5.4" vertical-offset="0" max-vertical-offset="756" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_0_2_RELEASE.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="559" />
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.0.2.RELEASE/spring-webmvc-4.0.2.RELEASE-sources.jar!/org/springframework/web/servlet/view/freemarker/FreeMarkerConfigurer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="67" selection-start="1380" selection-end="1380" vertical-scroll-proportion="0.431127" vertical-offset="326" max-vertical-offset="3591" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="173" column="45" selection-start="6314" selection-end="6314" vertical-scroll-proportion="-7.9166665" vertical-offset="4386" max-vertical-offset="5238">
+        <state line="51" column="51" selection-start="2021" selection-end="2021" vertical-scroll-proportion="0.1565762" vertical-offset="1302" max-vertical-offset="5589">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="21" selection-start="5053" selection-end="5053" vertical-scroll-proportion="0.0" vertical-offset="810" max-vertical-offset="8424">
+        <state line="324" column="41" selection-start="15910" selection-end="15910" vertical-scroll-proportion="0.0" vertical-offset="7927" max-vertical-offset="8883">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/ImageUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="149" column="25" selection-start="5713" selection-end="5713" vertical-scroll-proportion="0.0" vertical-offset="3602" max-vertical-offset="5940">
           <folding />
         </state>
       </provider>
@@ -1782,30 +1848,135 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/resource/css/normalize.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="9" selection-start="275" selection-end="275" vertical-scroll-proportion="-8.25" vertical-offset="0" max-vertical-offset="594">
+        <state line="12" column="1" selection-start="335" selection-end="335" vertical-scroll-proportion="0.6291262" vertical-offset="0" max-vertical-offset="11583">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/showPicture.jsp">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/resource/img/.gitkeep">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="11" selection-start="246" selection-end="246" vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="594">
+        <state line="1" column="0" selection-start="1" selection-end="1" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="189">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/controllers/CardController.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.0.2.RELEASE/spring-webmvc-4.0.2.RELEASE.jar!/org/springframework/web/servlet/view/freemarker/spring.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="5" selection-start="3029" selection-end="3029" vertical-scroll-proportion="0.0" vertical-offset="1253" max-vertical-offset="3456">
+        <state line="102" column="56" selection-start="3428" selection-end="3428" vertical-scroll-proportion="-1.6266094" vertical-offset="3512" max-vertical-offset="10503">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/macro/spring.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="86" column="34" selection-start="2541" selection-end="2541" vertical-scroll-proportion="-2.8390558" vertical-offset="3645" max-vertical-offset="10503">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/dispatcher.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="40" selection-start="906" selection-end="906" vertical-scroll-proportion="0.39457202" vertical-offset="324" max-vertical-offset="864">
+        <state line="28" column="72" selection-start="1342" selection-end="1342" vertical-scroll-proportion="-8.055555" vertical-offset="466" max-vertical-offset="1674">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/macro/foot.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="158" selection-end="158" vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="297">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/controllers/CardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="36" selection-start="2893" selection-end="2893" vertical-scroll-proportion="0.0" vertical-offset="1329" max-vertical-offset="3456">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/daos/BaseDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="142" column="18" selection-start="3856" selection-end="3856" vertical-scroll-proportion="0.0" vertical-offset="3027" max-vertical-offset="5022">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/DotaService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="44" selection-start="2910" selection-end="2910" vertical-scroll-proportion="0.0" vertical-offset="1434" max-vertical-offset="3780">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/daos/HeroDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="18" selection-start="1844" selection-end="1844" vertical-scroll-proportion="0.0" vertical-offset="975" max-vertical-offset="1890">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/resource/img/icons/favicon.ico">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/resource/js/modernizr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/resource/css/docs.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="209169">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/macro/head.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="0" selection-start="1217" selection-end="1217" vertical-scroll-proportion="0.57042253" vertical-offset="0" max-vertical-offset="852">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/macro/layout.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="27" selection-start="603" selection-end="603" vertical-scroll-proportion="0.5387324" vertical-offset="0" max-vertical-offset="852">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/hibernate/Hero.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="23" selection-start="224" selection-end="382" vertical-scroll-proportion="0.0" vertical-offset="84" max-vertical-offset="1917">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/controllers/DotaController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="5" selection-start="662" selection-end="662" vertical-scroll-proportion="0.0" vertical-offset="189" max-vertical-offset="810">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/showPicture.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="77" selection-end="91" vertical-scroll-proportion="-1.5" vertical-offset="0" max-vertical-offset="243">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/heros.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="39" selection-start="740" selection-end="740" vertical-scroll-proportion="0.8455115" vertical-offset="0" max-vertical-offset="729">
           <folding />
         </state>
       </provider>
@@ -1818,9 +1989,9 @@
           <artifact-editor>
             <show-content>
               <type id="jpa-descriptors" />
-              <type id="library" />
               <type id="artifact" />
               <type id="javaee-facet-resources" />
+              <type id="library" />
             </show-content>
           </artifact-editor>
           <last-edited>WeiChat:war exploded</last-edited>

@@ -62,45 +62,54 @@ public class CoreService {
                     responseMessage = new NewsResponseMessage ();
                     List<Article> articles = new ArrayList<Article> ();
                     NewsResponseMessage newsResponseMessage = (NewsResponseMessage) responseMessage;
-                    List<Hero> models = dotaService.searchHeros (textRequestMessage.getContent ());
-                    if (DotaService.complete && models != null && models.size () != 0) {
-                        if (models.size () == 1) {
-                            Hero model = models.get (0);
-                            Article article = new Article ();
-                            article.setTitle (model.getName ());
-                            article.setPicUrl (model.getImgUrl ());
-                            article.setUrl (model.getUrl ());
-                            article.setDescription (model.getDes ());
-                            articles.add (article);
-                            for (Skill skill : model.getSkills ()) {
-                                Article art = new Article ();
-                                art.setTitle (skill.getSkillName ());
-                                art.setUrl (skill.getSkillUrl ());
-                                art.setPicUrl (skill.getSkillImgUrl ());
-                                art.setDescription (skill.getSkillDesc ());
-                                articles.add (art);
-                            }
-                        } else {
-                            for (Hero model : models) {
+                    if (isGodness (textRequestMessage.getContent ())) {
+                        Article article = new Article ();
+                        article.setTitle ("我的女神哎");
+                        article.setPicUrl (YoYoUtil.PIC_PAGE_FACE);
+                        article.setUrl (YoYoUtil.PIC_GODNESS);
+                        article.setDescription ("我的女神哎");
+                        articles.add (article);
+                    } else {
+                        List<Hero> models = dotaService.searchHeros (textRequestMessage.getContent ());
+                        if (DotaService.complete && models != null && models.size () != 0) {
+                            if (models.size () == 1) {
+                                Hero model = models.get (0);
                                 Article article = new Article ();
                                 article.setTitle (model.getName ());
                                 article.setPicUrl (model.getImgUrl ());
                                 article.setUrl (model.getUrl ());
                                 article.setDescription (model.getDes ());
                                 articles.add (article);
+                                for (Skill skill : model.getSkills ()) {
+                                    Article art = new Article ();
+                                    art.setTitle (skill.getSkillName ());
+                                    art.setUrl (skill.getSkillUrl ());
+                                    art.setPicUrl (skill.getSkillImgUrl ());
+                                    art.setDescription (skill.getSkillDesc ());
+                                    articles.add (art);
+                                }
+                            } else {
+                                for (Hero model : models) {
+                                    Article article = new Article ();
+                                    article.setTitle (model.getName ());
+                                    article.setPicUrl (model.getImgUrl ());
+                                    article.setUrl (model.getUrl ());
+                                    article.setDescription (model.getDes ());
+                                    articles.add (article);
+                                }
                             }
+                        } else {
+                            int size = CardController.cards.size ();
+                            int randomNum = random.nextInt ();
+                            randomNum = Math.abs (randomNum) % size;
+                            String card = CardController.cards.get (randomNum);
+                            Article article = new Article ();
+                            article.setTitle (textRequestMessage.getContent () + "の" + card + "卡");
+                            article.setPicUrl (YoYoUtil.WEBSITE_URL + "cards/" + card);
+                            article.setUrl (YoYoUtil.WEBSITE_URL + "cards/loveuu/" + card + "/" + textRequestMessage.getContent () + "/" + System.currentTimeMillis ());
+                            article.setDescription (textRequestMessage.getContent () + "の" + card + "卡");
+                            articles.add (article);
                         }
-                    } else {
-                        int size = CardController.cards.size ();
-                        int randomNum = random.nextInt ();
-                        randomNum = Math.abs (randomNum) % size;
-                        String card = CardController.cards.get (randomNum);
-                        Article article = new Article ();
-                        article.setTitle (textRequestMessage.getContent ()+"の"+card+"卡");
-                        article.setPicUrl (YoYoUtil.WEBSITE_URL + "cards/"+card);
-                        article.setUrl (YoYoUtil.WEBSITE_URL + "cards/loveuu/"+card+"/"+textRequestMessage.getContent ()+"/"+System.currentTimeMillis ());
-                        article.setDescription (textRequestMessage.getContent ()+"の"+card+"卡");
-                        articles.add (article);
                     }
 
                     newsResponseMessage.setArticles (articles);
@@ -319,6 +328,14 @@ public class CoreService {
             clazz = clazz.getSuperclass ();
         }
         return message;
+    }
+
+    private boolean isGodness (String text) {
+        if (text == null) {
+            return false;
+        }
+        text = text.trim ().toLowerCase ();
+        return (text.equals ("godness") || text.equals ("女神") || text.equals ("nvshen"));
     }
 
 }

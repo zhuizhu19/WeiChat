@@ -18,6 +18,18 @@ public class Hero {
     private String url;
     private String des;
 
+    public Hero (int id, String name, String shortName, String imgUrl, String url, String des) {
+        this.id = id;
+        this.name = name;
+        this.shortName = shortName;
+        this.imgUrl = imgUrl;
+        this.url = url;
+        this.des = des;
+    }
+
+    public Hero () {
+    }
+
     @Id
     @GeneratedValue
     public int getId () {
