@@ -17,14 +17,27 @@ public class Hero {
     private List<Skill> skills;
     private String url;
     private String des;
+    private String initProps;
+    private HeroDetail heroDetail;
+    private String house;
 
-    public Hero (int id, String name, String shortName, String imgUrl, String url, String des) {
+    public Hero (int id, String name, String shortName, String imgUrl, String url, String des, String initProps, String house) {
         this.id = id;
         this.name = name;
         this.shortName = shortName;
         this.imgUrl = imgUrl;
         this.url = url;
         this.des = des;
+        this.initProps = initProps;
+        this.house = house;
+    }
+
+    public Hero (int id, String name, String shortName, String imgUrl, String house) {
+        this.id = id;
+        this.shortName = shortName;
+        this.name = name;
+        this.imgUrl = imgUrl;
+        this.house = house;
     }
 
     public Hero () {
@@ -75,7 +88,7 @@ public class Hero {
         this.imgUrl = imgUrl;
     }
 
-    @OneToMany(cascade = { CascadeType.ALL } , fetch = FetchType.EAGER)
+    @OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
     public List<Skill> getSkills () {
         return skills;
     }
@@ -90,5 +103,30 @@ public class Hero {
 
     public void setUrl (String url) {
         this.url = url;
+    }
+
+    public String getInitProps () {
+        return initProps;
+    }
+
+    public void setInitProps (String initProps) {
+        this.initProps = initProps;
+    }
+
+    @OneToOne(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
+    public HeroDetail getHeroDetail () {
+        return heroDetail;
+    }
+
+    public void setHeroDetail (HeroDetail heroDetail) {
+        this.heroDetail = heroDetail;
+    }
+
+    public String getHouse () {
+        return house;
+    }
+
+    public void setHouse (String house) {
+        this.house = house;
     }
 }

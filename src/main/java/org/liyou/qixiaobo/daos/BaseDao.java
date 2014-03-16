@@ -37,7 +37,6 @@ public class BaseDao<T> {
         } catch (HibernateException ex) {
             tx.rollback ();
         }
-        session.close ();
         return t;
     }
 
@@ -52,7 +51,6 @@ public class BaseDao<T> {
         } catch (HibernateException ex) {
             tx.rollback ();
         }
-        session.close ();
         return t;
     }
 
@@ -96,7 +94,6 @@ public class BaseDao<T> {
         } catch (HibernateException ex) {
             tx.rollback ();
         }
-        session.close ();
     }
 
     @Transactional

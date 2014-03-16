@@ -1,0 +1,25 @@
+<@liyou.html title="${hero.name}--Mr.Q">
+<div class=" medium-12 columns">
+    <div class="medium-4 columns">
+        <div class="medium-12 columns">
+            <div class="medium-3 columns">
+                <img src=" ${hero.imgUrl}"
+                     alt="${hero.name}">
+            </div>
+            <div class="medium-9 columns">
+                <h3><strong>${hero.name}</strong><sub>${hero.shortName}</sub></h3>
+            </div>
+        </div>
+        <div class="description">
+            <p> ${hero.des}</p>
+        </div>
+        <div>
+            <#list hero.skills as skill>
+
+                <img src="${skill.skillImgUrl}" alt="${skill.skillName}">
+
+            </#list>
+        </div>
+    </div>
+</div>
+</@liyou.html>

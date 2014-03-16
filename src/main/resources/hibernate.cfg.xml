@@ -25,5 +25,6 @@
         <property name = "hibernate.hbm2ddl.auto">update</property>
         <mapping class = "org.liyou.qixiaobo.entities.hibernate.Hero"></mapping>
         <mapping class = "org.liyou.qixiaobo.entities.hibernate.Skill"></mapping>
+        <mapping class = "org.liyou.qixiaobo.entities.hibernate.HeroDetail"></mapping>
     </session-factory>
 </hibernate-configuration>

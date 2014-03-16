@@ -5,8 +5,10 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.liyou.qixiaobo.daos.HeroDao;
+import org.liyou.qixiaobo.daos.HeroDetailDao;
 import org.liyou.qixiaobo.daos.SkillDao;
 import org.liyou.qixiaobo.entities.hibernate.Hero;
+import org.liyou.qixiaobo.entities.hibernate.HeroDetail;
 import org.liyou.qixiaobo.entities.hibernate.Skill;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -30,6 +32,8 @@ public class DotaService implements ApplicationListener<ContextRefreshedEvent> {
     private SkillDao skillDao;
     @Resource
     private HeroDao heroDao;
+    @Resource
+    private HeroDetailDao heroDetailDao;
 
 
     public List<Hero> searchHeros (String name) {
@@ -74,14 +78,16 @@ public class DotaService implements ApplicationListener<ContextRefreshedEvent> {
                                 Element shortName = tds.get (2);
                                 Element skills = tds.get (4);
                                 Hero hero = new Hero ();
-                                hero.setUrl (icon.child (0).attr ("href"));
+                                String href = icon.child (0).attr ("href");
+                                String[] array = href.split ("/");
+                                hero.setUrl (array[array.length - 1]);
                                 hero.setImgUrl (icon.child (0).child (0).attr ("src"));
                                 hero.setName (name.text ());
                                 hero.setShortName (shortName.text ());
-                                Document docTmp = Jsoup.connect (hero.getUrl ()).timeout (0).get ();
+                                Document docTmp = Jsoup.connect (href).timeout (0).get ();
                                 Elements eles = docTmp.getElementsByClass ("data");
                                 if (eles != null && eles.size () != 0) {
-                                    Element element = eles.get (0);
+                                    Element element = eles.get (0);//des
                                     String des = "";
                                     try {
                                         des = element.getElementsByTag ("p").get (0).text ();
@@ -89,7 +95,100 @@ public class DotaService implements ApplicationListener<ContextRefreshedEvent> {
 
                                     }
                                     hero.setDes (des);
+                                    element = eles.get (0).getElementsByClass ("line").get (0);//init
+                                    StringBuilder stringBuilder = new StringBuilder ();
+                                    try {
+                                        Elements elements = element.getElementsByTag ("ul");
+                                        for (Element element1 : elements) {
+                                            stringBuilder.append (element1.text ());
+                                            stringBuilder.append ("|");
+                                            stringBuilder.append (element1.getElementsByTag ("span").get (0).text ());
+                                            stringBuilder.append ("|");
+                                        }
+                                        hero.setInitProps (stringBuilder.toString ());
+                                    } catch (Exception ex) {
+
+                                    }
                                 }
+                                HeroDetail heroDetail = new HeroDetail ();
+                                Element element = docTmp.getElementById ("ue_tab1");//advantages
+                                if (element != null) {
+                                    eles = element.getElementsByTag ("p");
+                                    heroDetail.setAdvantages (eles.get (0).text ());
+                                    heroDetail.setDisAdvantages (eles.get (1).text ());
+                                }
+                                element = docTmp.getElementById ("ue_tab2");//heros
+                                if (element != null) {
+                                    eles = element.getElementsByClass ("piclist3");
+                                    StringBuilder stringBuilder = new StringBuilder ();
+                                    for (Element element1 : eles.get (0).children ()) {//buddies
+                                        element = element1.child (0);
+                                        href = element.attr ("href");
+                                        array = href.split ("/");
+                                        stringBuilder.append (array[array.length - 1]);
+                                        stringBuilder.append ("|");
+                                        stringBuilder.append (element.html ());
+                                        stringBuilder.append ("|");
+                                    }
+                                    heroDetail.setBuddies (stringBuilder.toString ());
+                                    stringBuilder = new StringBuilder ();
+                                    for (Element element1 : eles.get (1).children ()) {//enmies
+                                        element = element1.child (0);
+                                        href = element.attr ("href");
+                                        array = href.split ("/");
+                                        stringBuilder.append (array[array.length - 1]);
+                                        stringBuilder.append ("|");
+                                        stringBuilder.append (element.html ());
+                                        stringBuilder.append ("|");
+                                    }
+                                    heroDetail.setEnmies (stringBuilder.toString ());
+                                }
+                                element = docTmp.getElementById ("ue_tab");//equ
+                                if (element != null) {
+                                    eles = element.getElementsByClass ("piclist3");
+                                    StringBuilder stringBuilder = new StringBuilder ();
+                                    for (Element element1 : eles.get (0).children ()) {//goof
+                                        element = element1.child (0);
+                                        href = element.attr ("href");
+                                        array = href.split ("/");
+                                        stringBuilder.append (array[array.length - 1]);
+                                        stringBuilder.append ("|");
+                                        stringBuilder.append (element.html ());
+                                        stringBuilder.append ("|");
+                                    }
+                                    heroDetail.setGood (stringBuilder.toString ());
+                                    stringBuilder = new StringBuilder ();
+                                    for (Element element1 : eles.get (1).children ()) {//better
+                                        element = element1.child (0);
+                                        href = element.attr ("href");
+                                        array = href.split ("/");
+                                        stringBuilder.append (array[array.length - 1]);
+                                        stringBuilder.append ("|");
+                                        stringBuilder.append (element.html ());
+                                        stringBuilder.append ("|");
+                                    }
+                                    heroDetail.setBetter (stringBuilder.toString ());
+                                    stringBuilder = new StringBuilder ();
+                                    for (Element element1 : eles.get (2).children ()) {//best
+                                        element = element1.child (0);
+                                        href = element.attr ("href");
+                                        array = href.split ("/");
+                                        stringBuilder.append (array[array.length - 1]);
+                                        stringBuilder.append ("|");
+                                        stringBuilder.append (element.html ());
+                                        stringBuilder.append ("|");
+                                    }
+                                    heroDetail.setBest (stringBuilder.toString ());
+                                    element = docTmp.getElementById ("ue_tab");
+                                    heroDetail.setReason (element.getElementsByTag ("p").get (0).text ());
+                                }
+                                element = docTmp.getElementById ("skill");
+                                heroDetail.setPoint (element.getElementsByClass ("piclist4").get (0).html ());
+                                heroDetail.setPointReason (element.getElementsByTag ("p").get (0).text ());
+                                heroDetail = heroDetailDao.insert (heroDetail);
+                                hero.setHeroDetail (heroDetail);
+                                element = docTmp.getElementsByClass ("tabtit").get (0);
+                                hero.setHouse (element.getElementsByClass ("select").get (0).child (0).text ());
                                 List<Skill> skillList = new ArrayList<Skill> (skills.childNodeSize ());
                                 for (Element skillElement : skills.children ()) {
                                     Skill skill = new Skill ();
@@ -99,7 +198,7 @@ public class DotaService implements ApplicationListener<ContextRefreshedEvent> {
                                     docTmp = Jsoup.connect (skill.getSkillUrl ()).timeout (0).get ();
                                     eles = docTmp.getElementsByClass ("data");
                                     if (eles != null && eles.size () != 0) {
-                                        Element element = eles.get (0);
+                                        element = eles.get (0);
                                         String des = "";
                                         try {
                                             des = element.getElementsByTag ("p").get (0).text ();
@@ -107,6 +206,13 @@ public class DotaService implements ApplicationListener<ContextRefreshedEvent> {
 
                                         }
                                         skill.setSkillDesc (des);
+                                        eles = element.getElementsByTag ("tr");
+                                        element = eles.get (1);//cd
+                                        skill.setCd (element.textNodes ().get (0).text ());
+                                        element = eles.get (2);//mp
+                                        skill.setMpCost (element.textNodes ().get (0).text ());
+                                        element = eles.get (3); //distance
+                                        skill.setDistance (element.textNodes ().get (0).text ());
                                     }
                                     Skill skillTemp = skillDao.queryBySkillName (skill.getSkillName ());
                                     if (skillTemp != null) {
@@ -136,6 +242,7 @@ public class DotaService implements ApplicationListener<ContextRefreshedEvent> {
                 e.printStackTrace ();
             }
         }
+
         complete = true;
     }
 
@@ -150,5 +257,28 @@ public class DotaService implements ApplicationListener<ContextRefreshedEvent> {
             }).start ();
         }
 
+    }
+
+    public enum DotaHouse {
+        近卫力量_1 ("近卫力量-1", "酒馆"), 近卫力量_2 ("近卫力量-2", "酒馆"), 天灾力量_1 ("天灾力量-1", "酒馆"), 天灾力量_2 ("天灾力量-2", "酒馆"),
+        近卫敏捷_1 ("近卫敏捷-1", "酒馆"), 近卫敏捷_2 ("近卫敏捷-2", "酒馆"), 天灾敏捷_1 ("天灾敏捷-1", "酒馆"), 天灾敏捷_2 ("天灾敏捷-2", "酒馆"),
+        近卫智力_1 ("近卫智力-1", "酒馆"), 近卫智力_2 ("近卫智力-2", "酒馆"), 天灾智力_1 ("天灾智力-1", "酒馆"), 天灾智力_2 ("天灾智力-2", "酒馆");
+
+
+        String houseName;
+        String realName;
+
+       DotaHouse (String houseName, String realName) {
+            this.houseName = houseName;
+            this.realName = realName;
+        }
+
+        public String getHouseName () {
+            return houseName;
+        }
+
+        public String getRealName () {
+            return realName;
+        }
     }
 }

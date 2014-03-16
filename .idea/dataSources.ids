@@ -4814,26 +4814,49 @@
     </table>
     <table name="t_heros" schema="" catalog="iloveliyou" type="TABLE">
       <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="des" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="des" sqlType="LONGTEXT" length="2147483647" precision="0" nullable="true" jdbcType="-1"/>
+      <column name="house" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
       <column name="imgUrl" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
-      <column name="name" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
-      <column name="shortName" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="initProps" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" length="30" precision="0" nullable="false" jdbcType="12"/>
+      <column name="shortName" sqlType="VARCHAR" length="30" precision="0" nullable="false" jdbcType="12"/>
       <column name="url" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="heroDetail_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_pt4fd2yldmlpqlar8234tplvr" columns="heroDetail_id" ref-table="t_heros_details" ref-schema="" ref-catalog="iloveliyou" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <exported-key name="FK_q7imjc75a0yolohakgbk33bup" table="t_heros_t_skills" schema="" catalog="iloveliyou" columns="t_heros_id"/>
+      <index name="UK_9r4oftoo931r1fmsmhxwnblap" unique="true" columns="name"/>
+    </table>
+    <table name="t_heros_details" schema="" catalog="iloveliyou" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="advantages" sqlType="LONGTEXT" length="2147483647" precision="0" nullable="true" jdbcType="-1"/>
+      <column name="best" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="better" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="buddies" sqlType="LONGTEXT" length="2147483647" precision="0" nullable="true" jdbcType="-1"/>
+      <column name="disAdvantages" sqlType="LONGTEXT" length="2147483647" precision="0" nullable="true" jdbcType="-1"/>
+      <column name="enmies" sqlType="LONGTEXT" length="2147483647" precision="0" nullable="true" jdbcType="-1"/>
+      <column name="good" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="point" sqlType="LONGTEXT" length="2147483647" precision="0" nullable="true" jdbcType="-1"/>
+      <column name="pointReason" sqlType="LONGTEXT" length="2147483647" precision="0" nullable="true" jdbcType="-1"/>
+      <column name="reason" sqlType="LONGTEXT" length="2147483647" precision="0" nullable="true" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_pt4fd2yldmlpqlar8234tplvr" table="t_heros" schema="" catalog="iloveliyou" columns="heroDetail_id"/>
     </table>
     <table name="t_heros_t_skills" schema="" catalog="iloveliyou" type="TABLE">
       <column name="t_heros_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="skills_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
-      <foreign-key name="FK_b2k51uwelggiwg9n05hgjw78f" columns="skills_id" ref-table="t_skills" ref-schema="" ref-catalog="iloveliyou" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="FK_q7imjc75a0yolohakgbk33bup" columns="t_heros_id" ref-table="t_heros" ref-schema="" ref-catalog="iloveliyou" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_b2k51uwelggiwg9n05hgjw78f" columns="skills_id" ref-table="t_skills" ref-schema="" ref-catalog="iloveliyou" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <index name="UK_b2k51uwelggiwg9n05hgjw78f" unique="true" columns="skills_id"/>
     </table>
     <table name="t_skills" schema="" catalog="iloveliyou" type="TABLE">
       <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="skillDesc" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="cd" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="distance" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="mpCost" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="skillDesc" sqlType="LONGTEXT" length="2147483647" precision="0" nullable="true" jdbcType="-1"/>
       <column name="skillImgUrl" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
-      <column name="skillName" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="skillName" sqlType="VARCHAR" length="30" precision="0" nullable="false" jdbcType="12"/>
       <column name="skillUrl" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
       <exported-key name="FK_b2k51uwelggiwg9n05hgjw78f" table="t_heros_t_skills" schema="" catalog="iloveliyou" columns="skills_id"/>

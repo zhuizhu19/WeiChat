@@ -1,22 +1,24 @@
 <@liyou.html title="Dota 英雄大全">
-<div class=" medium-12 columns">
-    <div class=" medium-block-grid-2 large-block-grid-4">
-        <#list heros as hero>
-            <div class="medium-4 columns">
-                <div class="medium-12 columns">
-                    <div class="medium-3 columns">
-                        <img src=" ${hero.imgUrl}" onclick="window.location.href='${hero.url}'"
-                             alt="${hero.name}">
-                    </div>
-                    <div class="medium-9 columns">
-                        <h3><strong>${hero.name}</strong><sub>${hero.shortName}</sub></h3>
-                    </div>
-                </div>
-                <div class="description">
-                    <p> ${hero.des}</p>
-                </div>
+<div class="large-8 large-offset-2">
+    <#list heros?keys as house>
+        <div class="large-4 columns pictureBox">
+            <div>
+                <ul class="small-block-grid-4">
+                    <#list heros[house] as hero>
+                        <li>
+                            <a href="/dota/heros/${hero.id}" target="_blank"><img src="${hero.imgUrl}"
+                                                                                  alt="${hero.name}"
+                                                                                  title="${hero.name}"></a>
+                        </li>
+                    </#list>
+                </ul>
             </div>
-        </#list>
-    </div>
+        </div>
+    </#list>
 </div>
 </@liyou.html>
+<style type="text/css">
+    .pictureBox {
+        background: url("../resource/img/bg2.png") no-repeat;
+    }
+</style>

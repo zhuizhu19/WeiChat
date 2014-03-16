@@ -13,6 +13,9 @@ public class Skill {
     private String skillUrl;
     private String skillImgUrl;
     private String skillDesc;
+    private String cd;
+    private String mpCost;
+    private String distance;
 
     @Id
     @GeneratedValue
@@ -58,4 +61,27 @@ public class Skill {
         this.skillImgUrl = skillImgUrl;
     }
 
+    public String getCd () {
+        return cd;
+    }
+
+    public void setCd (String cd) {
+        this.cd = cd;
+    }
+
+    public String getMpCost () {
+        return mpCost;
+    }
+
+    public void setMpCost (String mpCost) {
+        this.mpCost = mpCost;
+    }
+
+    public String getDistance () {
+        return distance;
+    }
+
+    public void setDistance (String distance) {
+        this.distance = distance;
+    }
 }

@@ -52,14 +52,14 @@ public class HeroDao extends BaseDao<Hero> {
 
     /**
      * @param showSkills whether show skills
-     * */
+     */
     @Transactional
     public List<Hero> queryAllHeros (boolean showSkills) {
         List<Hero> heros = null;
         Session session = sessionFacotry.getCurrentSession ();
         Transaction tx = session.beginTransaction ();
         if (!showSkills) {
-            String hql = "select new Hero(id, name,shortName,imgUrl,url, des) from Hero";
+            String hql = "select new Hero(id, name,shortName,imgUrl,url, des,initProps,house) from Hero";
             Query query = session.createQuery (hql);
             heros = query.list ();
         } else {
@@ -70,5 +70,21 @@ public class HeroDao extends BaseDao<Hero> {
         return heros;
     }
 
+    public List<Hero> queryAllHerosByHouse (String houseName, boolean onlyPhoto) {
+        List<Hero> heros = null;
+        Session session = sessionFacotry.getCurrentSession ();
+        String hql = null;
+        Transaction tx = session.beginTransaction ();
+        if (onlyPhoto) {
+            hql = "select new Hero(id, name,shortName,imgUrl,house) from Hero where house =:house";
+        } else {
+            hql = "select new Hero(id, name,shortName,imgUrl,url, des,initProps,house) from Hero where house =:house";
+        }
+        Query query = session.createQuery (hql);
+        query.setParameter ("house", houseName);
+        heros = query.list ();
+        tx.commit ();
+        return heros;
+    }
 
 }
