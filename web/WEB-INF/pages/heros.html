@@ -1,24 +1,43 @@
 <@liyou.html title="Dota 英雄大全">
-<div class="large-8 large-offset-2">
-    <#list heros?keys as house>
-        <div class="large-4 columns pictureBox">
-            <div>
-                <ul class="small-block-grid-4">
-                    <#list heros[house] as hero>
-                        <li>
-                            <a href="/dota/heros/${hero.id}" target="_blank"><img src="${hero.imgUrl}"
-                                                                                  alt="${hero.name}"
-                                                                                  title="${hero.name}"></a>
-                        </li>
-                    </#list>
-                </ul>
-            </div>
-        </div>
-    </#list>
-</div>
+<#include "_heros.html"/>
 </@liyou.html>
 <style type="text/css">
     .pictureBox {
-        background: url("../resource/img/bg2.png") no-repeat;
+        width: 308px;
+        height: 291px;
+        background: url("/resource/img/bg2.png");
+        margin-bottom: 10px;
+        margin-right: 10px;
+    }
+
+    .title {
+        height: 75px;
+
+    }
+
+    h4 {
+        height: 60px;
+        line-height: 70px;
+        font-size: 16px;
+        color: #11c7eb;
+        padding-left: 100px;
+        overflow: hidden;
+        background: url("/resource/img/icons/ico.png") no-repeat;
+
+    }
+
+    .pt1 {
+        background-position-x: 22px;
+        background-position-y: -278px;
+    }
+
+    .pt2 {
+        background-position-x: 22px;
+        background-position-y: -333px;
+    }
+
+    .pt3 {
+        background-position-x: 22px;
+        background-position-y: -391px;
     }
 </style>

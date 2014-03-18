@@ -11,8 +11,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Administrator on 14-3-15.
@@ -25,7 +26,7 @@ public class DotaController extends BaseController {
 
     @RequestMapping("/heros")
     public String allHeros (Model model) {
-        HashMap<String, List<Hero>> map = new HashMap<String, List<Hero>> ();
+        Map<String, List<Hero>> map = new LinkedHashMap<String, List<Hero>> ();
         List<Hero> heros = heroDao.queryAllHerosByHouse (DotaService.DotaHouse.近卫力量_1.getHouseName (), true);
         map.put (DotaService.DotaHouse.近卫力量_1.getHouseName (), heros);
         heros = heroDao.queryAllHerosByHouse (DotaService.DotaHouse.近卫敏捷_1.getHouseName (), true);

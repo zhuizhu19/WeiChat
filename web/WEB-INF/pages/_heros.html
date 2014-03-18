@@ -1,0 +1,25 @@
+<div class="large-8 large-centered columns">
+    <ul class="small-block-grid-1 large-block-grid-3">
+        <#list heros?keys as house>
+            <li>
+                <div class="columns pictureBox">
+                    <div>
+                        <div class="title"><h4
+                                class='<#if house?contains("力量")>pt1<#elseif house?contains("敏捷")>pt2<#else>pt3</#if>'>
+                            ${house}</h4></div>
+                        <ul class="small-block-grid-4">
+                            <#list heros[house] as hero>
+                                <li>
+                                    <a href="/dota/heros/${hero.id}" target="_blank">
+                                        <img src="${hero.imgUrl}" alt="${hero.name}" width="64px" height="64px"
+                                             title="${hero.name}">
+                                    </a>
+                                </li>
+                            </#list>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </#list>
+    </ul>
+</div>

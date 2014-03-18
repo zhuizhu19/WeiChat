@@ -1,25 +1,69 @@
 <@liyou.html title="${hero.name}--Mr.Q">
-<div class=" medium-12 columns">
-    <div class="medium-4 columns">
+    <div class="medium-centered-10 columns">
         <div class="medium-12 columns">
             <div class="medium-3 columns">
                 <img src=" ${hero.imgUrl}"
-                     alt="${hero.name}">
+                     alt="${hero.name}" title="${hero.name}">
             </div>
-            <div class="medium-9 columns">
+            <div class="medium-9 columns name f16 color_yellow h32 line">
                 <h3><strong>${hero.name}</strong><sub>${hero.shortName}</sub></h3>
             </div>
+            <div class="description">
+                <p> ${hero.des}</p>
+            </div>
+            <div class="medium-9 columns init f16 color_yellow h32 line">
+                <h3>英雄属性</h3>
+            </div>
+            <div class="medium-9 columns init">
+                <p>${hero.initProps}</p>
+            </div>
         </div>
-        <div class="description">
-            <p> ${hero.des}</p>
-        </div>
+
         <div>
             <#list hero.skills as skill>
-
-                <img src="${skill.skillImgUrl}" alt="${skill.skillName}">
-
+                <img src="${skill.skillImgUrl}" alt="${skill.skillName}" title="${skill.skillName}">
+                ${skill.skillName}
+                 <p>${skill.skillDesc}</p>
             </#list>
         </div>
+        <div>
+            英雄优势
+           <p> ${hero.heroDetail.advantages}</p>
+            英雄劣势
+           <p> ${hero.heroDetail.advantages}</p>
+        </div>
+        <div>
+            配合英雄推荐
+            <p> ${hero.heroDetail.buddies}</p>
+            克制英雄推荐
+            <p> ${hero.heroDetail.enmies}</p>
+        </div>
+        <div>
+            前期出装
+            <p> ${hero.heroDetail.good}</p>
+            中期出装
+            <p> ${hero.heroDetail.better}</p>
+            后期神装
+            <p> ${hero.heroDetail.best}</p>
+            <p> ${hero.heroDetail.reason}</p>
+        </div>
+        <div>
+            推荐加点方案
+            <p> ${hero.heroDetail.point}</p>
+            <p> ${hero.heroDetail.pointReason}</p>
+        </div>
     </div>
-</div>
 </@liyou.html>
+        <style type="text/css">
+            .name{
+                color: #f7ff00;
+                font-size: 16px;
+            }
+            p {
+                display: block;
+                -webkit-margin-before: 1em;
+                -webkit-margin-after: 1em;
+                -webkit-margin-start: 0px;
+                -webkit-margin-end: 0px;
+            }
+        </style>
