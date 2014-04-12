@@ -23,8 +23,9 @@
         </property>
         <property name = "hibernate.jdbc.use_scrollable_resultset">false</property>
         <property name = "hibernate.hbm2ddl.auto">update</property>
-        <mapping class = "org.liyou.qixiaobo.entities.hibernate.Hero"></mapping>
-        <mapping class = "org.liyou.qixiaobo.entities.hibernate.Skill"></mapping>
-        <mapping class = "org.liyou.qixiaobo.entities.hibernate.HeroDetail"></mapping>
+        <mapping class = "org.liyou.qixiaobo.entities.hibernate.Hero"/>
+        <mapping class = "org.liyou.qixiaobo.entities.hibernate.Skill"/>
+        <mapping class = "org.liyou.qixiaobo.entities.hibernate.HeroDetail"/>
+        <mapping class="org.liyou.qixiaobo.entities.hibernate.WeiChatUser"/>
     </session-factory>
 </hibernate-configuration>

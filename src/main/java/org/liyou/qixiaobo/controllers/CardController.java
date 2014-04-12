@@ -22,7 +22,7 @@ import java.util.List;
  * Created by Administrator on 14-3-9.
  */
 @Controller
-@RequestMapping(value = "cards")
+@RequestMapping(value = "/cards")
 public class CardController extends BaseController {
     public static List<String> cards = null;
     private static final String CARD_FOLDER = "cards";
@@ -68,14 +68,18 @@ public class CardController extends BaseController {
 
     @RequestMapping(value = { "/loveuu/{cardName}/{name}" })
     public String showCard (Model model, @PathVariable String cardName, @PathVariable String name) {
-        return forward ("/cards/loveuu" + cardName + "/" + name + "/" + System.currentTimeMillis ());
+        System.out.println ("showcard"+name);
+        //if name contains chinese and so on,we may have a error
+        try {
+            name=java.net.URLEncoder.encode(name,"utf-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace ();
+        }
+        return redirect ("/cards/loveuu/" + cardName + "/" + name + "/" + System.currentTimeMillis ());
     }
 
     @RequestMapping(value = { "/loveuu/{cardName}/{name}/{time}" })
     public String showCard (Model model, @PathVariable String cardName, @PathVariable String name, @PathVariable String time) {
-        model.addAttribute ("cardName", cardName);
-        model.addAttribute ("name", name);
-        model.addAttribute ("time", time);
         return "showPicture";
     }
 

@@ -10,6 +10,7 @@ import org.liyou.qixiaobo.daos.SkillDao;
 import org.liyou.qixiaobo.entities.hibernate.Hero;
 import org.liyou.qixiaobo.entities.hibernate.HeroDetail;
 import org.liyou.qixiaobo.entities.hibernate.Skill;
+import org.liyou.qixiaobo.utils.DomainTool;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
@@ -29,6 +30,7 @@ public class DotaService implements ApplicationListener<ContextRefreshedEvent> {
     public static final String dota_house_list_url = dota_website_url + "herolist";
     static boolean complete = false;
     static boolean needUpdate = false;
+    boolean isDotaEnabled = false;
     @Resource
     private SkillDao skillDao;
     @Resource
@@ -38,6 +40,9 @@ public class DotaService implements ApplicationListener<ContextRefreshedEvent> {
 
 
     public List<Hero> searchHeros (String name) {
+        if(!isDotaEnabled){
+            return null;
+        }
         if (!complete || name == null || name.trim ().equals ("")) {
             return null;
         }
@@ -47,6 +52,9 @@ public class DotaService implements ApplicationListener<ContextRefreshedEvent> {
     }
 
     private void initModel () {
+        if ((isDotaEnabled = Boolean.parseBoolean (DomainTool.info ("dota"))) != true) {
+            return;
+        }
         if (!needUpdate && complete) {
             //that means complete or running
             return;

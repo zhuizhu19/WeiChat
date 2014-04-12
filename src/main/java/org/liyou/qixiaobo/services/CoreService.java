@@ -69,6 +69,7 @@ public class CoreService {
                         article.setUrl (YoYoUtil.PIC_GODNESS);
                         article.setDescription ("我的女神哎");
                         articles.add (article);
+                        newsResponseMessage.setArticles (articles);
                     } else {
                         List<Hero> models = dotaService.searchHeros (textRequestMessage.getContent ());
                         if (DotaService.complete && models != null && models.size () != 0) {
@@ -77,13 +78,13 @@ public class CoreService {
                                 Article article = new Article ();
                                 article.setTitle (model.getName ());
                                 article.setPicUrl (model.getImgUrl ());
-                                article.setUrl (model.getUrl ());
+                                article.setUrl (YoYoUtil.WEBSITE_URL+"dota/heros/"+model.getId ());
                                 article.setDescription (model.getDes ());
                                 articles.add (article);
                                 for (Skill skill : model.getSkills ()) {
                                     Article art = new Article ();
                                     art.setTitle (skill.getSkillName ());
-                                    art.setUrl (skill.getSkillUrl ());
+                                    art.setUrl (YoYoUtil.WEBSITE_URL+"dota/heros/"+model.getId ());
                                     art.setPicUrl (skill.getSkillImgUrl ());
                                     art.setDescription (skill.getSkillDesc ());
                                     articles.add (art);
@@ -98,21 +99,32 @@ public class CoreService {
                                     articles.add (article);
                                 }
                             }
+                            newsResponseMessage.setArticles (articles);
                         } else {
-                            int size = CardController.cards.size ();
-                            int randomNum = random.nextInt ();
-                            randomNum = Math.abs (randomNum) % size;
-                            String card = CardController.cards.get (randomNum);
-                            Article article = new Article ();
-                            article.setTitle (textRequestMessage.getContent () + "の" + card + "卡");
-                            article.setPicUrl (YoYoUtil.WEBSITE_URL + "cards/" + card);
-                            article.setUrl (YoYoUtil.WEBSITE_URL + "cards/loveuu/" + card + "/" + textRequestMessage.getContent () + "/" + System.currentTimeMillis ());
-                            article.setDescription (textRequestMessage.getContent () + "の" + card + "卡");
-                            articles.add (article);
+                            String content = textRequestMessage.getContent ();
+                            content = content.trim ();
+                            content = content.toLowerCase ();
+                            if (content.equals ("李尤") || content.equals ("liyou")) {
+                                int size = CardController.cards.size ();
+                                int randomNum = random.nextInt ();
+                                randomNum = Math.abs (randomNum) % size;
+                                String card = CardController.cards.get (randomNum);
+                                Article article = new Article ();
+                                article.setTitle (textRequestMessage.getContent () + "の" + card + "卡");
+                                article.setPicUrl (YoYoUtil.WEBSITE_URL + "cards/" + card);
+                                article.setUrl (YoYoUtil.WEBSITE_URL + "cards/loveuu/" + card + "/" + textRequestMessage.getContent () + "/" + System.currentTimeMillis ());
+                                article.setDescription (textRequestMessage.getContent () + "の" + card + "卡");
+                                articles.add (article);
+                                newsResponseMessage.setArticles (articles);
+                            } else {
+                                TextResponseMessage textResponseMessage = new TextResponseMessage ();
+                                textResponseMessage.setContent ("拜託，你又不是我家小尤，我才不給你回照片呢~回覆我小尤的名字哦！！！");
+                                responseMessage = textResponseMessage;
+                            }
                         }
                     }
 
-                    newsResponseMessage.setArticles (articles);
+
                 } else {
                     responseMessage = new TextResponseMessage ();
                 }
