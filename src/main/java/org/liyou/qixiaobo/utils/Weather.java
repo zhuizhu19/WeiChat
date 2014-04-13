@@ -61,7 +61,7 @@ public class Weather {
      * }
      * ]
      */
-    private static String page_url = "http://api.map.baidu.com/telematics/v3/weather?location=%location%&output=json&ak=B840be83881db76cd00aeead221c7e0a";
+    private final static String page_url = "http://api.map.baidu.com/telematics/v3/weather?location=%location%&output=json&ak=B840be83881db76cd00aeead221c7e0a";
     String city;
     String date;
     public String status;
@@ -93,10 +93,9 @@ public class Weather {
 
     public Weather (String city) throws IOException, NullPointerException {
         this.city = city;
-        city=java.net.URLEncoder.encode(city,"utf-8");
-        page_url = page_url.replace ("%location%", city);
-        URL url = new URL (page_url);
-        System.out.println (page_url);
+        city = java.net.URLEncoder.encode (city, "utf-8");
+        final String new_page_url = page_url.replace ("%location%", city);
+        URL url = new URL (new_page_url);
         BufferedReader br;
         StringBuilder sb = null;
         URLConnection connectionData = url.openConnection ();
@@ -123,7 +122,7 @@ public class Weather {
             String date = jsonData.getString ("date");
             this.date = date;
             JSONArray results = jsonData.getJSONArray ("results");
-            if(results.isEmpty ()){
+            if (results.isEmpty ()) {
                 return;
             }
             JSONObject result = results.getJSONObject (0);

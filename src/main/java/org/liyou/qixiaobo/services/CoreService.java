@@ -47,7 +47,6 @@ public class CoreService {
     @Resource
     private UserDao userDao;
     private Random random = new Random ();
-    private static int TEXT_LENGTH = 7;
     private static int isAuthed = 1;
     private static String WEATHER_INDEX = "http://m.weather.com.cn/data/";
     //http://www.mzwu.com/article.asp?id=3730
@@ -291,15 +290,8 @@ public class CoreService {
         List<Stage> stages = stageDao.getStagesByCategory (1);
         for (Stage stage : stages) {
             buffer.append (stage.getKey ());
-            buffer.append ("　");//append 全角空格
             String des = stage.getDes ();
-            if (des.length () <= TEXT_LENGTH) {
-                for (int i = 0; i < TEXT_LENGTH - des.length (); i++) {
-                    buffer.append (" ");
-                }
-            } else {
-                des = des.substring (0, TEXT_LENGTH);
-            }
+            des = des.trim ();
             buffer.append (des);
             buffer.append ("\ue417");
             buffer.append ("\n");
@@ -341,6 +333,7 @@ public class CoreService {
             return null;
         }
         content = content.trim ();
+        System.out.println (content);
         TextResponseMessage textResponseMessage = new TextResponseMessage ();
         if (content.equals ("?")) {
             textResponseMessage.setContent (getMainMenu (weiChatUser));
@@ -434,7 +427,7 @@ public class CoreService {
                     }
                 } else {
                     stage = weiChatUser.getStage ();
-                    if (stage == null||stage.getId ()==1) {
+                    if (stage == null || stage.getId () == 1) {
                         return null;
                     }
                     //handle the menu actually
