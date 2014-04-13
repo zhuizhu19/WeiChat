@@ -342,7 +342,7 @@ public class CoreService {
         TextResponseMessage textResponseMessage = new TextResponseMessage ();
         if (content.equals ("?")) {
             textResponseMessage.setContent (getMainMenu (weiChatUser));
-            return  textResponseMessage;
+            return textResponseMessage;
         }
         Stage stage = weiChatUser.getStage ();
         if ((stage == null || stage.getId () == 1) && content.equals ("0")) {
@@ -486,6 +486,11 @@ public class CoreService {
                                     textResponseMessage.setContent (response);
                                     return textResponseMessage;
                                 }
+                            } else {
+                                String response = Constellation.getConstellationString ();
+                                response = "请输入序号选择星座如xz2为我家小尤的双子座\r\n" + response;
+                                textResponseMessage.setContent (response);
+                                return textResponseMessage;
                             }
                             Constellation constellation = new Constellation (value);
                             StringBuilder stringBuilder = new StringBuilder ();

@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1a64b6c-8aa1-4b69-a0b2-5ae33d7103b7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/Constellation.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java" afterPath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -126,13 +125,13 @@
       <file leaf-file-name="CoreService.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="486" column="63" selection-start="24948" selection-end="24948" vertical-scroll-proportion="0.96039605" vertical-offset="12637" max-vertical-offset="15957">
+            <state line="492" column="59" selection-start="25050" selection-end="25328" vertical-scroll-proportion="26.30495" vertical-offset="0" max-vertical-offset="16092">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3728#3737#0" expanded="true" />
-                <element signature="e#19391#19400#0" expanded="true" />
-                <element signature="e#27074#27083#0" expanded="true" />
-                <element signature="e#29378#29387#0" expanded="true" />
+                <element signature="e#19390#19399#0" expanded="true" />
+                <element signature="e#27420#27429#0" expanded="true" />
+                <element signature="e#29724#29733#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -141,7 +140,7 @@
       <file leaf-file-name="Constellation.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/Constellation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="122" column="47" selection-start="4059" selection-end="4081" vertical-scroll-proportion="0.0" vertical-offset="2559" max-vertical-offset="4158">
+            <state line="119" column="0" selection-start="3978" selection-end="3978" vertical-scroll-proportion="0.0" vertical-offset="2640" max-vertical-offset="4158">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1361,7 +1360,7 @@
       <workItem from="1395471615891" duration="772000" />
       <workItem from="1395481948173" duration="480000" />
       <workItem from="1397270221268" duration="17657000" />
-      <workItem from="1397356329617" duration="35733000" />
+      <workItem from="1397356329617" duration="35920000" />
     </task>
     <task id="LOCAL-00001" summary="newsmessage">
       <created>1393762558085</created>
@@ -1419,11 +1418,15 @@
       <created>1397392102998</created>
       <updated>1397392102998</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="handle for 星座&#10;">
+      <created>1397397638030</created>
+      <updated>1397397638030</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="241127000" />
+    <option name="totallyTimeSpent" value="241314000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1902,7 +1905,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/Constellation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="122" column="47" selection-start="4059" selection-end="4081" vertical-scroll-proportion="0.0" vertical-offset="2559" max-vertical-offset="4158">
+        <state line="119" column="0" selection-start="3978" selection-end="3978" vertical-scroll-proportion="0.0" vertical-offset="2640" max-vertical-offset="4158">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1911,13 +1914,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="486" column="63" selection-start="24948" selection-end="24948" vertical-scroll-proportion="0.96039605" vertical-offset="12637" max-vertical-offset="15957">
+        <state line="492" column="59" selection-start="25050" selection-end="25328" vertical-scroll-proportion="26.30495" vertical-offset="0" max-vertical-offset="16092">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3728#3737#0" expanded="true" />
-            <element signature="e#19391#19400#0" expanded="true" />
-            <element signature="e#27074#27083#0" expanded="true" />
-            <element signature="e#29378#29387#0" expanded="true" />
+            <element signature="e#19390#19399#0" expanded="true" />
+            <element signature="e#27420#27429#0" expanded="true" />
+            <element signature="e#29724#29733#0" expanded="true" />
           </folding>
         </state>
       </provider>
