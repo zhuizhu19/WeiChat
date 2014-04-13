@@ -35,6 +35,7 @@ public class BaseDao<T> {
             session.flush ();
             tx.commit ();
         } catch (HibernateException ex) {
+            ex.printStackTrace ();
             tx.rollback ();
         }
         return t;
@@ -49,6 +50,7 @@ public class BaseDao<T> {
             session.flush ();
             tx.commit ();
         } catch (HibernateException ex) {
+            ex.printStackTrace ();
             tx.rollback ();
         }
         return t;

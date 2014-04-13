@@ -1,8 +1,6 @@
 package org.liyou.qixiaobo.entities.hibernate;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by Administrator on 14-4-12.
@@ -12,9 +10,8 @@ import javax.persistence.Table;
 public class WeiChatUser {
     private String fromUserName;
     private String weiChatName;
-    private boolean flag;
-    private int category;
-    private int stage;
+    private int flag;
+    private Stage stage;
 
     @Id
     public String getFromUserName () {
@@ -33,27 +30,21 @@ public class WeiChatUser {
         this.weiChatName = weiChatName;
     }
 
-    public boolean isFlag () {
+    @Column(nullable = false, length = 2)
+    public int getFlag () {
         return flag;
     }
 
-    public void setFlag (boolean flag) {
+    public void setFlag (int flag) {
         this.flag = flag;
     }
 
-    public int getCategory () {
-        return category;
-    }
-
-    public void setCategory (int category) {
-        this.category = category;
-    }
-
-    public int getStage () {
+    @OneToOne(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
+    public Stage getStage () {
         return stage;
     }
 
-    public void setStage (int stage) {
+    public void setStage (Stage stage) {
         this.stage = stage;
     }
 }

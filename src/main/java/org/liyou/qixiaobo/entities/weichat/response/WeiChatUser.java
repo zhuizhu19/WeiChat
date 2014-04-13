@@ -6,7 +6,7 @@ package org.liyou.qixiaobo.entities.weichat.response;
  */
 public class WeiChatUser {
     private byte subscribe;
-    private String opneid;
+    private String openid;
     private String nickname;
     private byte sex;
     private String city;
@@ -24,12 +24,12 @@ public class WeiChatUser {
         this.subscribe_time = subscribe_time;
     }
 
-    public String getOpneid () {
-        return opneid;
+    public String getOpenid () {
+        return openid;
     }
 
-    public void setOpneid (String opneid) {
-        this.opneid = opneid;
+    public void setOpenid (String openid) {
+        this.openid = openid;
     }
 
     public String getNickname () {

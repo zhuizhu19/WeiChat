@@ -27,5 +27,7 @@
         <mapping class = "org.liyou.qixiaobo.entities.hibernate.Skill"/>
         <mapping class = "org.liyou.qixiaobo.entities.hibernate.HeroDetail"/>
         <mapping class="org.liyou.qixiaobo.entities.hibernate.WeiChatUser"/>
+        <mapping class="org.liyou.qixiaobo.entities.hibernate.Category"/>
+        <mapping class="org.liyou.qixiaobo.entities.hibernate.Stage"/>
     </session-factory>
 </hibernate-configuration>

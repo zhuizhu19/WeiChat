@@ -2,8 +2,12 @@ package org.liyou.qixiaobo.services;
 
 import org.apache.log4j.Logger;
 import org.liyou.qixiaobo.controllers.CardController;
+import org.liyou.qixiaobo.daos.StageDao;
+import org.liyou.qixiaobo.daos.UserDao;
 import org.liyou.qixiaobo.entities.hibernate.Hero;
 import org.liyou.qixiaobo.entities.hibernate.Skill;
+import org.liyou.qixiaobo.entities.hibernate.Stage;
+import org.liyou.qixiaobo.entities.hibernate.WeiChatUser;
 import org.liyou.qixiaobo.entities.weichat.request.*;
 import org.liyou.qixiaobo.entities.weichat.response.Article;
 import org.liyou.qixiaobo.entities.weichat.response.BaseResponseMessage;
@@ -36,7 +40,13 @@ public class CoreService {
     private static Logger logger = Logger.getLogger (CoreService.class);
     @Resource
     private DotaService dotaService;
+    @Resource
+    private StageDao stageDao;
+    @Resource
+    private UserDao userDao;
     private Random random = new Random ();
+    private static int TEXT_LENGTH = 7;
+    private static int isAuthed = 1;
 
     static {
         sArticle = new Article ();
@@ -55,71 +65,102 @@ public class CoreService {
             // xml请求解析
             Map<String, String> requestMap = MessageUtil.parseXml (request);
             BaseEvent baseEvent = processMessage (requestMap);
+            WeiChatUser weiChatUser = userDao.getWeiChatUserByFromUserName (baseEvent.getFromUserName ());
+            if (weiChatUser == null) {
+                weiChatUser = new WeiChatUser ();
+                weiChatUser.setFromUserName (baseEvent.getFromUserName ());
+                weiChatUser.setFlag (0);
+                Stage stage = stageDao.query (Stage.class, 0);
+                weiChatUser.setStage (stage);
+                weiChatUser = userDao.insert (weiChatUser);
+            }
             logger.info (baseEvent.toString ());
             if (baseEvent instanceof BaseRequestMessage) {
                 if (baseEvent instanceof TextRequestMessage) {
                     TextRequestMessage textRequestMessage = (TextRequestMessage) baseEvent;
-                    responseMessage = new NewsResponseMessage ();
-                    List<Article> articles = new ArrayList<Article> ();
-                    NewsResponseMessage newsResponseMessage = (NewsResponseMessage) responseMessage;
-                    if (isGodness (textRequestMessage.getContent ())) {
-                        Article article = new Article ();
-                        article.setTitle ("我的女神哎");
-                        article.setPicUrl (YoYoUtil.PIC_PAGE_FACE);
-                        article.setUrl (YoYoUtil.PIC_GODNESS);
-                        article.setDescription ("我的女神哎");
-                        articles.add (article);
-                        newsResponseMessage.setArticles (articles);
+                    if (weiChatUser.getFlag () == isAuthed && (responseMessage = processMenu (textRequestMessage.getContent (), weiChatUser)) != null) {
+
                     } else {
-                        List<Hero> models = dotaService.searchHeros (textRequestMessage.getContent ());
-                        if (DotaService.complete && models != null && models.size () != 0) {
-                            if (models.size () == 1) {
-                                Hero model = models.get (0);
-                                Article article = new Article ();
-                                article.setTitle (model.getName ());
-                                article.setPicUrl (model.getImgUrl ());
-                                article.setUrl (YoYoUtil.WEBSITE_URL+"dota/heros/"+model.getId ());
-                                article.setDescription (model.getDes ());
-                                articles.add (article);
-                                for (Skill skill : model.getSkills ()) {
-                                    Article art = new Article ();
-                                    art.setTitle (skill.getSkillName ());
-                                    art.setUrl (YoYoUtil.WEBSITE_URL+"dota/heros/"+model.getId ());
-                                    art.setPicUrl (skill.getSkillImgUrl ());
-                                    art.setDescription (skill.getSkillDesc ());
-                                    articles.add (art);
-                                }
-                            } else {
-                                for (Hero model : models) {
+                        responseMessage = new NewsResponseMessage ();
+                        List<Article> articles = new ArrayList<Article> ();
+                        NewsResponseMessage newsResponseMessage = (NewsResponseMessage) responseMessage;
+                        if (weiChatUser.getFlag () == isAuthed && isGodness (textRequestMessage.getContent ())) {
+                            Article article = new Article ();
+                            article.setTitle ("我的女神哎");
+                            article.setPicUrl (YoYoUtil.PIC_PAGE_FACE);
+                            article.setUrl (YoYoUtil.PIC_GODNESS);
+                            article.setDescription ("我的女神哎");
+                            articles.add (article);
+                            newsResponseMessage.setArticles (articles);
+                        } else {
+                            List<Hero> models = dotaService.searchHeros (textRequestMessage.getContent ());
+                            if (DotaService.complete && models != null && models.size () != 0) {
+                                if (models.size () == 1) {
+                                    Hero model = models.get (0);
                                     Article article = new Article ();
                                     article.setTitle (model.getName ());
                                     article.setPicUrl (model.getImgUrl ());
-                                    article.setUrl (model.getUrl ());
+                                    article.setUrl (YoYoUtil.WEBSITE_URL + "dota/heros/" + model.getId ());
                                     article.setDescription (model.getDes ());
                                     articles.add (article);
+                                    for (Skill skill : model.getSkills ()) {
+                                        Article art = new Article ();
+                                        art.setTitle (skill.getSkillName ());
+                                        art.setUrl (YoYoUtil.WEBSITE_URL + "dota/heros/" + model.getId ());
+                                        art.setPicUrl (skill.getSkillImgUrl ());
+                                        art.setDescription (skill.getSkillDesc ());
+                                        articles.add (art);
+                                    }
+                                } else {
+                                    for (Hero model : models) {
+                                        Article article = new Article ();
+                                        article.setTitle (model.getName ());
+                                        article.setPicUrl (model.getImgUrl ());
+                                        article.setUrl (model.getUrl ());
+                                        article.setDescription (model.getDes ());
+                                        articles.add (article);
+                                    }
                                 }
-                            }
-                            newsResponseMessage.setArticles (articles);
-                        } else {
-                            String content = textRequestMessage.getContent ();
-                            content = content.trim ();
-                            content = content.toLowerCase ();
-                            if (content.equals ("李尤") || content.equals ("liyou")) {
-                                int size = CardController.cards.size ();
-                                int randomNum = random.nextInt ();
-                                randomNum = Math.abs (randomNum) % size;
-                                String card = CardController.cards.get (randomNum);
-                                Article article = new Article ();
-                                article.setTitle (textRequestMessage.getContent () + "の" + card + "卡");
-                                article.setPicUrl (YoYoUtil.WEBSITE_URL + "cards/" + card);
-                                article.setUrl (YoYoUtil.WEBSITE_URL + "cards/loveuu/" + card + "/" + textRequestMessage.getContent () + "/" + System.currentTimeMillis ());
-                                article.setDescription (textRequestMessage.getContent () + "の" + card + "卡");
-                                articles.add (article);
                                 newsResponseMessage.setArticles (articles);
                             } else {
-                                TextResponseMessage textResponseMessage = new TextResponseMessage ();
-                                textResponseMessage.setContent ("拜託，你又不是我家小尤，我才不給你回照片呢~回覆我小尤的名字哦！！！");
-                                responseMessage = textResponseMessage;
+                                String content = textRequestMessage.getContent ();
+                                content = content.trim ();
+                                if (isLiYou (content)) {
+                                    weiChatUser = userDao.getWeiChatUserByFromUserName (baseEvent.getFromUserName ());
+                                    if (weiChatUser != null && weiChatUser.getFlag () != isAuthed) {
+                                        weiChatUser.setFlag (isAuthed);
+                                        userDao.update (weiChatUser);
+                                    } else if (weiChatUser == null) {
+                                        //impossible
+                                        weiChatUser = new WeiChatUser ();
+                                        weiChatUser.setFromUserName (baseEvent.getFromUserName ());
+                                        weiChatUser.setFlag (isAuthed);
+                                        Stage stage = stageDao.query (Stage.class, 0);
+                                        weiChatUser.setStage (stage);
+                                        weiChatUser = userDao.insert (weiChatUser);
+                                    }
+                                    int size = CardController.cards.size ();
+                                    int randomNum = random.nextInt ();
+                                    randomNum = Math.abs (randomNum) % size;
+                                    String card = CardController.cards.get (randomNum);
+                                    Article article = new Article ();
+                                    article.setTitle (textRequestMessage.getContent () + "の" + card + "卡");
+                                    article.setPicUrl (YoYoUtil.WEBSITE_URL + "cards/" + card);
+                                    article.setUrl (YoYoUtil.WEBSITE_URL + "cards/loveuu/" + card + "/" + textRequestMessage.getContent () + "/" + System.currentTimeMillis ());
+                                    article.setDescription (textRequestMessage.getContent () + "の" + card + "卡");
+                                    articles.add (article);
+                                    newsResponseMessage.setArticles (articles);
+                                } else {
+                                    TextResponseMessage textResponseMessage = new TextResponseMessage ();
+                                    if (weiChatUser.getFlag () == isAuthed) {
+                                        textResponseMessage.setContent (getMainMenu (weiChatUser));
+                                    } else if (content.equals ("小尤")) {
+                                        textResponseMessage.setContent ("木哈哈哈，你当我傻么，我不如直接告诉你得了……回覆我小尤的名字哦！！！");
+                                    } else {
+                                        textResponseMessage.setContent ("拜託，你又不是我家小尤，我才不給你回照片呢~回覆我小尤的名字哦！！！");
+                                    }
+                                    responseMessage = textResponseMessage;
+                                }
                             }
                         }
                     }
@@ -136,122 +177,6 @@ public class CoreService {
             responseMessage.setCreateTime (new Date ().getTime ());
             responseMessage.setFuncFlag (0);
             respMessage = MessageUtil.messageToXml (responseMessage);
-//            // 发送方帐号（open_id）
-//            String fromUserName = requestMap.get ("FromUserName");
-//            // 公众帐号
-//            String toUserName = requestMap.get ("ToUserName");
-//            // 消息类型
-//            String msgType = requestMap.get ("MsgType");
-//
-//            // 回复消息
-//            BaseResponseMessage message = null;
-//
-//            // 文本消息
-//            if (msgType.equals (MessageUtil.REQ_MESSAGE_TYPE_TEXT)) {
-//                String content = requestMap.get ("Content");
-//                NewsResponseMessage newsMessage = new NewsResponseMessage ();
-//                List<Article> articleList = new ArrayList<Article> ();
-//                sArticle.setTitle ("您发送的是文本消息！");
-//                articleList.add (sArticle);
-//                // 设置图文消息个数
-//                newsMessage.setArticleCount (articleList.size ());
-//                // 设置图文消息包含的图文集合
-//                newsMessage.setArticles (articleList);
-//                // 将图文消息对象转换成xml字符串
-//                respMessage = MessageUtil.newsMessageToXml (newsMessage);
-//                message = newsMessage;
-//            }
-//            // 图片消息
-//            else if (msgType.equals (MessageUtil.REQ_MESSAGE_TYPE_IMAGE)) {
-//                NewsResponseMessage newsMessage = new NewsResponseMessage ();
-//                List<Article> articleList = new ArrayList<Article> ();
-//                sArticle.setTitle ("您发送的是图片消息！");
-//                articleList.add (sArticle);
-//                // 设置图文消息个数
-//                newsMessage.setArticleCount (articleList.size ());
-//                // 设置图文消息包含的图文集合
-//                newsMessage.setArticles (articleList);
-//                // 将图文消息对象转换成xml字符串
-//                respMessage = MessageUtil.newsMessageToXml (newsMessage);
-//                message = newsMessage;
-//                respContent = "您发送的是图片消息！";
-//            }
-//            // 地理位置消息
-//            else if (msgType.equals (MessageUtil.REQ_MESSAGE_TYPE_LOCATION)) {
-//                NewsResponseMessage newsMessage = new NewsResponseMessage ();
-//                List<Article> articleList = new ArrayList<Article> ();
-//                sArticle.setTitle ("您发送的是地理位置消息！");
-//                articleList.add (sArticle);
-//                // 设置图文消息个数
-//                newsMessage.setArticleCount (articleList.size ());
-//                // 设置图文消息包含的图文集合
-//                newsMessage.setArticles (articleList);
-//                // 将图文消息对象转换成xml字符串
-//                respMessage = MessageUtil.newsMessageToXml (newsMessage);
-//                message = newsMessage;
-//            }
-//            // 链接消息
-//            else if (msgType.equals (MessageUtil.REQ_MESSAGE_TYPE_LINK)) {
-//                NewsResponseMessage newsMessage = new NewsResponseMessage ();
-//                List<Article> articleList = new ArrayList<Article> ();
-//                sArticle.setTitle ("您发送的是链接消息！");
-//                articleList.add (sArticle);
-//                // 设置图文消息个数
-//                newsMessage.setArticleCount (articleList.size ());
-//                // 设置图文消息包含的图文集合
-//                newsMessage.setArticles (articleList);
-//                // 将图文消息对象转换成xml字符串
-//                respMessage = MessageUtil.newsMessageToXml (newsMessage);
-//                message = newsMessage;
-//            }
-//            // 音频消息
-//            else if (msgType.equals (MessageUtil.REQ_MESSAGE_TYPE_VOICE)) {
-//                NewsResponseMessage newsMessage = new NewsResponseMessage ();
-//                List<Article> articleList = new ArrayList<Article> ();
-//                sArticle.setTitle ("您发送的是音频消息！");
-//                articleList.add (sArticle);
-//                // 设置图文消息个数
-//                newsMessage.setArticleCount (articleList.size ());
-//                // 设置图文消息包含的图文集合
-//                newsMessage.setArticles (articleList);
-//                // 将图文消息对象转换成xml字符串
-//                respMessage = MessageUtil.newsMessageToXml (newsMessage);
-//                message = newsMessage;
-//                respContent = "您发送的是音频消息！";
-//            }
-//            // 事件推送
-//            else if (msgType.equals (MessageUtil.REQ_MESSAGE_TYPE_EVENT)) {
-//                // 事件类型
-//                String eventType = requestMap.get ("Event");
-//                // 订阅
-//                if (eventType.equals (MessageUtil.EVENT_TYPE_SUBSCRIBE)) {
-//
-//                    NewsResponseMessage newsMessage = new NewsResponseMessage ();
-//                    List<Article> articleList = new ArrayList<Article> ();
-//                    sArticle.setTitle ("谢谢您的关注！");
-//                    articleList.add (sArticle);
-//                    // 设置图文消息个数
-//                    newsMessage.setArticleCount (articleList.size ());
-//                    // 设置图文消息包含的图文集合
-//                    newsMessage.setArticles (articleList);
-//                    // 将图文消息对象转换成xml字符串
-//                    respMessage = MessageUtil.newsMessageToXml (newsMessage);
-//                    message = newsMessage;
-//                }
-//                // 取消订阅
-//                else if (eventType.equals (MessageUtil.EVENT_TYPE_UNSUBSCRIBE)) {
-//                    // TODO 取消订阅后用户再收不到公众号发送的消息，因此不需要回复消息
-//                }
-//                // 自定义菜单点击事件
-//                else if (eventType.equals (MessageUtil.EVENT_TYPE_CLICK)) {
-//                    // TODO 自定义菜单权没有开放，暂不处理该类消息
-//                }
-//            }
-//            message.setToUserName (fromUserName);
-//            message.setFromUserName (toUserName);
-//            message.setCreateTime (new Date ().getTime ());
-//            message.setFuncFlag (0);
-//            respMessage = MessageUtil.messageToXml (message);
         } catch (Exception e) {
             e.printStackTrace ();
         }
@@ -350,4 +275,136 @@ public class CoreService {
         return (text.equals ("godness") || text.equals ("女神") || text.equals ("nvshen"));
     }
 
+    private String getMainMenu (WeiChatUser user) {
+        if (user == null || user.getFlag () != isAuthed) {
+            return "";
+        }
+        StringBuffer buffer = new StringBuffer ();
+        buffer.append ("こんにちは、僕は祁です。番号を選択してください。回復の女神がサプライズよ。回復?このメニュー表示。").append ("\n\r\n");
+        List<Stage> stages = stageDao.getStagesByCategory (1);
+        for (Stage stage : stages) {
+            buffer.append (stage.getKey ());
+            buffer.append ("　");//append 全角空格
+            String des = stage.getDes ();
+            if (des.length () <= TEXT_LENGTH) {
+                for (int i = 0; i < TEXT_LENGTH - des.length (); i++) {
+                    buffer.append (" ");
+                }
+            } else {
+                des = des.substring (0, TEXT_LENGTH);
+            }
+            buffer.append (des);
+            buffer.append ("\ue417");
+            buffer.append ("\n");
+        }
+        buffer.append ("\r\n");
+        return buffer.toString ();
+    }
+
+    /**
+     * emoji表情转换(hex -> utf-16)
+     *
+     * @param hexEmoji
+     * @return
+     */
+    public static String emoji (int hexEmoji) {
+        return String.valueOf (Character.toChars (hexEmoji));
+    }
+
+    private boolean isLiYou (String name) {
+        if (name == null) {
+            return false;
+        }
+        if ((name = name.toLowerCase ()).equals ("liyou")) {
+            return true;
+        } else if (name.equals ("李尤")) {
+            return true;
+        } else if (name.equals ("小尤尤")) {
+            return true;
+        } else if (name.equals ("yoyo")) {
+            return true;
+        } else if (name.equals ("yoyo_littlepig")) {
+            return true;
+        }
+        return false;
+    }
+
+    private BaseResponseMessage processMenu (String content, WeiChatUser weiChatUser) {
+        if (content == null) {
+            return null;
+        }
+        content = content.trim ();
+        TextResponseMessage textResponseMessage = new TextResponseMessage ();
+        if (content.equals ("?")) {
+            textResponseMessage.setContent (getMainMenu (weiChatUser));
+        }
+        Stage stage = weiChatUser.getStage ();
+        if (stage == null || stage.getId () == 1) {
+            //we know we are in normal mode
+            if (content.equals ("0")) {
+                textResponseMessage.setContent ("哇哦，我们还没有选择模式哦，尤尤调皮啦……");
+            } else {
+                stage = stageDao.getStagesByCategoryAndKey (1, content);
+                if (stage != null) {
+                    textResponseMessage.setContent ("哇哦 尤尤选择了【" + stage.getDes () + "】，输入0退出，?显示菜单。");
+                    weiChatUser.setStage (stage);
+                    userDao.update (weiChatUser);
+                } else {
+                    return null;
+                }
+            }
+        } else {
+            //we should handle the menu
+            if (content.equals ("0")) {
+                textResponseMessage.setContent ("HoHo,退出模式【" + stage.getDes () + "】\r\n" + getMainMenu (weiChatUser));
+                stage = stageDao.getStagesByCategoryAndKey (1, "0");
+                weiChatUser.setStage (stage);
+                userDao.update (weiChatUser);
+            } else {
+                stage = stageDao.getStagesByCategoryAndKey (1, content);
+                if (stage != null) {
+                    textResponseMessage.setContent ("哇哦 尤尤选择了【" + stage.getDes () + "】，输入0退出，?显示菜单。");
+                } else {
+                    //handle the menu actually
+                    String key = stage.getKey ();
+                    if (key.equals ("1")) {
+                        //生理周期
+                    } else if (key.equals ("2")) {
+                        //运程
+                    } else if (key.equals ("3")) {
+                        //天气
+                    } else if (key.equals ("4")) {
+                        //图片
+                        int size = CardController.cards.size ();
+                        int randomNum = random.nextInt ();
+                        randomNum = Math.abs (randomNum) % size;
+                        String card = CardController.cards.get (randomNum);
+                        List<Article> articles = new ArrayList<Article> (1);
+                        Article article = new Article ();
+                        article.setTitle (content + "の" + card + "卡");
+                        article.setPicUrl (YoYoUtil.WEBSITE_URL + "cards/" + card);
+                        article.setUrl (YoYoUtil.WEBSITE_URL + "cards/loveuu/" + card + "/" + content + "/" + System.currentTimeMillis ());
+                        article.setDescription (content + "の" + card + "卡");
+                        articles.add (article);
+                        NewsResponseMessage newsResponseMessage = new NewsResponseMessage ();
+                        newsResponseMessage.setArticles (articles);
+                        return newsResponseMessage;
+                    } else if (key.equals ("5")) {
+                        //资料
+                    } else if (key.equals ("6")) {
+                        //可爱
+                    } else if (key.equals ("7")) {
+                        //喜欢
+                    } else if (key.equals ("8")) {
+                        //朋友
+                    } else if (key.equals ("9")) {
+                        //的家
+                    } else {
+
+                    }
+                }
+            }
+        }
+        return textResponseMessage;
+    }
 }
