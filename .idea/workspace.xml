@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1a64b6c-8aa1-4b69-a0b2-5ae33d7103b7" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/Constellation.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java" afterPath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/Weather.java" afterPath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/Weather.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WeiChat.iws" />
@@ -68,7 +68,7 @@
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java" line="167" class="org.liyou.qixiaobo.services.CoreService" package="org.liyou.qixiaobo.services">
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java" line="168" class="org.liyou.qixiaobo.services.CoreService" package="org.liyou.qixiaobo.services">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -98,7 +98,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java" line="80" class="org.liyou.qixiaobo.services.CoreService" package="org.liyou.qixiaobo.services">
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java" line="81" class="org.liyou.qixiaobo.services.CoreService" package="org.liyou.qixiaobo.services">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -126,22 +126,22 @@
       <file leaf-file-name="CoreService.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="438" column="50" selection-start="21878" selection-end="21878" vertical-scroll-proportion="0.38613862" vertical-offset="11631" max-vertical-offset="13797">
+            <state line="486" column="63" selection-start="24948" selection-end="24948" vertical-scroll-proportion="0.96039605" vertical-offset="12637" max-vertical-offset="15957">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3681#3690#0" expanded="true" />
-                <element signature="e#17559#17568#0" expanded="true" />
-                <element signature="e#22004#22013#0" expanded="true" />
-                <element signature="e#24308#24317#0" expanded="true" />
+                <element signature="e#3728#3737#0" expanded="true" />
+                <element signature="e#19391#19400#0" expanded="true" />
+                <element signature="e#27074#27083#0" expanded="true" />
+                <element signature="e#29378#29387#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Weather.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/Weather.java">
+      <file leaf-file-name="Constellation.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/Constellation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="328" column="31" selection-start="11427" selection-end="11427" vertical-scroll-proportion="0.0" vertical-offset="8478" max-vertical-offset="9693">
+            <state line="122" column="47" selection-start="4059" selection-end="4081" vertical-scroll-proportion="0.0" vertical-offset="2559" max-vertical-offset="4158">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -162,7 +162,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/test/java/TestPic.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/controllers/WeiChatController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/common/StringUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/common/CookieUtils.java" />
@@ -211,8 +210,9 @@
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/hibernate/Category.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/hibernate/Stage.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/WeiChatUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/Weather.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/Constellation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java" />
       </list>
     </option>
   </component>
@@ -300,6 +300,164 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="External Libraries" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WeiChat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.7 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WeiChat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.7 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rt.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WeiChat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.7 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rt.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sun" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WeiChat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.7 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rt.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sun" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nio" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WeiChat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.7 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rt.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sun" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nio" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WeiChat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.7 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rt.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WeiChat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.7 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rt.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -707,6 +865,34 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
+    <configuration default="false" name="Constellation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="org.liyou.qixiaobo.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="org.liyou.qixiaobo.utils.Constellation" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="WeiChat" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin" singleton="true">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -1097,15 +1283,17 @@
       </ConfigurationWrapper>
       <method />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.WeiChat" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.TestPic" />
       <item index="2" class="java.lang.String" itemvalue="Maven.WeiChat [install]" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Constellation" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.TestPic" />
-        <item index="1" class="java.lang.String" itemvalue="Maven.WeiChat [install]" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Application.Constellation" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.TestPic" />
+        <item index="2" class="java.lang.String" itemvalue="Maven.WeiChat [install]" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -1173,7 +1361,7 @@
       <workItem from="1395471615891" duration="772000" />
       <workItem from="1395481948173" duration="480000" />
       <workItem from="1397270221268" duration="17657000" />
-      <workItem from="1397356329617" duration="30193000" />
+      <workItem from="1397356329617" duration="35733000" />
     </task>
     <task id="LOCAL-00001" summary="newsmessage">
       <created>1393762558085</created>
@@ -1227,11 +1415,15 @@
       <created>1397390572098</created>
       <updated>1397390572098</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="handle for weather&#10;">
+      <created>1397392102998</created>
+      <updated>1397392102998</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="235587000" />
+    <option name="totallyTimeSpent" value="241127000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1311,7 +1503,8 @@
     <MESSAGE value="handle for url&#10;" />
     <MESSAGE value="handle for menu&#10;" />
     <MESSAGE value="handle for weather&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="handle for weather&#10;" />
+    <MESSAGE value="handle for 星座&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="handle for 星座&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1321,34 +1514,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/controllers/DotaController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="43" selection-start="1171" selection-end="1171" vertical-scroll-proportion="0.0" vertical-offset="441" max-vertical-offset="2160">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/dispatcher.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="72" selection-start="1342" selection-end="1342" vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="930">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/common/BaseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="52" selection-start="928" selection-end="928" vertical-scroll-proportion="0.7058824" vertical-offset="162" max-vertical-offset="6237">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="58" selection-start="292" selection-end="292" vertical-scroll-proportion="-1.7704918" vertical-offset="0" max-vertical-offset="1134">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="140" column="53" selection-start="5167" selection-end="5167" vertical-scroll-proportion="0.0" vertical-offset="2401" max-vertical-offset="3726">
@@ -1705,9 +1870,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/io/BufferedReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="107" column="11" selection-start="2779" selection-end="2779" vertical-scroll-proportion="0.0" vertical-offset="1972" max-vertical-offset="13635">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/jre/lib/rt.jar!/sun/nio/cs/StreamDecoder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="43" selection-start="817" selection-end="817" vertical-scroll-proportion="0.0" vertical-offset="257" max-vertical-offset="1809">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/io/InputStreamReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="99" column="69" selection-start="2607" selection-end="2618" vertical-scroll-proportion="0.5394582" vertical-offset="1540" max-vertical-offset="4914">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/Weather.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="328" column="31" selection-start="11427" selection-end="11427" vertical-scroll-proportion="0.0" vertical-offset="8478" max-vertical-offset="9693">
+        <state line="104" column="58" selection-start="3372" selection-end="3375" vertical-scroll-proportion="0.0" vertical-offset="2257" max-vertical-offset="9693">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/Constellation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="122" column="47" selection-start="4059" selection-end="4081" vertical-scroll-proportion="0.0" vertical-offset="2559" max-vertical-offset="4158">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1716,13 +1911,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="438" column="50" selection-start="21878" selection-end="21878" vertical-scroll-proportion="0.38613862" vertical-offset="11631" max-vertical-offset="13797">
+        <state line="486" column="63" selection-start="24948" selection-end="24948" vertical-scroll-proportion="0.96039605" vertical-offset="12637" max-vertical-offset="15957">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3681#3690#0" expanded="true" />
-            <element signature="e#17559#17568#0" expanded="true" />
-            <element signature="e#22004#22013#0" expanded="true" />
-            <element signature="e#24308#24317#0" expanded="true" />
+            <element signature="e#3728#3737#0" expanded="true" />
+            <element signature="e#19391#19400#0" expanded="true" />
+            <element signature="e#27074#27083#0" expanded="true" />
+            <element signature="e#29378#29387#0" expanded="true" />
           </folding>
         </state>
       </provider>

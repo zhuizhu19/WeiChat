@@ -13,6 +13,7 @@ import org.liyou.qixiaobo.entities.weichat.response.Article;
 import org.liyou.qixiaobo.entities.weichat.response.BaseResponseMessage;
 import org.liyou.qixiaobo.entities.weichat.response.NewsResponseMessage;
 import org.liyou.qixiaobo.entities.weichat.response.TextResponseMessage;
+import org.liyou.qixiaobo.utils.Constellation;
 import org.liyou.qixiaobo.utils.MessageUtil;
 import org.liyou.qixiaobo.utils.Weather;
 import org.liyou.qixiaobo.utils.YoYoUtil;
@@ -324,6 +325,10 @@ public class CoreService {
             return true;
         } else if (name.equals ("yoyo_littlepig")) {
             return true;
+        } else if (name.equals ("尤尤")) {
+            return true;
+        } else if (name.equals ("lu")) {
+            return true;
         }
         return false;
     }
@@ -337,6 +342,7 @@ public class CoreService {
         TextResponseMessage textResponseMessage = new TextResponseMessage ();
         if (content.equals ("?")) {
             textResponseMessage.setContent (getMainMenu (weiChatUser));
+            return  textResponseMessage;
         }
         Stage stage = weiChatUser.getStage ();
         if ((stage == null || stage.getId () == 1) && content.equals ("0")) {
@@ -357,9 +363,35 @@ public class CoreService {
                     userDao.update (weiChatUser);
                     String key = stage.getKey ();
                     if (key.equals ("1")) {
-
+                        //生理周期
                     } else if (key.equals ("2")) {
+                        //运程
+                        try {
+                            Constellation constellation = new Constellation (2);
+                            StringBuilder stringBuilder = new StringBuilder ();
+                            List<Constellation.Item> items = constellation.getItems ();
+                            if (items == null || items.size () == 0) {
 
+                            } else {
+                                stringBuilder.append (constellation.getConstellation ());
+                                stringBuilder.append ("\r\n");
+                                stringBuilder.append (constellation.getDate ());
+                                stringBuilder.append ("\r\n");
+                                for (Constellation.Item item : items) {
+                                    stringBuilder.append (item.getTitle ());
+                                    stringBuilder.append ("\r\n");
+                                    if (item.getRank () == 0) {
+                                        stringBuilder.append (item.getValue ());
+                                    } else {
+                                        stringBuilder.append (item.getRank ());
+                                    }
+                                    stringBuilder.append ("\r\n");
+                                }
+                            }
+                            textResponseMessage.setContent (stringBuilder.toString ());
+                        } catch (IOException e) {
+                            e.printStackTrace ();
+                        }
                     } else if (key.equals ("3")) {
                         try {
                             List<Article> articles = new ArrayList<Article> (8);
@@ -411,17 +443,17 @@ public class CoreService {
                             e.printStackTrace ();
                         }
                     } else if (key.equals ("4")) {
-
+                        //图片
                     } else if (key.equals ("5")) {
-
+                        //资料
                     } else if (key.equals ("6")) {
-
+                        //可爱
                     } else if (key.equals ("7")) {
-
+                        //喜欢
                     } else if (key.equals ("8")) {
-
+                        //朋友
                     } else if (key.equals ("9")) {
-
+                        //的家
                     } else {
                         return null;
                     }
@@ -436,6 +468,54 @@ public class CoreService {
                         //生理周期
                     } else if (key.equals ("2")) {
                         //运程
+                        try {
+                            int value = 2;
+                            if (content.startsWith ("xz")) {
+                                content = content.replace ("xz", "0");
+                                try {
+                                    value = Integer.parseInt (content);
+                                } catch (Exception ex) {
+                                    String response = Constellation.getConstellationString ();
+                                    response = "请输入序号选择星座如xz2为我家小尤的双子座\r\n" + response;
+                                    textResponseMessage.setContent (response);
+                                    return textResponseMessage;
+                                }
+                                if (value < 0 || value > 11) {
+                                    String response = Constellation.getConstellationString ();
+                                    response = "请输入序号选择星座如xz2为我家小尤的双子座\r\n" + response;
+                                    textResponseMessage.setContent (response);
+                                    return textResponseMessage;
+                                }
+                            }
+                            Constellation constellation = new Constellation (value);
+                            StringBuilder stringBuilder = new StringBuilder ();
+                            List<Constellation.Item> items = constellation.getItems ();
+                            if (items == null || items.size () == 0) {
+                                String response = Constellation.getConstellationString ();
+                                response = "请输入序号选择星座如xz2为我家小尤的双子座\r\n" + response;
+                                textResponseMessage.setContent (response);
+                                return textResponseMessage;
+                            } else {
+                                stringBuilder.append (constellation.getConstellation ());
+                                stringBuilder.append ("\n");
+                                stringBuilder.append (constellation.getDate ());
+                                stringBuilder.append ("\n");
+                                for (Constellation.Item item : items) {
+                                    stringBuilder.append (item.getTitle ());
+                                    stringBuilder.append ("\n");
+                                    if (item.getRank () == 0) {
+                                        stringBuilder.append (item.getValue ());
+                                    } else {
+                                        stringBuilder.append (item.getRank ());
+                                    }
+                                    stringBuilder.append ("\n");
+                                }
+                            }
+                            textResponseMessage.setContent (stringBuilder.toString ());
+                            return textResponseMessage;
+                        } catch (IOException e) {
+                            e.printStackTrace ();
+                        }
                     } else if (key.equals ("3")) {
                         //天气
                         try {
