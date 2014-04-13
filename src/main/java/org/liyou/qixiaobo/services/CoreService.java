@@ -14,11 +14,13 @@ import org.liyou.qixiaobo.entities.weichat.response.BaseResponseMessage;
 import org.liyou.qixiaobo.entities.weichat.response.NewsResponseMessage;
 import org.liyou.qixiaobo.entities.weichat.response.TextResponseMessage;
 import org.liyou.qixiaobo.utils.MessageUtil;
+import org.liyou.qixiaobo.utils.Weather;
 import org.liyou.qixiaobo.utils.YoYoUtil;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.*;
 
@@ -47,6 +49,11 @@ public class CoreService {
     private Random random = new Random ();
     private static int TEXT_LENGTH = 7;
     private static int isAuthed = 1;
+    private static String WEATHER_INDEX = "http://m.weather.com.cn/data/";
+    //http://www.mzwu.com/article.asp?id=3730
+    private static int 德惠 = 101060103;
+    private static int 南京 = 101190101;
+    private static int 太原 = 101100101;
 
     static {
         sArticle = new Article ();
@@ -339,20 +346,9 @@ public class CoreService {
             textResponseMessage.setContent (getMainMenu (weiChatUser));
         }
         Stage stage = weiChatUser.getStage ();
-        if (stage == null || stage.getId () == 1) {
+        if ((stage == null || stage.getId () == 1) && content.equals ("0")) {
             //we know we are in normal mode
-            if (content.equals ("0")) {
-                textResponseMessage.setContent ("哇哦，我们还没有选择模式哦，尤尤调皮啦……");
-            } else {
-                stage = stageDao.getStagesByCategoryAndKey (1, content);
-                if (stage != null) {
-                    textResponseMessage.setContent ("哇哦 尤尤选择了【" + stage.getDes () + "】，输入0退出，?显示菜单。");
-                    weiChatUser.setStage (stage);
-                    userDao.update (weiChatUser);
-                } else {
-                    return null;
-                }
-            }
+            textResponseMessage.setContent ("哇哦，我们还没有选择模式哦，尤尤调皮啦……");
         } else {
             //we should handle the menu
             if (content.equals ("0")) {
@@ -363,8 +359,84 @@ public class CoreService {
             } else {
                 stage = stageDao.getStagesByCategoryAndKey (1, content);
                 if (stage != null) {
-                    textResponseMessage.setContent ("哇哦 尤尤选择了【" + stage.getDes () + "】，输入0退出，?显示菜单。");
+                    textResponseMessage.setContent ("哇哦 尤尤选择了【" + stage.getDes () + "】，输入0退出?显示菜单。");
+                    weiChatUser.setStage (stage);
+                    userDao.update (weiChatUser);
+                    String key = stage.getKey ();
+                    if (key.equals ("1")) {
+
+                    } else if (key.equals ("2")) {
+
+                    } else if (key.equals ("3")) {
+                        try {
+                            List<Article> articles = new ArrayList<Article> (8);
+                            Weather nanjing = new Weather ("南京");
+                            List<Weather.WeatherInfo> infos = nanjing.getWeatherInfos ();
+                            if (infos == null) {
+                                Article article = new Article ();
+                                article.setTitle (" 小尤の天气--南京   " + nanjing.getDate ());
+                                article.setPicUrl (YoYoUtil.WEBSITE_URL + "cards/travel");
+                                article.setDescription ("oops!");
+                                article.setUrl (YoYoUtil.WEBSITE_URL + "cards/loveuu/travel/李尤/");
+                                articles.add (article);
+                            } else {
+                                Article article = new Article ();
+                                article.setTitle (" 小尤の天气--南京   ");
+                                article.setPicUrl ("");
+                                article.setDescription ("");
+                                article.setUrl (YoYoUtil.WEBSITE_URL + "cards/loveuu/travel/李尤/");
+                                articles.add (article);
+                                for (Weather.WeatherInfo info : infos) {
+                                    article = new Article ();
+                                    article.setTitle (info.getDate () + "\r\n" + info.getWeather () + " " + info.getTemperature ());
+                                    article.setPicUrl (info.getDayPictureUrl ());
+                                    article.setDescription (info.getDate () + "\r\n" + info.getWeather () + " " + info.getTemperature ());
+                                    article.setUrl (YoYoUtil.WEBSITE_URL + "cards/loveuu/travel/李尤/");
+                                    articles.add (article);
+                                }
+                                Weather dehui = new Weather ("德惠");
+                                infos = dehui.getWeatherInfos ();
+                                article = new Article ();
+                                article.setTitle (" 小尤の天气--德惠   ");
+                                article.setPicUrl ("");
+                                article.setDescription ("");
+                                article.setUrl (YoYoUtil.WEBSITE_URL + "cards/loveuu/travel/李尤/");
+                                articles.add (article);
+                                for (Weather.WeatherInfo info : infos) {
+                                    article = new Article ();
+                                    article.setTitle (info.getDate () + "\r\n" + info.getWeather () + " " + info.getTemperature ());
+                                    article.setPicUrl (info.getDayPictureUrl ());
+                                    article.setDescription (info.getDate () + "\r\n" + info.getWeather () + " " + info.getTemperature ());
+                                    article.setUrl (YoYoUtil.WEBSITE_URL + "cards/loveuu/travel/李尤/");
+                                    articles.add (article);
+                                }
+                            }
+                            NewsResponseMessage newsResponseMessage = new NewsResponseMessage ();
+                            newsResponseMessage.setArticles (articles);
+                            return newsResponseMessage;
+                        } catch (IOException e) {
+                            e.printStackTrace ();
+                        }
+                    } else if (key.equals ("4")) {
+
+                    } else if (key.equals ("5")) {
+
+                    } else if (key.equals ("6")) {
+
+                    } else if (key.equals ("7")) {
+
+                    } else if (key.equals ("8")) {
+
+                    } else if (key.equals ("9")) {
+
+                    } else {
+                        return null;
+                    }
                 } else {
+                    stage = weiChatUser.getStage ();
+                    if (stage == null||stage.getId ()==1) {
+                        return null;
+                    }
                     //handle the menu actually
                     String key = stage.getKey ();
                     if (key.equals ("1")) {
@@ -373,6 +445,35 @@ public class CoreService {
                         //运程
                     } else if (key.equals ("3")) {
                         //天气
+                        try {
+                            List<Article> articles = new ArrayList<Article> (4);
+                            Weather weather = new Weather (content);
+                            List<Weather.WeatherInfo> infos = weather.getWeatherInfos ();
+                            if (infos == null) {
+                                textResponseMessage.setContent ("Sorry 哦，没找到尤要的城市哎！");
+                                return textResponseMessage;
+                            } else {
+                                Article article = new Article ();
+                                article.setTitle (" 小尤の天气--" + weather.getCity ());
+                                article.setPicUrl ("");
+                                article.setDescription ("");
+                                article.setUrl (YoYoUtil.WEBSITE_URL + "cards/loveuu/travel/李尤/");
+                                articles.add (article);
+                                for (Weather.WeatherInfo info : infos) {
+                                    article = new Article ();
+                                    article.setTitle (info.getDate () + "\r\n" + info.getWeather () + " " + info.getTemperature ());
+                                    article.setPicUrl (info.getDayPictureUrl ());
+                                    article.setDescription (info.getDate () + "\r\n" + info.getWeather () + " " + info.getTemperature ());
+                                    article.setUrl (YoYoUtil.WEBSITE_URL + "cards/loveuu/travel/李尤/");
+                                    articles.add (article);
+                                }
+                            }
+                            NewsResponseMessage newsResponseMessage = new NewsResponseMessage ();
+                            newsResponseMessage.setArticles (articles);
+                            return newsResponseMessage;
+                        } catch (IOException e) {
+                            e.printStackTrace ();
+                        }
                     } else if (key.equals ("4")) {
                         //图片
                         int size = CardController.cards.size ();
@@ -407,4 +508,5 @@ public class CoreService {
         }
         return textResponseMessage;
     }
+
 }
