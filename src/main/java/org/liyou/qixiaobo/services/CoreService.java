@@ -363,6 +363,7 @@ public class CoreService {
                     userDao.update (weiChatUser);
                     String key = stage.getKey ();
                     if (key.equals ("1")) {
+                        textResponseMessage.setContent ("小尤的亲戚……");
                         //生理周期
                     } else if (key.equals ("2")) {
                         //运程
@@ -443,16 +444,27 @@ public class CoreService {
                             e.printStackTrace ();
                         }
                     } else if (key.equals ("4")) {
+                        textResponseMessage.setContent ("输入任何人姓名获得各种卡哦！如李尤……");
+                        return textResponseMessage;
                         //图片
                     } else if (key.equals ("5")) {
+                        textResponseMessage.setContent ("查看小尤的资料哦！");
+                        return textResponseMessage;
                         //资料
                     } else if (key.equals ("6")) {
+                        textResponseMessage.setContent ("小尤的最可爱的一面！");
+                        return textResponseMessage;
                         //可爱
                     } else if (key.equals ("7")) {
+                        textResponseMessage.setContent ("小尤喜欢的东东……");
+                        return textResponseMessage;
                         //喜欢
                     } else if (key.equals ("8")) {
+                        textResponseMessage.setContent ("小尤的闺蜜啊……");
+                        return textResponseMessage;
                         //朋友
                     } else if (key.equals ("9")) {
+                        textResponseMessage.setContent ("小尤的家人啊……");
                         //的家
                     } else {
                         return null;
