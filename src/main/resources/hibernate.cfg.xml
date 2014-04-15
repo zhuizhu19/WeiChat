@@ -29,5 +29,6 @@
         <mapping class="org.liyou.qixiaobo.entities.hibernate.WeiChatUser"/>
         <mapping class="org.liyou.qixiaobo.entities.hibernate.Category"/>
         <mapping class="org.liyou.qixiaobo.entities.hibernate.Stage"/>
+        <mapping class="org.liyou.qixiaobo.entities.hibernate.Aunties"/>
     </session-factory>
 </hibernate-configuration>

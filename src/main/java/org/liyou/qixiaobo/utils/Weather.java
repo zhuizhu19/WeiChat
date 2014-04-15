@@ -4,10 +4,8 @@ import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.SocketTimeoutException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
@@ -100,18 +98,12 @@ public class Weather {
         StringBuilder sb = null;
         URLConnection connectionData = url.openConnection ();
         connectionData.setConnectTimeout (1000);
-        try {
-            br = new BufferedReader (new InputStreamReader (
-                    connectionData.getInputStream (), "UTF-8"));
-            sb = new StringBuilder ();
-            String line = null;
-            while ((line = br.readLine ()) != null)
-                sb.append (line);
-        } catch (SocketTimeoutException e) {
-            System.out.println ("连接超时");
-        } catch (FileNotFoundException e) {
-            System.out.println ("加载文件出错");
-        }
+        br = new BufferedReader (new InputStreamReader (
+                connectionData.getInputStream (), "UTF-8"));
+        sb = new StringBuilder ();
+        String line = null;
+        while ((line = br.readLine ()) != null)
+            sb.append (line);
         String datas = sb.toString ();
         System.out.println (datas);
         JSONObject jsonData = JSONObject.fromObject (datas);

@@ -93,18 +93,12 @@ public class Constellation {
         StringBuilder sb = null;
         URLConnection connectionData = url.openConnection ();
         connectionData.setConnectTimeout (1000);
-        try {
-            br = new BufferedReader (new InputStreamReader (
-                    connectionData.getInputStream (), "ASCII"));
-            sb = new StringBuilder ();
-            String line = null;
-            while ((line = br.readLine ()) != null)
-                sb.append (line);
-        } catch (SocketTimeoutException e) {
-            System.out.println ("连接超时");
-        } catch (FileNotFoundException e) {
-            System.out.println ("加载文件出错");
-        }
+        br = new BufferedReader (new InputStreamReader (
+                connectionData.getInputStream (), "ASCII"));
+        sb = new StringBuilder ();
+        String line = null;
+        while ((line = br.readLine ()) != null)
+            sb.append (line);
         String datas = sb.toString ();
         JSONArray array = JSONArray.fromObject (datas);
         items = new ArrayList<Item> (10);
@@ -116,7 +110,7 @@ public class Constellation {
             item.setValue (jsonObject.getString ("value"));
             items.add (item);
         }
-        constellation=array.getJSONObject (10).getString ("cn");
+        constellation = array.getJSONObject (10).getString ("cn");
         date = array.getString (11).toString ();
     }
 
@@ -164,6 +158,32 @@ public class Constellation {
 
         public void setValue (String value) {
             this.value = value;
+        }
+
+        public String getRankString (int rank) {
+            String str;
+            switch (rank) {
+                case 0:
+                    str = "衰";
+                    break;
+                case 1:
+                    str = "一般";
+                    break;
+                case 2:
+                    str = "不错哦";
+                    break;
+                case 3:
+                    str = "好的一米";
+                    break;
+                case 4:
+                    str = "人品爆棚了";
+                    break;
+                default:
+                    str = "老天无法阻止你了哎";
+                    break;
+
+            }
+            return str;
         }
     }
 

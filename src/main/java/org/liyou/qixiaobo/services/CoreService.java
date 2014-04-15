@@ -2,12 +2,10 @@ package org.liyou.qixiaobo.services;
 
 import org.apache.log4j.Logger;
 import org.liyou.qixiaobo.controllers.CardController;
+import org.liyou.qixiaobo.daos.AuntiesDao;
 import org.liyou.qixiaobo.daos.StageDao;
 import org.liyou.qixiaobo.daos.UserDao;
-import org.liyou.qixiaobo.entities.hibernate.Hero;
-import org.liyou.qixiaobo.entities.hibernate.Skill;
-import org.liyou.qixiaobo.entities.hibernate.Stage;
-import org.liyou.qixiaobo.entities.hibernate.WeiChatUser;
+import org.liyou.qixiaobo.entities.hibernate.*;
 import org.liyou.qixiaobo.entities.weichat.request.*;
 import org.liyou.qixiaobo.entities.weichat.response.Article;
 import org.liyou.qixiaobo.entities.weichat.response.BaseResponseMessage;
@@ -23,6 +21,8 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.lang.reflect.Field;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 import static org.liyou.qixiaobo.utils.MessageUtil.*;
@@ -47,6 +47,8 @@ public class CoreService {
     private StageDao stageDao;
     @Resource
     private UserDao userDao;
+    @Resource
+    private AuntiesDao auntiesDao;
     private Random random = new Random ();
     private static int isAuthed = 1;
     private static String WEATHER_INDEX = "http://m.weather.com.cn/data/";
@@ -54,6 +56,8 @@ public class CoreService {
     private static int 德惠 = 101060103;
     private static int 南京 = 101190101;
     private static int 太原 = 101100101;
+    private static final DateFormat DATE_FORMAT = new SimpleDateFormat ("yyyy年MM月dd日");
+    private String respContent = "请求处理异常，请稍候尝试！";
 
     static {
         sArticle = new Article ();
@@ -67,7 +71,6 @@ public class CoreService {
         String respMessage = null;
         try {
             // 默认返回的文本消息内容
-            String respContent = "请求处理异常，请稍候尝试！";
             BaseResponseMessage responseMessage = null;
             // xml请求解析
             Map<String, String> requestMap = MessageUtil.parseXml (request);
@@ -290,7 +293,9 @@ public class CoreService {
         buffer.append ("こんにちは、僕は祁です。番号を選択してください。回復の女神がサプライズよ。回復?このメニュー表示。").append ("\n\r\n");
         List<Stage> stages = stageDao.getStagesByCategory (1);
         for (Stage stage : stages) {
+            buffer.append ("【");
             buffer.append (stage.getKey ());
+            buffer.append ("】 ");
             String des = stage.getDes ();
             des = des.trim ();
             buffer.append (des);
@@ -363,7 +368,7 @@ public class CoreService {
                     userDao.update (weiChatUser);
                     String key = stage.getKey ();
                     if (key.equals ("1")) {
-                        textResponseMessage.setContent ("小尤的亲戚……");
+                        textResponseMessage.setContent ("小尤的亲戚……输入任意非命令字符显示周期哦");
                         //生理周期
                     } else if (key.equals ("2")) {
                         //运程
@@ -384,14 +389,14 @@ public class CoreService {
                                     if (item.getRank () == 0) {
                                         stringBuilder.append (item.getValue ());
                                     } else {
-                                        stringBuilder.append (item.getRank ());
+                                        stringBuilder.append (item.getRankString (item.getRank ()));
                                     }
                                     stringBuilder.append ("\r\n");
                                 }
                             }
                             textResponseMessage.setContent (stringBuilder.toString ());
                         } catch (IOException e) {
-                            e.printStackTrace ();
+                            textResponseMessage.setContent (respContent);
                         }
                     } else if (key.equals ("3")) {
                         try {
@@ -441,7 +446,7 @@ public class CoreService {
                             newsResponseMessage.setArticles (articles);
                             return newsResponseMessage;
                         } catch (IOException e) {
-                            e.printStackTrace ();
+                           textResponseMessage.setContent (respContent);
                         }
                     } else if (key.equals ("4")) {
                         textResponseMessage.setContent ("输入任何人姓名获得各种卡哦！如李尤……");
@@ -477,6 +482,36 @@ public class CoreService {
                     //handle the menu actually
                     String key = stage.getKey ();
                     if (key.equals ("1")) {
+                        Date now = new Date ();
+                        List<Aunties> auntiesList = auntiesDao.queryByTime (now, 3);
+                        Date lastDate = null;
+                        StringBuilder stringBuilder = new StringBuilder ();
+                        int avag = 0;
+                        int used = 0;
+                        stringBuilder.append ("小尤近" + auntiesList.size () + "次亲戚来的时间哦：\r\n\r");
+                        for (Aunties aunties : auntiesList) {
+                            lastDate = aunties.getAuntDate ();
+                            String dateStr = DATE_FORMAT.format (lastDate);
+                            stringBuilder.append (dateStr);
+                            if (aunties.getIntervalDate () != 0) {
+                                stringBuilder.append ("----距离上次时间" + aunties.getIntervalDate () + "天");
+                                used++;
+                            }
+
+                            avag += aunties.getIntervalDate ();
+                            stringBuilder.append ("\r\n\r");
+                        }
+                        avag /= used;
+                        long expire = (now.getTime () - lastDate.getTime ()) / 24 / 60 / 60 / 1000;
+                        stringBuilder.append ("**********************\r\n\r");
+                        stringBuilder.append ("距离上次已过去").append (expire).append ("天,距离下一次大概还有").append (avag - expire).append ("天\r\n");
+                        if (expire >= avag - 5) {
+                            stringBuilder.append ("小尤注意哦，亲戚要来了哦，注意身体哦！！！\r\n");
+                        }
+                        stringBuilder.append ("祁麻麻のTips:\r\n（1）给自己的身体加温，可以用热水袋暖自己的肚子，让肚子不受寒\r\n（2）可以用热水加红糖（孕妇专用红糖，内含姜粉，这样效果更好）\r\n（3）把生姜、大枣放在锅中加水煮沸，然后加入鸡蛋喝下去也可以减缓疼痛\r\n\r");
+                        stringBuilder.append ("<a href=\"http://www.dayima.com/?var=mobile\">大姨吗</a>");
+                        textResponseMessage.setContent (stringBuilder.toString ());
+                        return textResponseMessage;
                         //生理周期
                     } else if (key.equals ("2")) {
                         //运程
@@ -523,7 +558,7 @@ public class CoreService {
                                     if (item.getRank () == 0) {
                                         stringBuilder.append (item.getValue ());
                                     } else {
-                                        stringBuilder.append (item.getRank ());
+                                        stringBuilder.append (item.getRankString (item.getRank ()));
                                     }
                                     stringBuilder.append ("\n");
                                 }
@@ -531,7 +566,7 @@ public class CoreService {
                             textResponseMessage.setContent (stringBuilder.toString ());
                             return textResponseMessage;
                         } catch (IOException e) {
-                            e.printStackTrace ();
+                            textResponseMessage.setContent (respContent);
                         }
                     } else if (key.equals ("3")) {
                         //天气
@@ -562,7 +597,8 @@ public class CoreService {
                             newsResponseMessage.setArticles (articles);
                             return newsResponseMessage;
                         } catch (IOException e) {
-                            e.printStackTrace ();
+                            textResponseMessage.setContent (respContent);
+
                         }
                     } else if (key.equals ("4")) {
                         //图片
