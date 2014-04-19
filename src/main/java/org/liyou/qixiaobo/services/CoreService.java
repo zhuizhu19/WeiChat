@@ -396,6 +396,7 @@ public class CoreService {
                             }
                             textResponseMessage.setContent (stringBuilder.toString ());
                         } catch (IOException e) {
+                            System.err.println (e.toString ());
                             textResponseMessage.setContent (respContent);
                         }
                     } else if (key.equals ("3")) {

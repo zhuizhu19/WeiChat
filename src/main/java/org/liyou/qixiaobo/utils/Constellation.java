@@ -88,18 +88,7 @@ public class Constellation {
 
     public Constellation (int value) throws IOException {
         final String new_page_url = page_url.replace ("%fun%", "day").replace ("%id%", String.valueOf (value));
-        URL url = new URL (new_page_url);
-        BufferedReader br;
-        StringBuilder sb = null;
-        URLConnection connectionData = url.openConnection ();
-        connectionData.setConnectTimeout (1000);
-        br = new BufferedReader (new InputStreamReader (
-                connectionData.getInputStream (), "ASCII"));
-        sb = new StringBuilder ();
-        String line = null;
-        while ((line = br.readLine ()) != null)
-            sb.append (line);
-        String datas = sb.toString ();
+        String datas = Weather.getConnectContent (new_page_url);
         JSONArray array = JSONArray.fromObject (datas);
         items = new ArrayList<Item> (10);
         for (int i = 0; i < 10; i++) {

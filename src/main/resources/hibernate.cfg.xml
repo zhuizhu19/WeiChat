@@ -23,12 +23,19 @@
         </property>
         <property name = "hibernate.jdbc.use_scrollable_resultset">false</property>
         <property name = "hibernate.hbm2ddl.auto">update</property>
+        <property name = "testWhileIdle">true</property>
+        <property name = "testOnBorrow">false</property>
+        <property name = "testOnReturn">false</property>
+        <property name = "validationQuery">select 1</property>
+        <property name = "validationQueryTimeout">1</property>
+        <property name = "timeBetweenEvictionRunsMillis">30000</property>
+        <property name = "numTestsPerEvictionRun">16</property>
         <mapping class = "org.liyou.qixiaobo.entities.hibernate.Hero"/>
         <mapping class = "org.liyou.qixiaobo.entities.hibernate.Skill"/>
         <mapping class = "org.liyou.qixiaobo.entities.hibernate.HeroDetail"/>
-        <mapping class="org.liyou.qixiaobo.entities.hibernate.WeiChatUser"/>
-        <mapping class="org.liyou.qixiaobo.entities.hibernate.Category"/>
-        <mapping class="org.liyou.qixiaobo.entities.hibernate.Stage"/>
-        <mapping class="org.liyou.qixiaobo.entities.hibernate.Aunties"/>
+        <mapping class = "org.liyou.qixiaobo.entities.hibernate.WeiChatUser"/>
+        <mapping class = "org.liyou.qixiaobo.entities.hibernate.Category"/>
+        <mapping class = "org.liyou.qixiaobo.entities.hibernate.Stage"/>
+        <mapping class = "org.liyou.qixiaobo.entities.hibernate.Aunties"/>
     </session-factory>
 </hibernate-configuration>

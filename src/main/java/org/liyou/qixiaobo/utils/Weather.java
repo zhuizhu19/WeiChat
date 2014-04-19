@@ -93,19 +93,7 @@ public class Weather {
         this.city = city;
         city = java.net.URLEncoder.encode (city, "utf-8");
         final String new_page_url = page_url.replace ("%location%", city);
-        URL url = new URL (new_page_url);
-        BufferedReader br;
-        StringBuilder sb = null;
-        URLConnection connectionData = url.openConnection ();
-        connectionData.setConnectTimeout (1000);
-        br = new BufferedReader (new InputStreamReader (
-                connectionData.getInputStream (), "UTF-8"));
-        sb = new StringBuilder ();
-        String line = null;
-        while ((line = br.readLine ()) != null)
-            sb.append (line);
-        String datas = sb.toString ();
-        System.out.println (datas);
+        String datas = getConnectContent (new_page_url);
         JSONObject jsonData = JSONObject.fromObject (datas);
         //  System.out.println(jsonData.toString());
         String error = jsonData.getString ("error");
@@ -134,6 +122,23 @@ public class Weather {
 
         }
 
+    }
+
+    public static String getConnectContent (String new_page_url) throws IOException {
+        URL url = new URL (new_page_url);
+        BufferedReader br;
+        StringBuilder sb = null;
+        URLConnection connectionData = url.openConnection ();
+        connectionData.setConnectTimeout (3000);
+        br = new BufferedReader (new InputStreamReader (
+                connectionData.getInputStream (), "UTF-8"));
+        sb = new StringBuilder ();
+        String line = null;
+        while ((line = br.readLine ()) != null)
+            sb.append (line);
+        String datas = sb.toString ();
+        System.out.println (datas);
+        return datas;
     }
 
 

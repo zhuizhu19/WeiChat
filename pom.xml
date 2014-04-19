@@ -67,6 +67,7 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.29</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
@@ -187,7 +188,22 @@
             <artifactId>freemarker</artifactId>
             <version>2.3.20</version>
         </dependency>
+        <dependency>
+            <groupId>com.baidu.bae</groupId>
+            <artifactId>baev3-sdk</artifactId>
+            <version>1.0.1</version>
+        </dependency>
     </dependencies>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>baemaven-snapshots</id>
+            <url>http://maven.duapp.com/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>baemaven-releases</id>
+            <url>http://maven.duapp.com/nexus/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
     <build>
         <finalName>iloveliyou</finalName>
         <plugins>
