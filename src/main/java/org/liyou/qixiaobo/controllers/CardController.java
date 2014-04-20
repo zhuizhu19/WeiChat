@@ -128,7 +128,7 @@ public class CardController extends BaseController {
             texts.add (dateString);
             points.add (new Point (IWeiChat.NAME_START_PX, IWeiChat.START_PX_Y));
             points.add (new Point (IWeiChat.DATA_START_PX, IWeiChat.START_PX_Y));
-            ByteArrayOutputStream outputStream = ImageUtils.pressTextOutPutStream (texts, filePath, IWeiChat.FONT_NAME, 0, IWeiChat.FONT_COLOR, IWeiChat.FONT_SIZE, points, 1.0f);
+            ByteArrayOutputStream outputStream = ImageUtils.pressTextOutPutStream (texts, filePath, IWeiChat.FONT_NAME, Font.BOLD, IWeiChat.FONT_COLOR, IWeiChat.FONT_SIZE, points, 1.0f);
             if (outputStream != null) {
                 byte[] abyte0 = outputStream.toByteArray ();
                 showPicture (null, cardName + ".jpg", abyte0, response, false);

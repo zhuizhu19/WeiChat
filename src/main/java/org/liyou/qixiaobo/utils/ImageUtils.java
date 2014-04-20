@@ -1,5 +1,7 @@
 package org.liyou.qixiaobo.utils;
 
+import org.springframework.core.io.ClassPathResource;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.geom.AffineTransform;
@@ -10,6 +12,8 @@ import java.util.*;
 import java.util.List;
 
 public final class ImageUtils {
+
+    private static Font definedFont;
     /**
      * 图片水印
      *
@@ -142,7 +146,7 @@ public final class ImageUtils {
                 size = size > points.size () ? points.size () : size;
             }
             g.setColor (color);
-            g.setFont (new Font (fontName, fontStyle, fontSize));
+            g.setFont (getDefinedFont());
             g.setComposite (AlphaComposite.getInstance (AlphaComposite.SRC_ATOP, alpha));
             for (int i = 0; i < size; i++) {
                 g.drawString (pressTexts.get (i), points.get (i).x, points.get (i).y);
@@ -155,6 +159,38 @@ public final class ImageUtils {
             e.printStackTrace ();
             return null;
         }
+    }
+
+    public static Font getDefinedFont () {
+        if (definedFont == null) {
+            InputStream is = null;
+            BufferedInputStream bis = null;
+            try {
+                is = new ClassPathResource ("/font/FZYTK.TTF").getInputStream ();
+                bis = new BufferedInputStream (is);
+                // createFont返回一个使用指定字体类型和输入数据的新 Font。<br>
+                // 新 Font磅值为 1，样式为 PLAIN,注意 此方法不会关闭 InputStream
+                definedFont = Font.createFont (Font.TRUETYPE_FONT, bis);
+                // 复制此 Font对象并应用新样式，创建一个指定磅值的新 Font对象。
+                definedFont = definedFont.deriveFont (Font.BOLD,IWeiChat.FONT_SIZE);
+            } catch (FontFormatException e) {
+                e.printStackTrace ();
+            } catch (IOException e) {
+                e.printStackTrace ();
+            } finally {
+                try {
+                    if (null != bis) {
+                        bis.close ();
+                    }
+                    if (null != is) {
+                        is.close ();
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace ();
+                }
+            }
+        }
+        return definedFont;
     }
 
     /**
