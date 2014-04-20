@@ -25,6 +25,7 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-aspects:4.0.2.RELEASE" />
           <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.7.0" />
           <element id="library" level="project" name="Maven: org.springframework:spring-context-support:4.0.2.RELEASE" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.29" />
           <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.9.9" />
           <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-core-asl:1.9.9" />
           <element id="library" level="project" name="Maven: commons-io:commons-io:2.4" />

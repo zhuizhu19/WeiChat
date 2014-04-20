@@ -88,89 +88,90 @@ public class CoreService {
             if (baseEvent instanceof BaseRequestMessage) {
                 if (baseEvent instanceof TextRequestMessage) {
                     TextRequestMessage textRequestMessage = (TextRequestMessage) baseEvent;
-                    if (weiChatUser.getFlag () == isAuthed && (responseMessage = processMenu (textRequestMessage.getContent (), weiChatUser)) != null) {
-
+                    if (weiChatUser.getFlag () == isAuthed && isGodness (textRequestMessage.getContent ())) {
+                        responseMessage = new NewsResponseMessage ();
+                        List<Article> articles = new ArrayList<Article> ();
+                        NewsResponseMessage newsResponseMessage = (NewsResponseMessage) responseMessage;
+                        Article article = new Article ();
+                        article.setTitle ("我的女神哎");
+                        article.setPicUrl (YoYoUtil.PIC_PAGE_FACE);
+                        article.setUrl (YoYoUtil.PIC_GODNESS);
+                        article.setDescription ("我的女神哎");
+                        articles.add (article);
+                        newsResponseMessage.setArticles (articles);
+                    } else if (weiChatUser.getFlag () == isAuthed && (responseMessage = processMenu (textRequestMessage.getContent (), weiChatUser)) != null) {
+                        //donothing
                     } else {
                         responseMessage = new NewsResponseMessage ();
                         List<Article> articles = new ArrayList<Article> ();
                         NewsResponseMessage newsResponseMessage = (NewsResponseMessage) responseMessage;
-                        if (weiChatUser.getFlag () == isAuthed && isGodness (textRequestMessage.getContent ())) {
-                            Article article = new Article ();
-                            article.setTitle ("我的女神哎");
-                            article.setPicUrl (YoYoUtil.PIC_PAGE_FACE);
-                            article.setUrl (YoYoUtil.PIC_GODNESS);
-                            article.setDescription ("我的女神哎");
-                            articles.add (article);
-                            newsResponseMessage.setArticles (articles);
-                        } else {
-                            List<Hero> models = dotaService.searchHeros (textRequestMessage.getContent ());
-                            if (DotaService.complete && models != null && models.size () != 0) {
-                                if (models.size () == 1) {
-                                    Hero model = models.get (0);
+                        List<Hero> models = dotaService.searchHeros (textRequestMessage.getContent ());
+                        if (DotaService.complete && models != null && models.size () != 0) {
+                            if (models.size () == 1) {
+                                Hero model = models.get (0);
+                                Article article = new Article ();
+                                article.setTitle (model.getName ());
+                                article.setPicUrl (model.getImgUrl ());
+                                article.setUrl (YoYoUtil.WEBSITE_URL + "dota/heros/" + model.getId ());
+                                article.setDescription (model.getDes ());
+                                articles.add (article);
+                                for (Skill skill : model.getSkills ()) {
+                                    Article art = new Article ();
+                                    art.setTitle (skill.getSkillName ());
+                                    art.setUrl (YoYoUtil.WEBSITE_URL + "dota/heros/" + model.getId ());
+                                    art.setPicUrl (skill.getSkillImgUrl ());
+                                    art.setDescription (skill.getSkillDesc ());
+                                    articles.add (art);
+                                }
+                            } else {
+                                for (Hero model : models) {
                                     Article article = new Article ();
                                     article.setTitle (model.getName ());
                                     article.setPicUrl (model.getImgUrl ());
-                                    article.setUrl (YoYoUtil.WEBSITE_URL + "dota/heros/" + model.getId ());
+                                    article.setUrl (model.getUrl ());
                                     article.setDescription (model.getDes ());
                                     articles.add (article);
-                                    for (Skill skill : model.getSkills ()) {
-                                        Article art = new Article ();
-                                        art.setTitle (skill.getSkillName ());
-                                        art.setUrl (YoYoUtil.WEBSITE_URL + "dota/heros/" + model.getId ());
-                                        art.setPicUrl (skill.getSkillImgUrl ());
-                                        art.setDescription (skill.getSkillDesc ());
-                                        articles.add (art);
-                                    }
-                                } else {
-                                    for (Hero model : models) {
-                                        Article article = new Article ();
-                                        article.setTitle (model.getName ());
-                                        article.setPicUrl (model.getImgUrl ());
-                                        article.setUrl (model.getUrl ());
-                                        article.setDescription (model.getDes ());
-                                        articles.add (article);
-                                    }
                                 }
+                            }
+                            newsResponseMessage.setArticles (articles);
+                        } else {
+                            String content = textRequestMessage.getContent ();
+                            content = content.trim ();
+                            if (isLiYou (content)) {
+                                weiChatUser = userDao.getWeiChatUserByFromUserName (baseEvent.getFromUserName ());
+                                if (weiChatUser != null && weiChatUser.getFlag () != isAuthed) {
+                                    weiChatUser.setFlag (isAuthed);
+                                    userDao.update (weiChatUser);
+                                } else if (weiChatUser == null) {
+                                    //impossible
+                                    weiChatUser = new WeiChatUser ();
+                                    weiChatUser.setFromUserName (baseEvent.getFromUserName ());
+                                    weiChatUser.setFlag (isAuthed);
+                                    Stage stage = stageDao.query (Stage.class, 0);
+                                    weiChatUser.setStage (stage);
+                                    weiChatUser = userDao.insert (weiChatUser);
+                                }
+                                int size = CardController.cards.size ();
+                                int randomNum = random.nextInt ();
+                                randomNum = Math.abs (randomNum) % size;
+                                String card = CardController.cards.get (randomNum);
+                                Article article = new Article ();
+                                article.setTitle (textRequestMessage.getContent () + "の" + card + "卡");
+                                article.setPicUrl (YoYoUtil.WEBSITE_URL + "cards/" + card);
+                                article.setUrl (YoYoUtil.WEBSITE_URL + "cards/loveuu/" + card + "/" + textRequestMessage.getContent () + "/" + System.currentTimeMillis ());
+                                article.setDescription (textRequestMessage.getContent () + "の" + card + "卡");
+                                articles.add (article);
                                 newsResponseMessage.setArticles (articles);
                             } else {
-                                String content = textRequestMessage.getContent ();
-                                content = content.trim ();
-                                if (isLiYou (content)) {
-                                    weiChatUser = userDao.getWeiChatUserByFromUserName (baseEvent.getFromUserName ());
-                                    if (weiChatUser != null && weiChatUser.getFlag () != isAuthed) {
-                                        weiChatUser.setFlag (isAuthed);
-                                        userDao.update (weiChatUser);
-                                    } else if (weiChatUser == null) {
-                                        //impossible
-                                        weiChatUser = new WeiChatUser ();
-                                        weiChatUser.setFromUserName (baseEvent.getFromUserName ());
-                                        weiChatUser.setFlag (isAuthed);
-                                        Stage stage = stageDao.query (Stage.class, 0);
-                                        weiChatUser.setStage (stage);
-                                        weiChatUser = userDao.insert (weiChatUser);
-                                    }
-                                    int size = CardController.cards.size ();
-                                    int randomNum = random.nextInt ();
-                                    randomNum = Math.abs (randomNum) % size;
-                                    String card = CardController.cards.get (randomNum);
-                                    Article article = new Article ();
-                                    article.setTitle (textRequestMessage.getContent () + "の" + card + "卡");
-                                    article.setPicUrl (YoYoUtil.WEBSITE_URL + "cards/" + card);
-                                    article.setUrl (YoYoUtil.WEBSITE_URL + "cards/loveuu/" + card + "/" + textRequestMessage.getContent () + "/" + System.currentTimeMillis ());
-                                    article.setDescription (textRequestMessage.getContent () + "の" + card + "卡");
-                                    articles.add (article);
-                                    newsResponseMessage.setArticles (articles);
+                                TextResponseMessage textResponseMessage = new TextResponseMessage ();
+                                if (weiChatUser.getFlag () == isAuthed) {
+                                    textResponseMessage.setContent (getMainMenu (weiChatUser));
+                                } else if (content.equals ("小尤")) {
+                                    textResponseMessage.setContent ("木哈哈哈，你当我傻么，我不如直接告诉你得了……回覆我小尤的名字哦！！！");
                                 } else {
-                                    TextResponseMessage textResponseMessage = new TextResponseMessage ();
-                                    if (weiChatUser.getFlag () == isAuthed) {
-                                        textResponseMessage.setContent (getMainMenu (weiChatUser));
-                                    } else if (content.equals ("小尤")) {
-                                        textResponseMessage.setContent ("木哈哈哈，你当我傻么，我不如直接告诉你得了……回覆我小尤的名字哦！！！");
-                                    } else {
-                                        textResponseMessage.setContent ("拜託，你又不是我家小尤，我才不給你回照片呢~回覆我小尤的名字哦！！！");
-                                    }
-                                    responseMessage = textResponseMessage;
+                                    textResponseMessage.setContent ("拜託，你又不是我家小尤，我才不給你回照片呢~回覆我小尤的名字哦！！！");
                                 }
+                                responseMessage = textResponseMessage;
                             }
                         }
                     }
@@ -345,7 +346,7 @@ public class CoreService {
         content = content.trim ();
         System.out.println (content);
         TextResponseMessage textResponseMessage = new TextResponseMessage ();
-        if (content.equals ("?")) {
+        if (content.equals ("?") || content.equals ("？")) {
             textResponseMessage.setContent (getMainMenu (weiChatUser));
             return textResponseMessage;
         }
@@ -447,7 +448,7 @@ public class CoreService {
                             newsResponseMessage.setArticles (articles);
                             return newsResponseMessage;
                         } catch (IOException e) {
-                           textResponseMessage.setContent (respContent);
+                            textResponseMessage.setContent (respContent);
                         }
                     } else if (key.equals ("4")) {
                         textResponseMessage.setContent ("输入任何人姓名获得各种卡哦！如李尤……");

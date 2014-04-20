@@ -66,31 +66,39 @@ public class CardController extends BaseController {
         }
     }
 
-    @RequestMapping(value = { "/loveuu/{cardName}/{name}" })
-    public String showCard (Model model, @PathVariable String cardName, @PathVariable String name) {
-        System.out.println ("showcard"+name);
+    @RequestMapping(value = { "/loveuu/{cardName}/{person}" })
+    public String showCard (Model model, @PathVariable String cardName, @PathVariable String person) {
+        System.out.println ("showcard" + person);
         //if name contains chinese and so on,we may have a error
         try {
-            name=java.net.URLEncoder.encode(name,"utf-8");
+            person = java.net.URLEncoder.encode (person, "utf-8");
+            System.out.println ("showcard encode" + person);
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace ();
         }
-        return redirect ("/cards/loveuu/" + cardName + "/" + name + "/" + System.currentTimeMillis ());
+        return redirect ("/cards/loveuu/" + cardName + "/" + person + "/" + System.currentTimeMillis ());
     }
 
-    @RequestMapping(value = { "/loveuu/{cardName}/{name}/{time}" })
-    public String showCard (Model model, @PathVariable String cardName, @PathVariable String name, @PathVariable String time) {
+    @RequestMapping(value = { "/loveuu/{cardName}/{person}/{time}" })
+    public String showCard (Model model, @PathVariable String cardName, @PathVariable String person, @PathVariable String time) {
+        System.out.println (cardName+":"+person+":"+time );
         return "showPicture";
     }
 
-    @RequestMapping(value = { "/{cardName}/{name}/{time}" })
-    public void showCard (HttpServletRequest request, HttpServletResponse response, @PathVariable String cardName, @PathVariable String name, @PathVariable String time) {
+    @RequestMapping(value = { "/{cardName}/{person}/{time}" })
+    public void showCard (HttpServletRequest request, HttpServletResponse response, @PathVariable String cardName, @PathVariable String person, @PathVariable String time) {
         if (cardName == null) {
             cardName = cards.get (0);
         }
-        name = StringUtils.defaultIfEmpty (name, DEFAULT_NAME);
-        if (name.length () > 6) {
-            name = name.substring (0, 5);
+        person = StringUtils.defaultIfEmpty (person, DEFAULT_NAME);
+        try {
+            person = java.net.URLDecoder.decode (person, "utf-8");
+            System.out.println ("showcard real encode" + person);
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace ();
+        }
+        if (person.length () > 6) {
+            person = person.substring (0, 5);
         }
         time = StringUtils.defaultIfEmpty (time, "-1");
         long timeLong = -1;
@@ -116,7 +124,7 @@ public class CardController extends BaseController {
         try {
             List<String> texts = new ArrayList<String> (2);
             List<Point> points = new ArrayList<Point> (2);
-            texts.add (name);
+            texts.add (person);
             texts.add (dateString);
             points.add (new Point (IWeiChat.NAME_START_PX, IWeiChat.START_PX_Y));
             points.add (new Point (IWeiChat.DATA_START_PX, IWeiChat.START_PX_Y));
