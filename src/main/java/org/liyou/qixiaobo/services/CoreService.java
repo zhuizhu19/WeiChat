@@ -11,10 +11,7 @@ import org.liyou.qixiaobo.entities.weichat.response.Article;
 import org.liyou.qixiaobo.entities.weichat.response.BaseResponseMessage;
 import org.liyou.qixiaobo.entities.weichat.response.NewsResponseMessage;
 import org.liyou.qixiaobo.entities.weichat.response.TextResponseMessage;
-import org.liyou.qixiaobo.utils.Constellation;
-import org.liyou.qixiaobo.utils.MessageUtil;
-import org.liyou.qixiaobo.utils.Weather;
-import org.liyou.qixiaobo.utils.YoYoUtil;
+import org.liyou.qixiaobo.utils.*;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -49,7 +46,7 @@ public class CoreService {
     private UserDao userDao;
     @Resource
     private AuntiesDao auntiesDao;
-    private Random random = new Random ();
+    private final Random random = new Random ();
     private static int isAuthed = 1;
     private static String WEATHER_INDEX = "http://m.weather.com.cn/data/";
     //http://www.mzwu.com/article.asp?id=3730
@@ -58,6 +55,7 @@ public class CoreService {
     private static int 太原 = 101100101;
     private static final DateFormat DATE_FORMAT = new SimpleDateFormat ("yyyy年MM月dd日");
     private String respContent = "请求处理异常，请稍候尝试！";
+    private IChat iChat;
 
     static {
         sArticle = new Article ();
@@ -156,10 +154,10 @@ public class CoreService {
                                 randomNum = Math.abs (randomNum) % size;
                                 String card = CardController.cards.get (randomNum);
                                 Article article = new Article ();
-                                article.setTitle (textRequestMessage.getContent () + "の" + card + "卡");
+                                article.setTitle (textRequestMessage.getContent () + "の专属" + card + "卡");
                                 article.setPicUrl (YoYoUtil.WEBSITE_URL + "cards/" + card);
                                 article.setUrl (YoYoUtil.WEBSITE_URL + "cards/loveuu/" + card + "/" + textRequestMessage.getContent () + "/" + System.currentTimeMillis ());
-                                article.setDescription (textRequestMessage.getContent () + "の" + card + "卡");
+                                article.setDescription ("出示本卡可令祁麻麻" + getTitle (randomNum) + "一次。仅限" + content + "使用。有效期forever~");
                                 articles.add (article);
                                 newsResponseMessage.setArticles (articles);
                             } else {
@@ -177,6 +175,17 @@ public class CoreService {
                     }
 
 
+                } else if (baseEvent instanceof VoiceRequestMessage) {
+                    responseMessage = new TextResponseMessage ();
+                    VoiceRequestMessage voiceRequestMessage = (VoiceRequestMessage) baseEvent;
+                    String result = voiceRequestMessage.getRecognition ();
+                    synchronized (random) {
+                        if (iChat == null) {
+                            iChat = XiaoI.getInstance ();
+                        }
+                    }
+                    String talk = iChat.chat (voiceRequestMessage.getFromUserName (), result, XiaoI.ASK, null);
+                    ((TextResponseMessage) responseMessage).setContent (talk);
                 } else {
                     responseMessage = new TextResponseMessage ();
                 }
@@ -510,7 +519,7 @@ public class CoreService {
                         if (expire >= avag - 5) {
                             stringBuilder.append ("小尤注意哦，亲戚要来了哦，注意身体哦！！！\r\n");
                         }
-                        stringBuilder.append ("祁麻麻のTips:\r\n（1）给自己的身体加温，可以用热水袋暖自己的肚子，让肚子不受寒\r\n（2）可以用热水加红糖（孕妇专用红糖，内含姜粉，这样效果更好）\r\n（3）把生姜、大枣放在锅中加水煮沸，然后加入鸡蛋喝下去也可以减缓疼痛\r\n\r");
+                        stringBuilder.append ("祁麻麻のTips:\r\n（1）给自己的身体加温，可以用热水袋暖自己的肚子，让肚子不受寒\r\n（2）可以用热水加红糖\r\n（3）把生姜、大枣放在锅中加水煮沸，然后加入鸡蛋喝下去也可以减缓疼痛\r\n\r");
                         stringBuilder.append ("<a href=\"http://www.dayima.com/?var=mobile\">大姨吗</a>");
                         textResponseMessage.setContent (stringBuilder.toString ());
                         return textResponseMessage;
@@ -610,10 +619,10 @@ public class CoreService {
                         String card = CardController.cards.get (randomNum);
                         List<Article> articles = new ArrayList<Article> (1);
                         Article article = new Article ();
-                        article.setTitle (content + "の" + card + "卡");
+                        article.setTitle (content + "の专属" + card + "卡");
                         article.setPicUrl (YoYoUtil.WEBSITE_URL + "cards/" + card);
                         article.setUrl (YoYoUtil.WEBSITE_URL + "cards/loveuu/" + card + "/" + content + "/" + System.currentTimeMillis ());
-                        article.setDescription (content + "の" + card + "卡");
+                        article.setDescription ("出示本卡可令祁麻麻" + getTitle (randomNum) + "一次。仅限" + content + "使用。有效期forever~");
                         articles.add (article);
                         NewsResponseMessage newsResponseMessage = new NewsResponseMessage ();
                         newsResponseMessage.setArticles (articles);
@@ -635,6 +644,34 @@ public class CoreService {
             }
         }
         return textResponseMessage;
+    }
+
+    public static String getTitle (int kind) {
+        String title;
+        switch (kind) {
+            case 0:
+                title = "打扫房间";
+                break;
+            case 1:
+                title = "洗衣服";
+                break;
+            case 2:
+                title = "做饭刷碗";
+                break;
+            case 3:
+                title = "讲笑话";
+                break;
+            case 4:
+                title = "陪逛街";
+                break;
+            case 5:
+                title = "一起旅行";
+                break;
+            default:
+                title = "各种玩";
+                break;
+        }
+        return title;
     }
 
 }
