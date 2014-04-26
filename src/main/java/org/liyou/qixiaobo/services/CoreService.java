@@ -52,6 +52,7 @@ public class CoreService {
     private AuntiesDao auntiesDao;
     private final Random random = new Random();
     private static final int isAuthed = 1;
+    private Calendar calendar = Calendar.getInstance();
     private final String WEATHER_INDEX = "http://m.weather.com.cn/data/";
     private final String FORTURE_URL = "http://apix.sinaapp.com/fortune/?appkey=trailuser&name=%name%";
     private final String LIYOU_FORTURE = "得分：89分\\n 天格：大吉 人格：大吉 地格：大吉 外格：大吉 总格：" +
@@ -120,10 +121,14 @@ public class CoreService {
                         List<Article> articles = new ArrayList<Article>();
                         NewsResponseMessage newsResponseMessage = (NewsResponseMessage) responseMessage;
                         Article article = new Article();
-                        article.setTitle("我的女神哎");
+                        article.setTitle("我的小尤哦");
                         article.setPicUrl(YoYoUtil.PIC_PAGE_FACE);
                         article.setUrl(YoYoUtil.PIC_GODNESS);
-                        article.setDescription("我的女神哎");
+                        Date now = new Date();
+                        calendar.set(2013, Calendar.APRIL, 22);
+                        Date lastDate = calendar.getTime();
+                        long expire = (now.getTime() - lastDate.getTime()) / 24 / 60 / 60 / 1000;
+                        article.setDescription("相识于2013年4月22日，初见惊艳，再见沉迷。至今已有" + expire + "日！");
                         articles.add(article);
                         newsResponseMessage.setArticles(articles);
                     } else if (weiChatUser.getFlag() == isAuthed && (responseMessage = processMenu(textRequestMessage.getContent(), weiChatUser)) != null) {
