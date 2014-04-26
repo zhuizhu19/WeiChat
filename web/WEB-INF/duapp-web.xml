@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <du-web-app xmlns="http://bae.baidu.com/java/1.0">
+    <system-properties>
+        <property name="java.util.logging.level" value="SEVERE"/>
+        <property name="java.util.logging.level" value="WARNING"/>
+        <property name="java.util.logging.level" value="INFO"/>
+    </system-properties>
     <sessions-enabled>true</sessions-enabled>
     <static-files>
         <include path="/**.html"   expiration ="access 1 months" />

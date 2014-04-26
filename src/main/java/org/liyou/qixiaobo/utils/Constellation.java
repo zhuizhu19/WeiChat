@@ -153,22 +153,21 @@ public class Constellation {
             String str;
             switch (rank) {
                 case 0:
-                    str = "衰";
+                    str = " \ue421";
                     break;
                 case 1:
-                    str = "一般";
-                    break;
                 case 2:
-                    str = "不错哦";
-                    break;
                 case 3:
-                    str = "好的一米";
-                    break;
                 case 4:
-                    str = "人品爆棚了";
-                    break;
+                    str = " ";
+                    for (int i = 0; i < rank; i++) {
+                        str += "\ue00e ";
+                    }
                 default:
-                    str = "老天无法阻止你了哎";
+                    str = "";
+                    for (int i = 0; i < 5; i++) {
+                        str += "\ue00e ";
+                    }
                     break;
 
             }

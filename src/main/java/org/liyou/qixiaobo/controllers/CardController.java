@@ -29,13 +29,14 @@ public class CardController extends BaseController {
     private static final String DEFAULT_NAME = "李尤";
 
     static {
-        cards = new ArrayList<String> (6);
+        cards = new ArrayList<String> (7);
         cards.add ("clean");
         cards.add ("cloth");
         cards.add ("dinner");
         cards.add ("joke");
         cards.add ("shopping");
         cards.add ("travel");
+        cards.add ("notangry");
     }
 
     @RequestMapping(value = { "/{cardName}" })
