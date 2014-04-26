@@ -5,9 +5,9 @@ import org.liyou.qixiaobo.utils.MessageUtil;
 /**
  * Created by Administrator on 14-3-2.
  */
-public class LocationEvent extends  PushEvent {
+public class LocationEvent extends PushEvent {
     public LocationEvent () {
-        this.setEvent (MessageUtil.EVENT_TYPE_LOCATION);
+        this.setEvent(MessageUtil.EVENT_TYPE_LOCATION);
     }
 
     private float Latitude;
@@ -44,6 +44,6 @@ public class LocationEvent extends  PushEvent {
                 "Latitude=" + Latitude +
                 ", Longitude=" + Longitude +
                 ", Precision=" + Precision +
-                "} " + super.toString ();
+                "} " + super.toString();
     }
 }

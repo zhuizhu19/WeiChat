@@ -28,6 +28,6 @@ public class QREvent extends PushEvent {
         return "QREvent{" +
                 "EventKey='" + EventKey + '\'' +
                 ", Ticket='" + Ticket + '\'' +
-                "} " + super.toString ();
+                "} " + super.toString();
     }
 }

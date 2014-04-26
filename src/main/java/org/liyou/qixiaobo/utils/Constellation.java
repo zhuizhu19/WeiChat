@@ -7,13 +7,7 @@ package org.liyou.qixiaobo.utils;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.SocketTimeoutException;
-import java.net.URL;
-import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -87,37 +81,37 @@ public class Constellation {
     }
 
     public Constellation (int value) throws IOException {
-        final String new_page_url = page_url.replace ("%fun%", "day").replace ("%id%", String.valueOf (value));
-        String datas = Weather.getConnectContent (new_page_url);
-        JSONArray array = JSONArray.fromObject (datas);
-        items = new ArrayList<Item> (10);
+        final String new_page_url = page_url.replace("%fun%", "day").replace("%id%", String.valueOf(value));
+        String datas = Weather.getConnectContent(new_page_url);
+        JSONArray array = JSONArray.fromObject(datas);
+        items = new ArrayList<Item>(10);
         for (int i = 0; i < 10; i++) {
-            Item item = new Item ();
-            JSONObject jsonObject = array.getJSONObject (i);
-            item.setTitle (jsonObject.getString ("title"));
-            item.setRank (Integer.parseInt (jsonObject.getString ("rank")));
-            item.setValue (jsonObject.getString ("value"));
-            items.add (item);
+            Item item = new Item();
+            JSONObject jsonObject = array.getJSONObject(i);
+            item.setTitle(jsonObject.getString("title"));
+            item.setRank(Integer.parseInt(jsonObject.getString("rank")));
+            item.setValue(jsonObject.getString("value"));
+            items.add(item);
         }
-        constellation = array.getJSONObject (10).getString ("cn");
-        date = array.getString (11).toString ();
+        constellation = array.getJSONObject(10).getString("cn");
+        date = array.getString(11).toString();
     }
 
     public static String getConstellationString () {
-        StringBuilder stringBuilder = new StringBuilder ();
-        stringBuilder.append ("xz0 :白羊座(03/21-04/19)\n");
-        stringBuilder.append ("xz1 :金牛座(04/20-05/20)\n");
-        stringBuilder.append ("xz2 :双子座(05/21-06/21)\n");
-        stringBuilder.append ("xz3 :巨蟹座(06/22-07/22)\n");
-        stringBuilder.append ("xz4 :狮子座(07/23-08/22)\n");
-        stringBuilder.append ("xz5 :处女座(08/23-09/22)\n");
-        stringBuilder.append ("xz6 :天秤座(09/23-10/23)\n");
-        stringBuilder.append ("xz7 :天蝎座(10/24-11/22)\n");
-        stringBuilder.append ("xz8 :射手座(11/23-12/21)\n");
-        stringBuilder.append ("xz9 :魔羯座(12/22-01/19)\n");
-        stringBuilder.append ("xz10:水瓶座(01/20-02/18)\n");
-        stringBuilder.append ("xz11:双鱼座(02/19-03/20)\n");
-        return stringBuilder.toString ();
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("xz0 :白羊座(03/21-04/19)\n");
+        stringBuilder.append("xz1 :金牛座(04/20-05/20)\n");
+        stringBuilder.append("xz2 :双子座(05/21-06/21)\n");
+        stringBuilder.append("xz3 :巨蟹座(06/22-07/22)\n");
+        stringBuilder.append("xz4 :狮子座(07/23-08/22)\n");
+        stringBuilder.append("xz5 :处女座(08/23-09/22)\n");
+        stringBuilder.append("xz6 :天秤座(09/23-10/23)\n");
+        stringBuilder.append("xz7 :天蝎座(10/24-11/22)\n");
+        stringBuilder.append("xz8 :射手座(11/23-12/21)\n");
+        stringBuilder.append("xz9 :魔羯座(12/22-01/19)\n");
+        stringBuilder.append("xz10:水瓶座(01/20-02/18)\n");
+        stringBuilder.append("xz11:双鱼座(02/19-03/20)\n");
+        return stringBuilder.toString();
     }
 
     public class Item {
@@ -177,9 +171,9 @@ public class Constellation {
 
     public static void main (String[] args) {
         try {
-            System.out.print (new Constellation (1).toString ());
+            System.out.print(new Constellation(1).toString());
         } catch (IOException e) {
-            e.printStackTrace ();
+            e.printStackTrace();
         }
     }
 

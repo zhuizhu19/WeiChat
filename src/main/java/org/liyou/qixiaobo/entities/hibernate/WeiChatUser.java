@@ -39,7 +39,7 @@ public class WeiChatUser {
         this.flag = flag;
     }
 
-    @OneToOne(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
+    @OneToOne(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
     public Stage getStage () {
         return stage;
     }

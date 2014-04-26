@@ -9,7 +9,7 @@ import java.util.List;
  */
 public class NewsResponseMessage extends BaseResponseMessage {
     public NewsResponseMessage () {
-        this.setMsgType (MessageUtil.RESP_MESSAGE_TYPE_NEWS);
+        this.setMsgType(MessageUtil.RESP_MESSAGE_TYPE_NEWS);
     }
 
     // 图文消息个数，限制为10条以内
@@ -32,7 +32,7 @@ public class NewsResponseMessage extends BaseResponseMessage {
 
     public NewsResponseMessage setArticles (List<Article> articles) {
         Articles = articles;
-        setArticleCount (articles.size ());
+        setArticleCount(articles.size());
         return this;
     }
 }

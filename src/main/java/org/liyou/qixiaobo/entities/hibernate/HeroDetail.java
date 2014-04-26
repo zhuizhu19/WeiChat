@@ -38,6 +38,7 @@ public class HeroDetail {
     public void setAdvantages (String advantages) {
         this.advantages = advantages;
     }
+
     @Column(length = 65535)
     public String getDisAdvantages () {
         return disAdvantages;
@@ -46,6 +47,7 @@ public class HeroDetail {
     public void setDisAdvantages (String disAdvantages) {
         this.disAdvantages = disAdvantages;
     }
+
     @Column(length = 65535)
     public String getBuddies () {
         return buddies;
@@ -54,6 +56,7 @@ public class HeroDetail {
     public void setBuddies (String buddies) {
         this.buddies = buddies;
     }
+
     @Column(length = 65535)
     public String getEnmies () {
         return enmies;
@@ -62,6 +65,7 @@ public class HeroDetail {
     public void setEnmies (String enmies) {
         this.enmies = enmies;
     }
+
     @Column(length = 65535)
     public String getGood () {
         return good;
@@ -70,6 +74,7 @@ public class HeroDetail {
     public void setGood (String good) {
         this.good = good;
     }
+
     @Column(length = 65535)
     public String getBetter () {
         return better;
@@ -78,6 +83,7 @@ public class HeroDetail {
     public void setBetter (String better) {
         this.better = better;
     }
+
     @Column(length = 65535)
     public String getBest () {
         return best;
@@ -95,6 +101,7 @@ public class HeroDetail {
     public void setReason (String reason) {
         this.reason = reason;
     }
+
     @Column(length = 65535)
     public String getPoint () {
         return point;

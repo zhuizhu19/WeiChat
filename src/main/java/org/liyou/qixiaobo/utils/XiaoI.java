@@ -27,10 +27,10 @@ public class XiaoI implements IChat {
     public final static int ASK = 0;
     public final static int RECOG = 1;
     public final static int SYNTH = 2;
-    private static XiaoI xiaoI = new XiaoI ();
+    private static XiaoI xiaoI = new XiaoI();
 
     static {
-        sign ();
+        sign();
     }
 
     private XiaoI () {
@@ -60,27 +60,27 @@ public class XiaoI implements IChat {
         }
         String str = null;
 
-        HttpClient hc = new HttpClient ();
-        PostMethod pm = new PostMethod (postUrl);
-        pm.getParams ().setParameter (HttpMethodParams.HTTP_CONTENT_CHARSET,
+        HttpClient hc = new HttpClient();
+        PostMethod pm = new PostMethod(postUrl);
+        pm.getParams().setParameter(HttpMethodParams.HTTP_CONTENT_CHARSET,
                 "utf-8");
-        pm.addRequestHeader ("X-Auth", "app_key=\""+app_key+"\", nonce=\""
+        pm.addRequestHeader("X-Auth", "app_key=\"" + app_key + "\", nonce=\""
                 + nonce + "\", signature=\"" + sign + "\"");
-        pm.setParameter ("platform", "weixin");
-        pm.setParameter ("type", "0");
-        pm.setParameter ("userId", fromUserId);
-        pm.setParameter ("question", chatContent);
+        pm.setParameter("platform", "weixin");
+        pm.setParameter("type", "0");
+        pm.setParameter("userId", fromUserId);
+        pm.setParameter("question", chatContent);
         int re_code;
         try {
-            re_code = hc.executeMethod (pm);
+            re_code = hc.executeMethod(pm);
             if (re_code == 200) {
-                str = pm.getResponseBodyAsString ();
-                System.out.print (str);
+                str = pm.getResponseBodyAsString();
+                System.out.print(str);
             }
         } catch (HttpException e) {
-            e.printStackTrace ();
+            e.printStackTrace();
         } catch (IOException e) {
-            e.printStackTrace ();
+            e.printStackTrace();
         }
         return str;
 
@@ -91,14 +91,14 @@ public class XiaoI implements IChat {
         String method = "POST";
         String uri = "/robot/ask.do";
         byte[] b = new byte[20];
-        new Random ().nextBytes (b);
-        nonce = new String (Hex.encodeHex (b));
-        String ha1 = DigestUtils.shaHex (StringUtils.join (new String[]{ app_key , realm , app_secret }, ":"));
-        String ha2 = DigestUtils.shaHex (StringUtils.join (new String[]{ method , uri }, ":"));
-        sign = DigestUtils.shaHex (StringUtils.join (new String[]{ ha1 , nonce , ha2 }, ":"));
+        new Random().nextBytes(b);
+        nonce = new String(Hex.encodeHex(b));
+        String ha1 = DigestUtils.shaHex(StringUtils.join(new String[]{app_key, realm, app_secret}, ":"));
+        String ha2 = DigestUtils.shaHex(StringUtils.join(new String[]{method, uri}, ":"));
+        sign = DigestUtils.shaHex(StringUtils.join(new String[]{ha1, nonce, ha2}, ":"));
     }
 
     public static void main (String[] args) {
-        XiaoI.getInstance ().chat ("123123", "我喜欢李尤!!!", XiaoI.ASK, null);
+        XiaoI.getInstance().chat("123123", "我喜欢李尤!!!", XiaoI.ASK, null);
     }
 }

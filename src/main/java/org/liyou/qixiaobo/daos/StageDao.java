@@ -18,25 +18,26 @@ import java.util.List;
 public class StageDao extends BaseDao<Stage> {
     @Transactional
     public List<Stage> getStagesByCategory (Integer categoryId) {
-        Session session = sessionFacotry.getCurrentSession ();
-        Transaction tx = session.beginTransaction ();
-        Criteria criteria = session.createCriteria (Stage.class);
+        Session session = sessionFacotry.getCurrentSession();
+        Transaction tx = session.beginTransaction();
+        Criteria criteria = session.createCriteria(Stage.class);
 //        criteria.add (Restrictions.eq ("category", categoryId));
-        List<Stage> stages = criteria.list ();
-        tx.commit ();
+        List<Stage> stages = criteria.list();
+        tx.commit();
         return stages;
     }
+
     @Transactional
-    public Stage getStagesByCategoryAndKey (Integer categoryId,String key) {
-        Session session = sessionFacotry.getCurrentSession ();
-        Transaction tx = session.beginTransaction ();
-        Criteria criteria = session.createCriteria (Stage.class);
+    public Stage getStagesByCategoryAndKey (Integer categoryId, String key) {
+        Session session = sessionFacotry.getCurrentSession();
+        Transaction tx = session.beginTransaction();
+        Criteria criteria = session.createCriteria(Stage.class);
 //        criteria.add (Restrictions.eq ("category", categoryId));
-        criteria.add (Restrictions.eq ("key",key));
-        List<Stage> stages = criteria.list ();
-        tx.commit ();
-        if (stages == null || stages.size () == 0)
+        criteria.add(Restrictions.eq("key", key));
+        List<Stage> stages = criteria.list();
+        tx.commit();
+        if (stages == null || stages.size() == 0)
             return null;
-        return stages.get (0);
+        return stages.get(0);
     }
 }

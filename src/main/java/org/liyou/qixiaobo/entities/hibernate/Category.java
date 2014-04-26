@@ -11,6 +11,7 @@ public class Category {
     private int id;
     private String des;
     private String key;
+
     @Id
     @GeneratedValue
     public int getId () {
@@ -20,7 +21,8 @@ public class Category {
     public void setId (int id) {
         this.id = id;
     }
-    @Column(length = 65535,nullable = false)
+
+    @Column(length = 65535, nullable = false)
     public String getDes () {
         return des;
     }
@@ -28,7 +30,8 @@ public class Category {
     public void setDes (String des) {
         this.des = des;
     }
-    @Column(unique = true,name="short_key")
+
+    @Column(unique = true, name = "short_key")
     public String getKey () {
         return key;
     }

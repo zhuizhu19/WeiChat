@@ -19,6 +19,6 @@ public class BaseRequestMessage extends BaseEvent {
     public String toString () {
         return "BaseRequestMessage{" +
                 "MsgId=" + MsgId +
-                "} " + super.toString ();
+                "} " + super.toString();
     }
 }

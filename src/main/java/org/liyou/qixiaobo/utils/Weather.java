@@ -91,33 +91,33 @@ public class Weather {
 
     public Weather (String city) throws IOException, NullPointerException {
         this.city = city;
-        city = java.net.URLEncoder.encode (city, "utf-8");
-        final String new_page_url = page_url.replace ("%location%", city);
-        String datas = getConnectContent (new_page_url);
-        JSONObject jsonData = JSONObject.fromObject (datas);
+        city = java.net.URLEncoder.encode(city, "utf-8");
+        final String new_page_url = page_url.replace("%location%", city);
+        String datas = getConnectContent(new_page_url);
+        JSONObject jsonData = JSONObject.fromObject(datas);
         //  System.out.println(jsonData.toString());
-        String error = jsonData.getString ("error");
-        status = jsonData.getString ("status");
-        if (error.equals ("0")) {
-            String date = jsonData.getString ("date");
+        String error = jsonData.getString("error");
+        status = jsonData.getString("status");
+        if (error.equals("0")) {
+            String date = jsonData.getString("date");
             this.date = date;
-            JSONArray results = jsonData.getJSONArray ("results");
-            if (results.isEmpty ()) {
+            JSONArray results = jsonData.getJSONArray("results");
+            if (results.isEmpty()) {
                 return;
             }
-            JSONObject result = results.getJSONObject (0);
-            this.city = result.getString ("currentCity");
-            JSONArray weather = result.getJSONArray ("weather_data");
-            weatherInfos = new ArrayList<WeatherInfo> (3);
+            JSONObject result = results.getJSONObject(0);
+            this.city = result.getString("currentCity");
+            JSONArray weather = result.getJSONArray("weather_data");
+            weatherInfos = new ArrayList<WeatherInfo>(3);
             for (int i = 0; i < 3; i++) {
-                JSONObject jsonObject = weather.getJSONObject (i);
-                WeatherInfo info = new WeatherInfo ();
-                info.setDate (jsonObject.getString ("date"));
-                info.setDayPictureUrl (jsonObject.getString ("dayPictureUrl"));
-                info.setNightPictureUrl (jsonObject.getString ("nightPictureUrl"));
-                info.setWeather (jsonObject.getString ("weather"));
-                info.setTemperature (jsonObject.getString ("temperature"));
-                weatherInfos.add (info);
+                JSONObject jsonObject = weather.getJSONObject(i);
+                WeatherInfo info = new WeatherInfo();
+                info.setDate(jsonObject.getString("date"));
+                info.setDayPictureUrl(jsonObject.getString("dayPictureUrl"));
+                info.setNightPictureUrl(jsonObject.getString("nightPictureUrl"));
+                info.setWeather(jsonObject.getString("weather"));
+                info.setTemperature(jsonObject.getString("temperature"));
+                weatherInfos.add(info);
             }
 
         }
@@ -125,19 +125,19 @@ public class Weather {
     }
 
     public static String getConnectContent (String new_page_url) throws IOException {
-        URL url = new URL (new_page_url);
+        URL url = new URL(new_page_url);
         BufferedReader br;
         StringBuilder sb = null;
-        URLConnection connectionData = url.openConnection ();
-        connectionData.setConnectTimeout (3000);
-        br = new BufferedReader (new InputStreamReader (
-                connectionData.getInputStream (), "UTF-8"));
-        sb = new StringBuilder ();
+        URLConnection connectionData = url.openConnection();
+        connectionData.setConnectTimeout(3000);
+        br = new BufferedReader(new InputStreamReader(
+                connectionData.getInputStream(), "UTF-8"));
+        sb = new StringBuilder();
         String line = null;
-        while ((line = br.readLine ()) != null)
-            sb.append (line);
-        String datas = sb.toString ();
-        System.out.println (datas);
+        while ((line = br.readLine()) != null)
+            sb.append(line);
+        String datas = sb.toString();
+        System.out.println(datas);
         return datas;
     }
 

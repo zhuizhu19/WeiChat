@@ -64,9 +64,9 @@
         <!-- Rollover at the top of each hour
         <param name="DatePattern" value="'.'yyyy-MM-dd-HH'.log'"/>
         -->
-        <param name = "ak" value = "FuDNRht4COuEW5fNg0cGwbU1"/>
-        <param name = "sk" value = "IllGr5dwdyapCW7rvbyDBHbuxBWOsWsp"/>
-        <layout class = "org.apache.log4j.PatternLayout">
+        <param name="ak" value="FuDNRht4COuEW5fNg0cGwbU1"/>
+        <param name="sk" value="IllGr5dwdyapCW7rvbyDBHbuxBWOsWsp"/>
+        <layout class="org.apache.log4j.PatternLayout">
 
             <!--
               The default pattern: Date Priority [Category] Message\n
@@ -99,7 +99,7 @@
       根默认会自动构建一个 root,输出INFO级别的日志到控制台，供logger继承
      -->
     <root>
-        <priority value ="INFO"/>
+        <priority value="INFO"/>
         <appender-ref ref="myConsole"/>
         <appender-ref ref="BAE"/>
     </root>

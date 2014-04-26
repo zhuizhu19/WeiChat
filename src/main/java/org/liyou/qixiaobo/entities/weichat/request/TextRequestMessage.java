@@ -7,11 +7,11 @@ public class TextRequestMessage extends BaseRequestMessage {
     // 消息内容
     private String Content;
 
-    public String getContent() {
+    public String getContent () {
         return Content;
     }
 
-    public void setContent(String content) {
+    public void setContent (String content) {
         Content = content;
     }
 
@@ -19,6 +19,6 @@ public class TextRequestMessage extends BaseRequestMessage {
     public String toString () {
         return "TextResponseMessage{" +
                 "Content='" + Content + '\'' +
-                "} " + super.toString ();
+                "} " + super.toString();
     }
 }

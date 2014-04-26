@@ -19,13 +19,13 @@ import java.util.List;
 public class AuntiesDao extends BaseDao<Aunties> {
     @Transactional
     public List<Aunties> queryByTime (Date date, int nums) {
-        Session session = sessionFacotry.getCurrentSession ();
-        Transaction tx = session.beginTransaction ();
-        Criteria criteria = session.createCriteria (Aunties.class);
-        criteria.add (Restrictions.le ("auntDate", date));
-        criteria.setMaxResults (nums);
-        List<Aunties> aunties = criteria.list ();
-        tx.commit ();
+        Session session = sessionFacotry.getCurrentSession();
+        Transaction tx = session.beginTransaction();
+        Criteria criteria = session.createCriteria(Aunties.class);
+        criteria.add(Restrictions.le("auntDate", date));
+        criteria.setMaxResults(nums);
+        List<Aunties> aunties = criteria.list();
+        tx.commit();
         return aunties;
     }
 }

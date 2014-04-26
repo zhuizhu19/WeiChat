@@ -21,31 +21,31 @@ public class HttpUtil {
 
         try {
             // 建立连接
-            URL url = new URL (requestUrl);
-            HttpURLConnection httpUrlConn = (HttpURLConnection) url.openConnection ();
-            httpUrlConn.setDoInput (true);
-            httpUrlConn.setRequestMethod ("GET");
+            URL url = new URL(requestUrl);
+            HttpURLConnection httpUrlConn = (HttpURLConnection) url.openConnection();
+            httpUrlConn.setDoInput(true);
+            httpUrlConn.setRequestMethod("GET");
 
             // 获取输入流
-            InputStream inputStream = httpUrlConn.getInputStream ();
-            InputStreamReader inputStreamReader = new InputStreamReader (inputStream, "utf-8");
-            BufferedReader bufferedReader = new BufferedReader (inputStreamReader);
+            InputStream inputStream = httpUrlConn.getInputStream();
+            InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "utf-8");
+            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 
             // 读取返回结果
-            buffer = new StringBuffer ();
+            buffer = new StringBuffer();
             String str = null;
-            while ((str = bufferedReader.readLine ()) != null) {
-                buffer.append (str);
+            while ((str = bufferedReader.readLine()) != null) {
+                buffer.append(str);
             }
 
             // 释放资源
-            bufferedReader.close ();
-            inputStreamReader.close ();
-            inputStream.close ();
-            httpUrlConn.disconnect ();
+            bufferedReader.close();
+            inputStreamReader.close();
+            inputStream.close();
+            httpUrlConn.disconnect();
         } catch (Exception e) {
-            e.printStackTrace ();
+            e.printStackTrace();
         }
-        return buffer.toString ();
+        return buffer.toString();
     }
 }

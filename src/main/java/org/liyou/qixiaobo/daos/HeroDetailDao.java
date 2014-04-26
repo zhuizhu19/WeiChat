@@ -10,5 +10,5 @@ import javax.transaction.Transactional;
  */
 @Service
 @Transactional
-public class HeroDetailDao extends BaseDao<HeroDetail>{
+public class HeroDetailDao extends BaseDao<HeroDetail> {
 }

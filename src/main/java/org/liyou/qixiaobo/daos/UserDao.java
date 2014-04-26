@@ -18,15 +18,15 @@ import java.util.List;
 public class UserDao extends BaseDao<WeiChatUser> {
     @Transactional
     public WeiChatUser getWeiChatUserByFromUserName (String fromUserName) {
-        Session session = sessionFacotry.getCurrentSession ();
-        Transaction tx = session.beginTransaction ();
-        Criteria criteria = session.createCriteria (WeiChatUser.class);
-        criteria.add (Restrictions.eq ("fromUserName", fromUserName));
-        criteria.setMaxResults (1);
-        List<WeiChatUser> weiChatUsers = criteria.list ();
-        tx.commit ();
-        if (weiChatUsers == null || weiChatUsers.size () == 0)
+        Session session = sessionFacotry.getCurrentSession();
+        Transaction tx = session.beginTransaction();
+        Criteria criteria = session.createCriteria(WeiChatUser.class);
+        criteria.add(Restrictions.eq("fromUserName", fromUserName));
+        criteria.setMaxResults(1);
+        List<WeiChatUser> weiChatUsers = criteria.list();
+        tx.commit();
+        if (weiChatUsers == null || weiChatUsers.size() == 0)
             return null;
-        return weiChatUsers.get (0);
+        return weiChatUsers.get(0);
     }
 }

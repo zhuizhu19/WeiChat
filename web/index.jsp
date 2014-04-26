@@ -7,10 +7,10 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
+<head>
     <title>来自星星的YoYo</title>
-  </head>
-  <body>
-   LiYou：UU
-  </body>
+</head>
+<body>
+LiYou：UU
+</body>
 </html>

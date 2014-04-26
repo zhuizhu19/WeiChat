@@ -37,21 +37,21 @@ public class BaseController extends CookieUtils {
     public static String WEB_REAL_PATH;
 
     static {
-        df = new SimpleDateFormat ("yyyy-MM-dd");
+        df = new SimpleDateFormat("yyyy-MM-dd");
     }
 
     public String redirect (String url) {
-        StringBuilder sb = new StringBuilder ();
-        sb.append (REDIRECT);
-        sb.append (url);
-        return sb.toString ();
+        StringBuilder sb = new StringBuilder();
+        sb.append(REDIRECT);
+        sb.append(url);
+        return sb.toString();
     }
 
     public String forward (String url) {
-        StringBuilder sb = new StringBuilder ();
-        sb.append (FORWARD);
-        sb.append (url);
-        return sb.toString ();
+        StringBuilder sb = new StringBuilder();
+        sb.append(FORWARD);
+        sb.append(url);
+        return sb.toString();
     }
 
     /**
@@ -61,7 +61,7 @@ public class BaseController extends CookieUtils {
      * @return
      */
     public String encrypt (String password) {
-        return StringUtils.encrypt (password);
+        return StringUtils.encrypt(password);
     }
 
     /**
@@ -71,15 +71,15 @@ public class BaseController extends CookieUtils {
      * @return
      */
     public String decrypt (String data) {
-        return StringUtils.decrypt (data);
+        return StringUtils.decrypt(data);
     }
 
     /**
      * 判断是否登录
      */
     public boolean isLogin (HttpSession session) {
-        if (session.getAttribute (LOGIN) != null
-                && session.getAttribute (LOGIN).equals ("true")) {
+        if (session.getAttribute(LOGIN) != null
+                && session.getAttribute(LOGIN).equals("true")) {
             return true;
         }
         return false;
@@ -90,17 +90,17 @@ public class BaseController extends CookieUtils {
      */
     public void setLoginState (HttpSession session, String userName,
                                String userId, Date date) {
-        session.setAttribute (LOGIN, "true");
-        session.setAttribute (CURRENTUSER, userName);
-        session.setAttribute (USERID, userId);
-        session.setAttribute (LASTACCESS, date);
+        session.setAttribute(LOGIN, "true");
+        session.setAttribute(CURRENTUSER, userName);
+        session.setAttribute(USERID, userId);
+        session.setAttribute(LASTACCESS, date);
     }
 
     /**
      * 设置退出
      */
     public void setLogOutStatus (HttpSession session) {
-        session.setAttribute (LOGIN, "false");
+        session.setAttribute(LOGIN, "false");
     }
 
     /**
@@ -108,8 +108,8 @@ public class BaseController extends CookieUtils {
      */
     public String getUserName (HttpSession session) {
         try {
-            if (session.getAttribute (LOGIN).equals ("true")) {
-                return session.getAttribute (CURRENTUSER).toString ();
+            if (session.getAttribute(LOGIN).equals("true")) {
+                return session.getAttribute(CURRENTUSER).toString();
             }
         } catch (NullPointerException e) {
 
@@ -122,8 +122,8 @@ public class BaseController extends CookieUtils {
      */
     public String getUserID (HttpSession session) {
         try {
-            if (session.getAttribute (LOGIN).equals ("true")) {
-                return session.getAttribute (USERID).toString ();
+            if (session.getAttribute(LOGIN).equals("true")) {
+                return session.getAttribute(USERID).toString();
             }
         } catch (NullPointerException e) {
 
@@ -144,38 +144,38 @@ public class BaseController extends CookieUtils {
             throws IOException {
         ServletResponse res = null;
         while (response instanceof HttpServletRequestWrapper) {
-            res = ((HttpServletResponseWrapper) response).getResponse ();
+            res = ((HttpServletResponseWrapper) response).getResponse();
             if (res instanceof HttpServletResponse) {
                 response = (HttpServletResponse) res;
             }
         }
         if (content != null && content.length > 0) {
-            fileName = StringUtils.defaultIfEmpty (fileName,
-                    "temp_" + String.valueOf (System.nanoTime ()) + ".file");
-            contentType = StringUtils.defaultIfEmpty (contentType,
+            fileName = StringUtils.defaultIfEmpty(fileName,
+                    "temp_" + String.valueOf(System.nanoTime()) + ".file");
+            contentType = StringUtils.defaultIfEmpty(contentType,
                     DEFALULT_CONTENT_TYPE);
-            if (!INLINE.equals (dispostition)
-                    && !ATTACHMENT.equals (dispostition)) {
+            if (!INLINE.equals(dispostition)
+                    && !ATTACHMENT.equals(dispostition)) {
                 dispostition = ATTACHMENT;
             }
             ServletOutputStream out = null;
             try {
-                response.setContentType (contentType);
-                response.setHeader ("Content-Disposition", dispostition
+                response.setContentType(contentType);
+                response.setHeader("Content-Disposition", dispostition
                         + ";filename='"
-                        + new String (fileName.getBytes ("GBK"), "ISO-8859-1")
+                        + new String(fileName.getBytes("GBK"), "ISO-8859-1")
                         + "'");
                 if (cacheTime != -1) {
-                    response.addHeader ("Cache-control:max-age", "" + cacheTime);
+                    response.addHeader("Cache-control:max-age", "" + cacheTime);
                 }
-                out = response.getOutputStream ();
-                out.write (content, 0, content.length);
-                out.flush ();
+                out = response.getOutputStream();
+                out.write(content, 0, content.length);
+                out.flush();
             } catch (Exception e) {
 
             } finally {
                 if (out != null) {
-                    out.close ();
+                    out.close();
                 }
             }
         }
@@ -183,7 +183,7 @@ public class BaseController extends CookieUtils {
 
     public void downloadFile (String contentType, String fileName,
                               byte[] content, HttpServletResponse response) throws IOException {
-        download (contentType, fileName, ATTACHMENT, content, response, -1);
+        download(contentType, fileName, ATTACHMENT, content, response, -1);
     }
 
     public void showPicture (String contentType, String fileName,
@@ -192,19 +192,19 @@ public class BaseController extends CookieUtils {
         if (cached) {
             cache = 36000;
         }
-        download ("image/jpg", fileName, INLINE, content, response, cache);
+        download("image/jpg", fileName, INLINE, content, response, cache);
     }
 
     public Date parseDate (String s) {
         if (s == null)
-            return new Date ();
-        SimpleDateFormat dateFormat = new SimpleDateFormat ("yyyy-MM-dd");
+            return new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date toDate;
         try {
-            toDate = dateFormat.parse (s);
+            toDate = dateFormat.parse(s);
         } catch (ParseException e) {
-            toDate = new Date ();
-            e.printStackTrace ();
+            toDate = new Date();
+            e.printStackTrace();
         }
         return toDate;
 
@@ -214,23 +214,23 @@ public class BaseController extends CookieUtils {
      * 拼接展示内容
      */
     protected String getContent () {
-        StringBuilder sb = new StringBuilder ();
-        sb.append ("<font color='blue'><center>上传图片中</center></font><br/>");
-        sb.append ("<center><span><img src='/resource/ajax-loader.gif' title='上传图片中' alt='上传图片中'></span></center>");
-        return sb.toString ();
+        StringBuilder sb = new StringBuilder();
+        sb.append("<font color='blue'><center>上传图片中</center></font><br/>");
+        sb.append("<center><span><img src='/resource/ajax-loader.gif' title='上传图片中' alt='上传图片中'></span></center>");
+        return sb.toString();
     }
 
     protected static String format (Date date) {
 
-        return df.format (date);
+        return df.format(date);
     }
 
     public String replce (String where) {
         if (where == null) {
             return "";
         }
-        where = where.replace ("*", "%");
-        where = where.replace ("?", "_");
+        where = where.replace("*", "%");
+        where = where.replace("?", "_");
         return where;
     }
 

@@ -20,19 +20,19 @@ public class VoiceRequestMessage extends BaseRequestMessage {
     }
 
 
-    public String getMediaId() {
+    public String getMediaId () {
         return MediaId;
     }
 
-    public void setMediaId(String mediaId) {
+    public void setMediaId (String mediaId) {
         MediaId = mediaId;
     }
 
-    public String getFormat() {
+    public String getFormat () {
         return Format;
     }
 
-    public void setFormat(String format) {
+    public void setFormat (String format) {
         Format = format;
     }
 
@@ -42,6 +42,6 @@ public class VoiceRequestMessage extends BaseRequestMessage {
                 "MediaId='" + MediaId + '\'' +
                 ", Format='" + Format + '\'' +
                 ", Recognition='" + Recognition + '\'' +
-                "} " + super.toString ();
+                "} " + super.toString();
     }
 }

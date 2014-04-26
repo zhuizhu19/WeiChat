@@ -10,14 +10,14 @@ public class MusicResponseMessage extends BaseResponseMessage {
     private Music music;
 
     public MusicResponseMessage () {
-        this.setMsgType (MessageUtil.RESP_MESSAGE_TYPE_MUSIC);
+        this.setMsgType(MessageUtil.RESP_MESSAGE_TYPE_MUSIC);
     }
 
-    public Music getMusic() {
+    public Music getMusic () {
         return music;
     }
 
-    public void setMusic(Music music) {
+    public void setMusic (Music music) {
         this.music = music;
     }
 }

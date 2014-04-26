@@ -84,7 +84,7 @@ public class MessageUtil {
     /**
      * 事件类型：location(定时位置上报)
      */
-    public static final String EVENT_TYPE_LOCATION= "LOCATION";
+    public static final String EVENT_TYPE_LOCATION = "LOCATION";
 
 
     /**
@@ -100,9 +100,9 @@ public class MessageUtil {
      * @throws Exception
      */
     @SuppressWarnings("unchecked")
-    public static Map<String, String> parseXml(HttpServletRequest request) throws Exception {
+    public static Map<String, String> parseXml (HttpServletRequest request) throws Exception {
         // 将解析结果存储在HashMap中
-        Map<String, String> map = new HashMap<String, String> ();
+        Map<String, String> map = new HashMap<String, String>();
 
         // 从request中取得输入流
         InputStream inputStream = request.getInputStream();
@@ -124,15 +124,16 @@ public class MessageUtil {
 
         return map;
     }
+
     /**
      * 消息对象转换成xml
      *
      * @param message 消息对象
      * @return xml
      */
-    public static String messageToXml(BaseResponseMessage message) {
+    public static String messageToXml (BaseResponseMessage message) {
         xstream.alias("xml", message.getClass());
-        if(message instanceof NewsResponseMessage){
+        if (message instanceof NewsResponseMessage) {
             xstream.alias("item", Article.class);
         }
         return xstream.toXML(message);
@@ -144,7 +145,7 @@ public class MessageUtil {
      * @param textMessage 文本消息对象
      * @return xml
      */
-    public static String textMessageToXml(TextResponseMessage textMessage) {
+    public static String textMessageToXml (TextResponseMessage textMessage) {
         xstream.alias("xml", textMessage.getClass());
         return xstream.toXML(textMessage);
     }
@@ -155,7 +156,7 @@ public class MessageUtil {
      * @param musicMessage 音乐消息对象
      * @return xml
      */
-    public static String musicMessageToXml(MusicResponseMessage musicMessage) {
+    public static String musicMessageToXml (MusicResponseMessage musicMessage) {
         xstream.alias("xml", musicMessage.getClass());
         return xstream.toXML(musicMessage);
     }
@@ -166,7 +167,7 @@ public class MessageUtil {
      * @param newsMessage 图文消息对象
      * @return xml
      */
-    public static String newsMessageToXml(NewsResponseMessage newsMessage) {
+    public static String newsMessageToXml (NewsResponseMessage newsMessage) {
         xstream.alias("xml", newsMessage.getClass());
         xstream.alias("item", Article.class);
         return xstream.toXML(newsMessage);
@@ -177,18 +178,18 @@ public class MessageUtil {
      *
      * @date 2013-05-19
      */
-    private static XStream xstream = new XStream(new XppDriver () {
-        public HierarchicalStreamWriter createWriter(Writer out) {
-            return new PrettyPrintWriter (out) {
+    private static XStream xstream = new XStream(new XppDriver() {
+        public HierarchicalStreamWriter createWriter (Writer out) {
+            return new PrettyPrintWriter(out) {
                 // 对所有xml节点的转换都增加CDATA标记
                 boolean cdata = true;
 
                 @SuppressWarnings("unchecked")
-                public void startNode(String name, Class clazz) {
+                public void startNode (String name, Class clazz) {
                     super.startNode(name, clazz);
                 }
 
-                protected void writeText(QuickWriter writer, String text) {
+                protected void writeText (QuickWriter writer, String text) {
                     if (cdata) {
                         writer.write("<![CDATA[");
                         writer.write(text);

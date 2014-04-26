@@ -10,14 +10,14 @@ public class TextResponseMessage extends BaseResponseMessage {
     private String Content;
 
     public TextResponseMessage () {
-        this.setMsgType (MessageUtil.RESP_MESSAGE_TYPE_TEXT);
+        this.setMsgType(MessageUtil.RESP_MESSAGE_TYPE_TEXT);
     }
 
-    public String getContent() {
+    public String getContent () {
         return Content;
     }
 
-    public void setContent(String content) {
+    public void setContent (String content) {
         Content = content;
     }
 }

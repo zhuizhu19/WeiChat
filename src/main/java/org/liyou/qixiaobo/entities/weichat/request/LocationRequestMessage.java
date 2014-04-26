@@ -13,35 +13,35 @@ public class LocationRequestMessage extends BaseRequestMessage {
     // 地理位置信息
     private String Label;
 
-    public String getLocation_X() {
+    public String getLocation_X () {
         return Location_X;
     }
 
-    public void setLocation_X(String location_X) {
+    public void setLocation_X (String location_X) {
         Location_X = location_X;
     }
 
-    public String getLocation_Y() {
+    public String getLocation_Y () {
         return Location_Y;
     }
 
-    public void setLocation_Y(String location_Y) {
+    public void setLocation_Y (String location_Y) {
         Location_Y = location_Y;
     }
 
-    public String getScale() {
+    public String getScale () {
         return Scale;
     }
 
-    public void setScale(String scale) {
+    public void setScale (String scale) {
         Scale = scale;
     }
 
-    public String getLabel() {
+    public String getLabel () {
         return Label;
     }
 
-    public void setLabel(String label) {
+    public void setLabel (String label) {
         Label = label;
     }
 
@@ -52,6 +52,6 @@ public class LocationRequestMessage extends BaseRequestMessage {
                 ", Location_Y='" + Location_Y + '\'' +
                 ", Scale='" + Scale + '\'' +
                 ", Label='" + Label + '\'' +
-                "} " + super.toString ();
+                "} " + super.toString();
     }
 }

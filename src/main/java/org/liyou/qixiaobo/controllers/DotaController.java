@@ -26,48 +26,48 @@ public class DotaController extends BaseController {
 
     @RequestMapping("/heros")
     public String allHeros (Model model) {
-        Map<String, List<Hero>> map = new LinkedHashMap<String, List<Hero>> ();
-        List<Hero> heros = heroDao.queryAllHerosByHouse (DotaService.DotaHouse.近卫力量_1.getHouseName (), true);
-        map.put (DotaService.DotaHouse.近卫力量_1.getHouseName (), heros);
-        heros = heroDao.queryAllHerosByHouse (DotaService.DotaHouse.近卫敏捷_1.getHouseName (), true);
-        map.put (DotaService.DotaHouse.近卫敏捷_1.getHouseName (), heros);
-        heros = heroDao.queryAllHerosByHouse (DotaService.DotaHouse.近卫智力_1.getHouseName (), true);
-        map.put (DotaService.DotaHouse.近卫智力_1.getHouseName (), heros);
-        heros = heroDao.queryAllHerosByHouse (DotaService.DotaHouse.近卫力量_2.getHouseName (), true);
-        map.put (DotaService.DotaHouse.近卫力量_2.getHouseName (), heros);
-        heros = heroDao.queryAllHerosByHouse (DotaService.DotaHouse.近卫敏捷_2.getHouseName (), true);
-        map.put (DotaService.DotaHouse.近卫敏捷_2.getHouseName (), heros);
-        heros = heroDao.queryAllHerosByHouse (DotaService.DotaHouse.近卫智力_2.getHouseName (), true);
-        map.put (DotaService.DotaHouse.近卫智力_2.getHouseName (), heros);
-        heros = heroDao.queryAllHerosByHouse (DotaService.DotaHouse.天灾力量_1.getHouseName (), true);
-        map.put (DotaService.DotaHouse.天灾力量_1.getHouseName (), heros);
-        heros = heroDao.queryAllHerosByHouse (DotaService.DotaHouse.天灾敏捷_1.getHouseName (), true);
-        map.put (DotaService.DotaHouse.天灾敏捷_1.getHouseName (), heros);
-        heros = heroDao.queryAllHerosByHouse (DotaService.DotaHouse.天灾智力_1.getHouseName (), true);
-        map.put (DotaService.DotaHouse.天灾智力_1.getHouseName (), heros);
-        heros = heroDao.queryAllHerosByHouse (DotaService.DotaHouse.天灾力量_2.getHouseName (), true);
-        map.put (DotaService.DotaHouse.天灾力量_2.getHouseName (), heros);
-        heros = heroDao.queryAllHerosByHouse (DotaService.DotaHouse.天灾敏捷_2.getHouseName (), true);
-        map.put (DotaService.DotaHouse.天灾敏捷_2.getHouseName (), heros);
-        heros = heroDao.queryAllHerosByHouse (DotaService.DotaHouse.天灾智力_2.getHouseName (), true);
-        map.put (DotaService.DotaHouse.天灾智力_2.getHouseName (), heros);
-        model.addAttribute ("heros",map);
+        Map<String, List<Hero>> map = new LinkedHashMap<String, List<Hero>>();
+        List<Hero> heros = heroDao.queryAllHerosByHouse(DotaService.DotaHouse.近卫力量_1.getHouseName(), true);
+        map.put(DotaService.DotaHouse.近卫力量_1.getHouseName(), heros);
+        heros = heroDao.queryAllHerosByHouse(DotaService.DotaHouse.近卫敏捷_1.getHouseName(), true);
+        map.put(DotaService.DotaHouse.近卫敏捷_1.getHouseName(), heros);
+        heros = heroDao.queryAllHerosByHouse(DotaService.DotaHouse.近卫智力_1.getHouseName(), true);
+        map.put(DotaService.DotaHouse.近卫智力_1.getHouseName(), heros);
+        heros = heroDao.queryAllHerosByHouse(DotaService.DotaHouse.近卫力量_2.getHouseName(), true);
+        map.put(DotaService.DotaHouse.近卫力量_2.getHouseName(), heros);
+        heros = heroDao.queryAllHerosByHouse(DotaService.DotaHouse.近卫敏捷_2.getHouseName(), true);
+        map.put(DotaService.DotaHouse.近卫敏捷_2.getHouseName(), heros);
+        heros = heroDao.queryAllHerosByHouse(DotaService.DotaHouse.近卫智力_2.getHouseName(), true);
+        map.put(DotaService.DotaHouse.近卫智力_2.getHouseName(), heros);
+        heros = heroDao.queryAllHerosByHouse(DotaService.DotaHouse.天灾力量_1.getHouseName(), true);
+        map.put(DotaService.DotaHouse.天灾力量_1.getHouseName(), heros);
+        heros = heroDao.queryAllHerosByHouse(DotaService.DotaHouse.天灾敏捷_1.getHouseName(), true);
+        map.put(DotaService.DotaHouse.天灾敏捷_1.getHouseName(), heros);
+        heros = heroDao.queryAllHerosByHouse(DotaService.DotaHouse.天灾智力_1.getHouseName(), true);
+        map.put(DotaService.DotaHouse.天灾智力_1.getHouseName(), heros);
+        heros = heroDao.queryAllHerosByHouse(DotaService.DotaHouse.天灾力量_2.getHouseName(), true);
+        map.put(DotaService.DotaHouse.天灾力量_2.getHouseName(), heros);
+        heros = heroDao.queryAllHerosByHouse(DotaService.DotaHouse.天灾敏捷_2.getHouseName(), true);
+        map.put(DotaService.DotaHouse.天灾敏捷_2.getHouseName(), heros);
+        heros = heroDao.queryAllHerosByHouse(DotaService.DotaHouse.天灾智力_2.getHouseName(), true);
+        map.put(DotaService.DotaHouse.天灾智力_2.getHouseName(), heros);
+        model.addAttribute("heros", map);
         return "heros";
     }
 
     @RequestMapping("/heros/{id}")
     public String Hero (Model model, @PathVariable String id) throws Resource404Exception {
-        if (id == null || id.trim ().equals (""))
-            throw new Resource404Exception ("invaild id");
+        if (id == null || id.trim().equals(""))
+            throw new Resource404Exception("invaild id");
         try {
-            int idInt = Integer.parseInt (id);
-            Hero hero = heroDao.query (Hero.class, idInt);
+            int idInt = Integer.parseInt(id);
+            Hero hero = heroDao.query(Hero.class, idInt);
             if (hero == null) {
-                throw new Resource404Exception ("invaild id");
+                throw new Resource404Exception("invaild id");
             }
-            model.addAttribute ("hero", hero);
+            model.addAttribute("hero", hero);
         } catch (NumberFormatException ex) {
-            throw new Resource404Exception ("invaild id");
+            throw new Resource404Exception("invaild id");
         }
         return "hero";
     }

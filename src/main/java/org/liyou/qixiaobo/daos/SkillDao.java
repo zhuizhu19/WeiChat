@@ -18,15 +18,15 @@ import java.util.List;
 public class SkillDao extends BaseDao<Skill> {
     @Transactional
     public Skill queryBySkillName (String name) {
-        Session session = sessionFacotry.getCurrentSession ();
-        Transaction tx = session.beginTransaction ();
-        Criteria criteria = session.createCriteria (Skill.class);
-        criteria.add (Restrictions.eq ("skillName", name));
-        criteria.setMaxResults (1);
-        List<Skill> skills = criteria.list ();
-        tx.commit ();
-        if (skills == null || skills.size () == 0)
+        Session session = sessionFacotry.getCurrentSession();
+        Transaction tx = session.beginTransaction();
+        Criteria criteria = session.createCriteria(Skill.class);
+        criteria.add(Restrictions.eq("skillName", name));
+        criteria.setMaxResults(1);
+        List<Skill> skills = criteria.list();
+        tx.commit();
+        if (skills == null || skills.size() == 0)
             return null;
-        return skills.get (0);
+        return skills.get(0);
     }
 }

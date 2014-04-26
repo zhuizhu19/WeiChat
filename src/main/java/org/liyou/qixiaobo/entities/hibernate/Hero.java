@@ -88,7 +88,7 @@ public class Hero {
         this.imgUrl = imgUrl;
     }
 
-    @OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
+    @OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
     public List<Skill> getSkills () {
         return skills;
     }
@@ -113,7 +113,7 @@ public class Hero {
         this.initProps = initProps;
     }
 
-    @OneToOne(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
+    @OneToOne(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
     public HeroDetail getHeroDetail () {
         return heroDetail;
     }

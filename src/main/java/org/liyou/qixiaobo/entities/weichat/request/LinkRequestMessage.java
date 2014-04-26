@@ -11,27 +11,27 @@ public class LinkRequestMessage extends BaseRequestMessage {
     // 消息链接
     private String Url;
 
-    public String getTitle() {
+    public String getTitle () {
         return Title;
     }
 
-    public void setTitle(String title) {
+    public void setTitle (String title) {
         Title = title;
     }
 
-    public String getDescription() {
+    public String getDescription () {
         return Description;
     }
 
-    public void setDescription(String description) {
+    public void setDescription (String description) {
         Description = description;
     }
 
-    public String getUrl() {
+    public String getUrl () {
         return Url;
     }
 
-    public void setUrl(String url) {
+    public void setUrl (String url) {
         Url = url;
     }
 
@@ -41,6 +41,6 @@ public class LinkRequestMessage extends BaseRequestMessage {
                 "Title='" + Title + '\'' +
                 ", Description='" + Description + '\'' +
                 ", Url='" + Url + '\'' +
-                "} " + super.toString ();
+                "} " + super.toString();
     }
 }

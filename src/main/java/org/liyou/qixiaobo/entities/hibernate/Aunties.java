@@ -1,6 +1,9 @@
 package org.liyou.qixiaobo.entities.hibernate;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Date;
 
 /**
@@ -14,6 +17,7 @@ public class Aunties {
     private int intervalDate;
     private String advice;
     private String remark;
+
     @Id
     @GeneratedValue
     public int getId () {
@@ -27,6 +31,7 @@ public class Aunties {
     public Date getAuntDate () {
         return auntDate;
     }
+
     public void setAuntDate (Date auntDate) {
         this.auntDate = auntDate;
     }

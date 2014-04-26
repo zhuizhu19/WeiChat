@@ -7,6 +7,6 @@
     </system-properties>
     <sessions-enabled>true</sessions-enabled>
     <static-files>
-        <include path="/**.html"   expiration ="access 1 months" />
+        <include path="/**.html" expiration="access 1 months"/>
     </static-files>
 </du-web-app>

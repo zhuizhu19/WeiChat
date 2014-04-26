@@ -7,7 +7,7 @@ import org.liyou.qixiaobo.utils.MessageUtil;
  */
 public class ClickEvent extends PushEvent {
     public ClickEvent () {
-        this.setEvent (MessageUtil.EVENT_TYPE_CLICK);
+        this.setEvent(MessageUtil.EVENT_TYPE_CLICK);
     }
 
     private String EventKey;
@@ -24,6 +24,6 @@ public class ClickEvent extends PushEvent {
     public String toString () {
         return "ClickEvent{" +
                 "EventKey='" + EventKey + '\'' +
-                "} " + super.toString ();
+                "} " + super.toString();
     }
 }

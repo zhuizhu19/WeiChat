@@ -12,7 +12,7 @@ public interface IWeiChat {
     public static final int NAME_START_PX = 135;
     public static final int DATA_START_PX = 500;
     public static final int START_PX_Y = 481;
-    public static final Color FONT_COLOR = new Color (102, 16, 19);
+    public static final Color FONT_COLOR = new Color(102, 16, 19);
     public static final int FONT_SIZE = 26;
     public static final String FONT_NAME = "宋体";
 }

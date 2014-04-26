@@ -7,8 +7,7 @@ import java.util.Arrays;
 /**
  * Created by Administrator on 14-3-1.
  */
-public class SignUtil implements  IWeiChat {
-
+public class SignUtil implements IWeiChat {
 
 
     /**
@@ -19,10 +18,10 @@ public class SignUtil implements  IWeiChat {
      * @param nonce
      * @return
      */
-    public static boolean checkSignature(String signature, String timestamp, String nonce) {
-        String[] arr = new String[] { token, timestamp, nonce };
+    public static boolean checkSignature (String signature, String timestamp, String nonce) {
+        String[] arr = new String[]{token, timestamp, nonce};
         // 将token、timestamp、nonce三个参数进行字典序排序
-        Arrays.sort (arr);
+        Arrays.sort(arr);
         StringBuilder content = new StringBuilder();
         for (int i = 0; i < arr.length; i++) {
             content.append(arr[i]);
@@ -50,7 +49,7 @@ public class SignUtil implements  IWeiChat {
      * @param byteArray
      * @return
      */
-    private static String byteToStr(byte[] byteArray) {
+    private static String byteToStr (byte[] byteArray) {
         String strDigest = "";
         for (int i = 0; i < byteArray.length; i++) {
             strDigest += byteToHexStr(byteArray[i]);
@@ -64,8 +63,8 @@ public class SignUtil implements  IWeiChat {
      * @param mByte
      * @return
      */
-    private static String byteToHexStr(byte mByte) {
-        char[] Digit = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
+    private static String byteToHexStr (byte mByte) {
+        char[] Digit = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
         char[] tempArr = new char[2];
         tempArr[0] = Digit[(mByte >>> 4) & 0X0F];
         tempArr[1] = Digit[mByte & 0X0F];

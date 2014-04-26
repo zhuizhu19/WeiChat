@@ -26,21 +26,21 @@ public class WeiChatController extends BaseController {
      * @param echostr   回显字符串
      */
     @ResponseBody
-    @RequestMapping(value = { "/yoyo" } , method = RequestMethod.GET)
+    @RequestMapping(value = {"/yoyo"}, method = RequestMethod.GET)
     public String checkSignature (String signature, String timestamp, String nonce, String echostr) {
 
         // 通过检验signature对请求进行校验，若校验成功则原样返回echostr，表示接入成功，否则接入失败
-        if (SignUtil.checkSignature (signature, timestamp, nonce)) {
+        if (SignUtil.checkSignature(signature, timestamp, nonce)) {
             return echostr;
         }
         return null;
     }
 
     @ResponseBody
-    @RequestMapping(value = { "/yoyo" } , method = RequestMethod.POST)
+    @RequestMapping(value = {"/yoyo"}, method = RequestMethod.POST)
     public String processRequest (HttpServletRequest request) {
-        String response = coreService.processRequest (request);
-        System.out.println (response);
+        String response = coreService.processRequest(request);
+        System.out.println(response);
         return response;
     }
 

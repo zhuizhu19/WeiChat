@@ -24,7 +24,7 @@ public class Stage {
         this.id = id;
     }
 
-    @OneToOne(cascade = { CascadeType.ALL } , fetch = FetchType.EAGER)
+    @OneToOne(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
     public Category getCategory () {
         return category;
     }
@@ -42,7 +42,7 @@ public class Stage {
         this.key = key;
     }
 
-    @Column(nullable = false , length = 65535)
+    @Column(nullable = false, length = 65535)
     public String getDes () {
         return des;
     }

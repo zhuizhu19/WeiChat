@@ -7,11 +7,11 @@ public class ImageRequestMessage extends BaseRequestMessage {
     // 图片链接
     private String PicUrl;
 
-    public String getPicUrl() {
+    public String getPicUrl () {
         return PicUrl;
     }
 
-    public void setPicUrl(String picUrl) {
+    public void setPicUrl (String picUrl) {
         PicUrl = picUrl;
     }
 
@@ -19,6 +19,6 @@ public class ImageRequestMessage extends BaseRequestMessage {
     public String toString () {
         return "ImageRequestMessage{" +
                 "PicUrl='" + PicUrl + '\'' +
-                "} " + super.toString ();
+                "} " + super.toString();
     }
 }

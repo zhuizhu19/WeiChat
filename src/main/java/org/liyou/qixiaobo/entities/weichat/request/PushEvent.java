@@ -5,9 +5,9 @@ import org.liyou.qixiaobo.utils.MessageUtil;
 /**
  * Created by Administrator on 14-3-2.
  */
-public class PushEvent extends BaseEvent{
+public class PushEvent extends BaseEvent {
     public PushEvent () {
-        this.setMsgType (MessageUtil.REQ_MESSAGE_TYPE_EVENT);
+        this.setMsgType(MessageUtil.REQ_MESSAGE_TYPE_EVENT);
     }
 
     private String Event;
@@ -24,6 +24,6 @@ public class PushEvent extends BaseEvent{
     public String toString () {
         return "PushEvent{" +
                 "Event='" + Event + '\'' +
-                "} " + super.toString ();
+                "} " + super.toString();
     }
 }

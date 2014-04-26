@@ -16,17 +16,18 @@ import java.util.Properties;
  */
 public class DomainTool {
     private static Properties context;
+
     static {
-        Resource r = new ClassPathResource (
+        Resource r = new ClassPathResource(
                 "context.properties");
         try {
-            context = PropertyUtils.readFromResource (r);
+            context = PropertyUtils.readFromResource(r);
         } catch (IOException e) {
-            context = new Properties ();
+            context = new Properties();
         }
     }
 
     public static String info (String key) {
-        return context.getProperty (key);
+        return context.getProperty(key);
     }
 }
