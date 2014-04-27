@@ -7,12 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1a64b6c-8aa1-4b69-a0b2-5ae33d7103b7" name="Default" comment="">
-      <change type="DELETED" beforePath="F:\workspace\WeiChat\src\main\resources\font\FZYTK.TTF" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/controllers/CardController.java" afterPath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/controllers/CardController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java" afterPath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/ImageUtils.java" afterPath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/ImageUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/font/STLITI.TTF" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/YoYoUtil.java" afterPath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/YoYoUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/dispatcher.xml" afterPath="$PROJECT_DIR$/src/main/resources/dispatcher.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/db.properties" afterPath="$PROJECT_DIR$/src/main/resources/db.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WeiChat.iws" />
@@ -102,10 +99,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="db.properties" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="db.properties" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/db.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="5" selection-start="181" selection-end="181" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
+            <state line="9" column="0" selection-start="328" selection-end="328" vertical-scroll-proportion="0.48991936" vertical-offset="0" max-vertical-offset="540">
               <folding />
             </state>
           </provider>
@@ -125,16 +122,16 @@
       <file leaf-file-name="web.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="45" selection-start="3186" selection-end="3186" vertical-scroll-proportion="-7.1944447" vertical-offset="2144" max-vertical-offset="2673">
+            <state line="7" column="46" selection-start="365" selection-end="365" vertical-scroll-proportion="-5.25" vertical-offset="0" max-vertical-offset="2673">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CardController.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="CardController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/controllers/CardController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="59" selection-start="2671" selection-end="2671" vertical-scroll-proportion="0.06413302" vertical-offset="1485" max-vertical-offset="3807">
+            <state line="72" column="59" selection-start="2671" selection-end="2671" vertical-scroll-proportion="-0.43548387" vertical-offset="1485" max-vertical-offset="3807">
               <folding />
             </state>
           </provider>
@@ -143,7 +140,7 @@
       <file leaf-file-name="YoYoUtil.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/YoYoUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="57" selection-start="494" selection-end="494" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="567">
+            <state line="9" column="4" selection-start="364" selection-end="364" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="567">
               <folding />
             </state>
           </provider>
@@ -227,10 +224,10 @@
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/controllers/CardController.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/YoYoUtil.java" />
         <option value="$PROJECT_DIR$/src/main/resources/dispatcher.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/db.properties" />
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/ImageUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/YoYoUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/db.properties" />
       </list>
     </option>
   </component>
@@ -1983,7 +1980,7 @@
       <workItem from="1398480657590" duration="16193000" />
       <workItem from="1398565864400" duration="404000" />
       <workItem from="1398568325986" duration="3289000" />
-      <workItem from="1398581117437" duration="13071000" />
+      <workItem from="1398581117437" duration="14456000" />
     </task>
     <task id="LOCAL-00001" summary="newsmessage">
       <created>1393762558085</created>
@@ -2097,11 +2094,15 @@
       <created>1398589672066</created>
       <updated>1398589672066</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="handle for sae&#10;">
+      <created>1398595248246</created>
+      <updated>1398595248246</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="349032000" />
+    <option name="totallyTimeSpent" value="350417000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -2187,14 +2188,14 @@
     <MESSAGE value="handle for weather&#10;" />
     <MESSAGE value="handle for 星座&#10;" />
     <MESSAGE value="handle for 大姨妈&#10;" />
-    <MESSAGE value="handle for sae&#10;" />
     <MESSAGE value="handle for bae&#10;&#10;session   name关键字为应用名称&#10;" />
     <MESSAGE value="handle for bae&#10;&#10;font ttf&#10;" />
     <MESSAGE value="handle for xiaoI&#10;" />
     <MESSAGE value="handle for bae log&#10;" />
     <MESSAGE value="handle for bae &#10;" />
     <MESSAGE value="handle for bae&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="handle for bae&#10;" />
+    <MESSAGE value="handle for sae&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="handle for sae&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2454,20 +2455,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="45" selection-start="3186" selection-end="3186" vertical-scroll-proportion="-7.1944447" vertical-offset="2144" max-vertical-offset="2673">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/YoYoUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="57" selection-start="494" selection-end="494" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="567">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/MyWork/apache-tomcat-8.0.3/lib/servlet-api.jar!/javax/servlet/http/HttpServletRequest.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="50" column="35" selection-start="1309" selection-end="1309" vertical-scroll-proportion="-6.08" vertical-offset="1171" max-vertical-offset="2241">
@@ -2496,13 +2483,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/db.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="5" selection-start="181" selection-end="181" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="742" column="18" selection-start="41063" selection-end="41063" vertical-scroll-proportion="0.0" vertical-offset="19903" max-vertical-offset="23328">
@@ -2521,7 +2501,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/controllers/CardController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="59" selection-start="2671" selection-end="2671" vertical-scroll-proportion="0.06413302" vertical-offset="1485" max-vertical-offset="3807">
+        <state line="72" column="59" selection-start="2671" selection-end="2671" vertical-scroll-proportion="-0.43548387" vertical-offset="1485" max-vertical-offset="3807">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="46" selection-start="365" selection-end="365" vertical-scroll-proportion="-5.25" vertical-offset="0" max-vertical-offset="2673">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/YoYoUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="4" selection-start="364" selection-end="364" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="567">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/db.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="328" selection-end="328" vertical-scroll-proportion="0.48991936" vertical-offset="0" max-vertical-offset="540">
           <folding />
         </state>
       </provider>
