@@ -1,7 +1,9 @@
 package org.liyou.qixiaobo.services;
 
+import net.sf.json.JSONObject;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpException;
+import org.apache.commons.httpclient.HttpMethod;
 import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.log4j.Logger;
 import org.liyou.qixiaobo.controllers.CardController;
@@ -80,11 +82,12 @@ public class CoreService {
     private final String DELETE_FORTURE_STRING = "（评分由数理文化得出，仅供娱乐参考）";
     private final String JOKE_URL = "http://apix.sinaapp.com/joke/?appkey=trialuser";
     private final String DELETE_JOKE_STRING = "\\n\\n技术支持 方倍工作室";
+    private final String FACE_URL = "http://api2.sinaapp.com/recognize/picture/?appkey=0020120430&appsecert=fa6095e123cd28fd&reqtype=text&keyword=%KEYWORD%";
     private static int 德惠 = 101060103;
     private static int 南京 = 101190101;
     private static int 太原 = 101100101;
     private static final DateFormat DATE_FORMAT = new SimpleDateFormat("yyyy年MM月dd日");
-    private String respContent = "请求处理异常，请稍候尝试！";
+    private final String respContent = "呀，尤，我错了……网络问题么 \ue411";
     private IChat iChat = XiaoI.getInstance();
 
     static {
@@ -131,7 +134,7 @@ public class CoreService {
                         article.setDescription("相识于2013年4月22日，初见惊艳，再见沉迷。至今已有" + expire + "日！");
                         articles.add(article);
                         newsResponseMessage.setArticles(articles);
-                    } else if (weiChatUser.getFlag() == isAuthed && (responseMessage = processMenu(textRequestMessage.getContent(), weiChatUser)) != null) {
+                    } else if (weiChatUser.getFlag() == isAuthed && (responseMessage = processMenu(textRequestMessage.getContent(), weiChatUser, baseEvent)) != null) {
                         //donothing
                     } else {
                         responseMessage = new NewsResponseMessage();
@@ -221,10 +224,66 @@ public class CoreService {
                     }
 
                     ((TextResponseMessage) responseMessage).setContent(talk);
+                } else if (baseEvent instanceof ImageRequestMessage) {
+                    responseMessage = new TextResponseMessage();
+                    TextResponseMessage textResponseMessage = (TextResponseMessage) responseMessage;
+                    ImageRequestMessage imageRequestMessage = (ImageRequestMessage) baseEvent;
+                    HttpMethod getMethod = null;
+                    try {
+                        HttpClient client = new HttpClient();
+                        final String url = FACE_URL.replace("%KEYWORD%", imageRequestMessage.getPicUrl());
+                        logger.info("getPicUrl;" + imageRequestMessage.getPicUrl());
+                        getMethod = new GetMethod(url);
+                        int ret_code = client.executeMethod(getMethod);
+                        if (ret_code == 200) {
+                            JSONObject jsonObject = JSONObject.fromObject(getMethod.getResponseBodyAsString());
+                            JSONObject text = jsonObject.getJSONObject("text");
+                            String result = text.getString("content");
+                            if (result.equals("我有权保持沉默！")) {
+                                result += "Tips:尤尤换张图片呗，我评分很艰难哎~";
+                            } else if (result.equals("不支持的图片类型！")) {
+                                result = "这张图片真心看不懂哎~尤尤要不直接拍一张怎么样啊……";
+                            } else if (result.equals("图片大小超过最大值！")) {
+                                result = "哎哟，不要为难我了哎，人家只是波波为尤尤设置的机器人而已嘛,你说要是传一张稍小一点的图片肿么样……";
+                            } else if (!result.contains("察颜")) {
+                                result = "哎唷，不要为难我了哎，伦家只是波波为尤尤设置的小机器人而已嘛……";
+                            }
+                            textResponseMessage.setContent(result);
+                        } else {
+                            textResponseMessage.setContent(respContent);
+                        }
+
+                    } catch (UnsupportedEncodingException e) {
+                        e.printStackTrace();
+                        textResponseMessage.setContent(respContent);
+                    } catch (HttpException e) {
+                        e.printStackTrace();
+                        textResponseMessage.setContent(respContent);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        textResponseMessage.setContent(respContent);
+                    } finally {
+                        if (getMethod != null) {
+                            getMethod.releaseConnection();
+                        }
+                    }
+                } else if (baseEvent instanceof LinkRequestMessage) {
+                    responseMessage = new TextResponseMessage();
+                } else if (baseEvent instanceof LocationRequestMessage) {
+                    LocationRequestMessage locationRequestMessage = (LocationRequestMessage) baseEvent;
+                    System.out.println("**********************");
+                    System.out.println(locationRequestMessage.toString());
+                    System.out.println("**********************");
+                    responseMessage = new TextResponseMessage();
                 } else {
+                    System.out.println("**********************");
+                    System.out.println(baseEvent.toString());
+                    System.out.println("**********************");
                     responseMessage = new TextResponseMessage();
                 }
             } else if (baseEvent instanceof PushEvent) {
+                responseMessage = processPushEvent((PushEvent) baseEvent, weiChatUser);
+            } else {
                 responseMessage = new TextResponseMessage();
             }
             responseMessage.setToUserName(baseEvent.getFromUserName());
@@ -237,6 +296,19 @@ public class CoreService {
         }
 
         return respMessage;
+    }
+
+    private BaseResponseMessage processPushEvent (PushEvent pushEvent, WeiChatUser weiChatUser) {
+        String event = pushEvent.getEvent();
+        if (event.equals("subscribe")) {
+            TextResponseMessage textResponseMessage = new TextResponseMessage();
+            textResponseMessage.setContent(getMainMenu(weiChatUser));
+            return textResponseMessage;
+        } else {
+            //TODO
+            TextResponseMessage textResponseMessage = new TextResponseMessage();
+            return textResponseMessage;
+        }
     }
 
     public BaseResponseMessage processTextMessage (Map<String, String> requestMap) {
@@ -383,7 +455,7 @@ public class CoreService {
         return false;
     }
 
-    private BaseResponseMessage processMenu (String content, WeiChatUser weiChatUser) {
+    private BaseResponseMessage processMenu (String content, WeiChatUser weiChatUser, BaseEvent baseEvent) {
         if (content == null) {
             return null;
         }
@@ -507,7 +579,7 @@ public class CoreService {
                         return textResponseMessage;
                         //笑话
                     } else if (key.equals("7")) {
-                        textResponseMessage.setContent("小尤喜欢的东东……");
+                        textResponseMessage.setContent("上传一张图片哦，查看评分呢……偷偷告诉你其实任意模式下上传图片即可哦~");
                         return textResponseMessage;
                         //喜欢
                     } else if (key.equals("8")) {
@@ -670,16 +742,17 @@ public class CoreService {
                         } else if (content.equals("祁晓波")) {
                             textResponseMessage.setContent(QIXIAOBO_FORTURE);
                         } else {
+                            HttpMethod getMethod = null;
                             try {
                                 content = java.net.URLEncoder.encode(content, "UTF-8");
                                 final String url = FORTURE_URL.replace("%name%", content);
                                 HttpClient client = new HttpClient();
-                                GetMethod getMethod = new GetMethod(url);
+                                getMethod = new GetMethod(url);
                                 int ret_code = client.executeMethod(getMethod);
                                 if (ret_code == 200) {
                                     String result = getMethod.getResponseBodyAsString();
                                     result = result.replace(DELETE_FORTURE_STRING, "");
-                                    result = result.replace("\n", "\r\n");
+                                    result = result.replace("\\n", "\r\n");
                                     textResponseMessage.setContent(result);
                                 } else {
                                     textResponseMessage.setContent(respContent);
@@ -694,18 +767,23 @@ public class CoreService {
                             } catch (IOException e) {
                                 e.printStackTrace();
                                 textResponseMessage.setContent(respContent);
+                            } finally {
+                                if (getMethod != null) {
+                                    getMethod.releaseConnection();
+                                }
                             }
                         }
                         return textResponseMessage;
                     } else if (key.equals("6")) {
+                        HttpMethod getMethod = null;
                         try {
                             HttpClient client = new HttpClient();
-                            GetMethod getMethod = new GetMethod(JOKE_URL);
+                            getMethod = new GetMethod(JOKE_URL);
                             int ret_code = client.executeMethod(getMethod);
                             if (ret_code == 200) {
                                 String result = getMethod.getResponseBodyAsString();
                                 result = result.replace(DELETE_JOKE_STRING, "");
-                                result = result.replace("\n", "\r\n");
+                                result = result.replace("\\n", "\r\n");
                                 textResponseMessage.setContent(result);
                             } else {
                                 textResponseMessage.setContent(respContent);
@@ -720,11 +798,17 @@ public class CoreService {
                         } catch (IOException e) {
                             e.printStackTrace();
                             textResponseMessage.setContent(respContent);
+                        } finally {
+                            if (getMethod != null) {
+                                getMethod.releaseConnection();
+                            }
                         }
                         return textResponseMessage;
                         //笑话
                     } else if (key.equals("7")) {
-                        //喜欢
+                        textResponseMessage.setContent("小尤尤调皮了哎，明明叫你上传图片的哈……");
+                        return textResponseMessage;
+                        //娱乐，面相评分
                     } else if (key.equals("8")) {
                         //朋友
                     } else if (key.equals("9")) {
@@ -758,6 +842,9 @@ public class CoreService {
                 break;
             case 5:
                 title = "一起旅行";
+                break;
+            case 6:
+                title = "不生气";
                 break;
             default:
                 title = "各种玩";

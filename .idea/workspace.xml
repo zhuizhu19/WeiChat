@@ -6,9 +6,11 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1a64b6c-8aa1-4b69-a0b2-5ae33d7103b7" name="Default" comment="">
+    <list default="true" id="a1a64b6c-8aa1-4b69-a0b2-5ae33d7103b7" name="Default" comment="handle for bae&#10;">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java" afterPath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="F:\workspace\WeiChat\web\WEB-INF\cards\notangrycard.png" afterPath="$PROJECT_DIR$/web/WEB-INF/cards/notangrycard.jpg" />
     </list>
     <ignored path="WeiChat.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -100,32 +102,75 @@
       <file leaf-file-name="CoreService.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="131" column="46" selection-start="6603" selection-end="6603" vertical-scroll-proportion="-0.5383104" vertical-offset="3811" max-vertical-offset="20925">
+            <state line="256" column="44" selection-start="15089" selection-end="15089" vertical-scroll-proportion="-0.6674584" vertical-offset="7193" max-vertical-offset="23274">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5837#5846#0" expanded="true" />
-                <element signature="e#7024#7033#0" expanded="true" />
-                <element signature="e#22646#22655#0" expanded="true" />
-                <element signature="e#33320#33329#0" expanded="true" />
-                <element signature="e#35617#35626#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Calendar.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/util/Calendar.java">
+      <file leaf-file-name="ImageRequestMessage.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/weichat/request/ImageRequestMessage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="635" column="28" selection-start="26142" selection-end="26142" vertical-scroll-proportion="0.0" vertical-offset="15540" max-vertical-offset="74493">
+            <state line="5" column="48" selection-start="149" selection-end="149" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="702">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="YoYoUtil.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/YoYoUtil.java">
+      <file leaf-file-name="BaseRequestMessage.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/weichat/request/BaseRequestMessage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="688" selection-end="688" vertical-scroll-proportion="0.0" vertical-offset="4" max-vertical-offset="567">
+            <state line="5" column="41" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="702">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MessageUtil.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/MessageUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="71" column="31" selection-start="1650" selection-end="1650" vertical-scroll-proportion="0.0" vertical-offset="1328" max-vertical-offset="5211">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseEvent.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/weichat/request/BaseEvent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="13" selection-start="114" selection-end="114" vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="1269">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LocationEvent.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/weichat/request/LocationEvent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="13" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0" vertical-offset="24" max-vertical-offset="1161">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PushEvent.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/weichat/request/PushEvent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="18" selection-start="329" selection-end="329" vertical-scroll-proportion="0.0" vertical-offset="194" max-vertical-offset="891">
+              <folding>
+                <element signature="e#341#342#0" expanded="true" />
+                <element signature="e#369#370#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QREvent.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/weichat/request/QREvent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="13" selection-start="114" selection-end="114" vertical-scroll-proportion="0.0" vertical-offset="98" max-vertical-offset="837">
               <folding />
             </state>
           </provider>
@@ -180,13 +225,11 @@
         <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/datasource.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/log4j.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/Weather.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/pages/showPicture.html" />
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/IWeiChat.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/ImageUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/IChat.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/XiaoI.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/db.properties" />
         <option value="$PROJECT_DIR$/web/WEB-INF/duapp-web.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
@@ -194,6 +237,8 @@
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/Constellation.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/controllers/CardController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/YoYoUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/db.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/Weather.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java" />
       </list>
     </option>
@@ -322,6 +367,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -345,25 +391,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; 1.7 &gt;" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WeiChat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; 1.7 &gt;" />
+              <option name="myItemId" value="Maven: org.apache.httpcomponents:httpcore:4.2.4" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="rt.jar" />
+              <option name="myItemId" value="httpcore-4.2.4.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="http" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -377,15 +413,81 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; 1.7 &gt;" />
+              <option name="myItemId" value="Maven: org.apache.httpcomponents:httpcore:4.2.4" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="rt.jar" />
+              <option name="myItemId" value="httpcore-4.2.4.jar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
+              <option name="myItemId" value="http" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protocol" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WeiChat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven: org.apache.httpcomponents:httpcore:4.2.4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="httpcore-4.2.4.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WeiChat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven: net.sf.json-lib:json-lib:jdk15:2.4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="json-lib-2.4-jdk15.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="json" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WeiChat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven: net.sf.json-lib:json-lib:jdk15:2.4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="json-lib-2.4-jdk15.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="json" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -403,15 +505,51 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; 1.7 &gt;" />
+              <option name="myItemId" value="Maven: net.sf.json-lib:json-lib:jdk15:2.4" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="rt.jar" />
+              <option name="myItemId" value="json-lib-2.4-jdk15.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WeiChat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven: commons-httpclient:commons-httpclient:3.1-osgi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="commons-httpclient-3.1-osgi.jar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
+              <option name="myItemId" value="httpclient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WeiChat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven: commons-httpclient:commons-httpclient:3.1-osgi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="commons-httpclient-3.1-osgi.jar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -781,9 +919,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WeiChat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WeiChat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="qixiaobo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1298,6 +1465,21 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="JettyConfiguration" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false" ALTERNATIVE_JRE_PATH="">
       <option name="OPEN_IN_BROWSER" value="false" />
       <option name="UPDATING_POLICY" value="restart-server" />
@@ -1318,19 +1500,10 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method />
     </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
+    <configuration default="true" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
+      <option name="VM_PARAMETERS" value="" />
+      <option name="USER_CFG_CLASS" />
+      <option name="CONTEXT_PROVIDER" />
       <method />
     </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -1350,12 +1523,6 @@
       <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <method />
-    </configuration>
-    <configuration default="true" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
-      <option name="VM_PARAMETERS" value="" />
-      <option name="USER_CFG_CLASS" />
-      <option name="CONTEXT_PROVIDER" />
       <method />
     </configuration>
     <configuration default="false" name="Just4Yo" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -1579,13 +1746,13 @@
     </configuration>
     <list size="8">
       <item index="0" class="java.lang.String" itemvalue="Android Application.Just4Yo" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Constellation" />
-      <item index="2" class="java.lang.String" itemvalue="Application.XiaoI" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.TestPic" />
-      <item index="4" class="java.lang.String" itemvalue="Jetty Server.sae" />
-      <item index="5" class="java.lang.String" itemvalue="Maven.WeiChat [package]" />
-      <item index="6" class="java.lang.String" itemvalue="Maven.WeiChat [war:war]" />
-      <item index="7" class="java.lang.String" itemvalue="Tomcat Server.WeiChat" />
+      <item index="1" class="java.lang.String" itemvalue="Jetty Server.sae" />
+      <item index="2" class="java.lang.String" itemvalue="Tomcat Server.WeiChat" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Constellation" />
+      <item index="4" class="java.lang.String" itemvalue="Application.XiaoI" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.TestPic" />
+      <item index="6" class="java.lang.String" itemvalue="Maven.WeiChat [package]" />
+      <item index="7" class="java.lang.String" itemvalue="Maven.WeiChat [war:war]" />
     </list>
     <recent_temporary>
       <list size="5">
@@ -1673,7 +1840,10 @@
       <workItem from="1398084949781" duration="4545000" />
       <workItem from="1398175487702" duration="4375000" />
       <workItem from="1398348953545" duration="4030000" />
-      <workItem from="1398480657590" duration="15092000" />
+      <workItem from="1398480657590" duration="16193000" />
+      <workItem from="1398565864400" duration="404000" />
+      <workItem from="1398568325986" duration="3289000" />
+      <workItem from="1398581117437" duration="8176000" />
     </task>
     <task id="LOCAL-00001" summary="newsmessage">
       <created>1393762558085</created>
@@ -1779,11 +1949,15 @@
       <created>1398526349324</created>
       <updated>1398526349324</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="handle for bae &#10;">
+      <created>1398527228450</created>
+      <updated>1398527228450</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="331167000" />
+    <option name="totallyTimeSpent" value="344137000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1822,8 +1996,8 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297062" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861805" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861805" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.253212" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39825898" sideWeight="0.49893162" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.253212" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39825898" sideWeight="0.49893162" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861805" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1847,15 +2021,15 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861805" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24893162" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2013889" sideWeight="0.49908924" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2013889" sideWeight="0.49908924" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861805" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294686" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861805" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959402" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297062" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2013889" sideWeight="0.50091076" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861805" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861805" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -1874,8 +2048,8 @@
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24893162" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33351177" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33351177" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -1910,7 +2084,8 @@
     <MESSAGE value="handle for bae&#10;&#10;font ttf&#10;" />
     <MESSAGE value="handle for xiaoI&#10;" />
     <MESSAGE value="handle for bae log&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="handle for bae log&#10;" />
+    <MESSAGE value="handle for bae &#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="handle for bae &#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1924,126 +2099,14 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/4.0.2.RELEASE/spring-context-4.0.2.RELEASE.jar!/org/springframework/ui/Model.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="33" selection-start="210" selection-end="210" vertical-scroll-proportion="0.35172415" vertical-offset="9" max-vertical-offset="675" />
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/net/URLEncoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="200" column="25" selection-start="7054" selection-end="7054" vertical-scroll-proportion="-0.019565217" vertical-offset="4437" max-vertical-offset="7101" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/showPicture.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="28" selection-start="28" selection-end="28" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459" />
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/4.0.2.RELEASE/spring-core-4.0.2.RELEASE.jar!/org/springframework/core/io/ClassPathResource.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="11" selection-start="394" selection-end="394" vertical-scroll-proportion="-10.8" vertical-offset="0" max-vertical-offset="1161" />
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/awt/Font.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1863" column="16" selection-start="73237" selection-end="73237" vertical-scroll-proportion="0.35892117" vertical-offset="48103" max-vertical-offset="70632" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/DomainTool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="3" selection-start="309" selection-end="309" vertical-scroll-proportion="0.4" vertical-offset="99" max-vertical-offset="918">
-          <folding>
-            <element signature="e#0#728#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/ImageUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="213" column="24" selection-start="7983" selection-end="7983" vertical-scroll-proportion="-0.96473026" vertical-offset="5973" max-vertical-offset="6669">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="71145" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/PropertyUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="29" selection-start="451" selection-end="451" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="837">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.16/log4j-1.2.16-sources.jar!/org/apache/log4j/xml/DOMConfigurator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="246" column="0" selection-start="8814" selection-end="8814" vertical-scroll-proportion="0.33195022" vertical-offset="4970" max-vertical-offset="28971" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/cards/travel.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/4.0.2.RELEASE/spring-core-4.0.2.RELEASE.jar!/org/springframework/util/DigestUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="22" selection-start="176" selection-end="176" vertical-scroll-proportion="-5.4" vertical-offset="0" max-vertical-offset="918" />
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="954" column="18" selection-start="36771" selection-end="36771" vertical-scroll-proportion="0.0" vertical-offset="24706" max-vertical-offset="83052">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/net/URLClassLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="365" column="0" selection-start="13550" selection-end="13550" vertical-scroll-proportion="0.33333334" vertical-offset="8371" max-vertical-offset="19629" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/weichat/request/TextRequestMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="114" selection-end="114" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="702">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/weichat/request/VoiceRequestMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="114" selection-end="114" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1107">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/db.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="5" selection-start="335" selection-end="335" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/IChat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="221" selection-end="221" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="378">
-          <folding />
-        </state>
+        <state line="8" column="0" selection-start="221" selection-end="221" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="378" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/duapp-web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="13" selection-start="502" selection-end="502" vertical-scroll-proportion="-8.25" vertical-offset="0" max-vertical-offset="459">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/Weather.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="168" column="17" selection-start="5490" selection-end="5490" vertical-scroll-proportion="0.0" vertical-offset="3483" max-vertical-offset="9369">
-          <folding />
-        </state>
+        <state line="11" column="13" selection-start="502" selection-end="502" vertical-scroll-proportion="-8.25" vertical-offset="0" max-vertical-offset="459" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/controllers/WeiChatController.java">
@@ -2055,37 +2118,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="26" selection-start="943" selection-end="943" vertical-scroll-proportion="-18.0" vertical-offset="0" max-vertical-offset="2997">
-          <folding />
-        </state>
+        <state line="24" column="26" selection-start="943" selection-end="943" vertical-scroll-proportion="-18.0" vertical-offset="0" max-vertical-offset="2997" />
       </provider>
     </entry>
     <entry file="file://$MAVEN_REPOSITORY$/com/baidu/log4j-adapter/1.0.0/log4j-adapter-1.0.0.pom">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="888">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="888" />
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/baidu/log4j-adapter/1.0.0/log4j-adapter-1.0.0.jar!/com/baidu/bae/api/baelog/BaeAppender.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="167" selection-end="167" vertical-scroll-proportion="-5.4" vertical-offset="0" max-vertical-offset="567">
-          <folding />
-        </state>
+        <state line="6" column="13" selection-start="167" selection-end="167" vertical-scroll-proportion="-5.4" vertical-offset="0" max-vertical-offset="567" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="34" selection-start="467" selection-end="467" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="432">
-          <folding />
-        </state>
+        <state line="10" column="34" selection-start="467" selection-end="467" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="432" />
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/baidu/bae/baev3-sdk/1.0.1/baev3-sdk-1.0.1.jar!/com/baidu/bae/api/log/BaeLogAppender.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="868" selection-end="868" vertical-scroll-proportion="0.47983015" vertical-offset="395" max-vertical-offset="891">
-          <folding />
-        </state>
+        <state line="24" column="0" selection-start="868" selection-end="868" vertical-scroll-proportion="0.47983015" vertical-offset="395" max-vertical-offset="891" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
@@ -2097,44 +2150,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="57" selection-start="212" selection-end="212" vertical-scroll-proportion="-5.25" vertical-offset="0" max-vertical-offset="594">
-          <folding />
-        </state>
+        <state line="7" column="57" selection-start="212" selection-end="212" vertical-scroll-proportion="-5.25" vertical-offset="0" max-vertical-offset="594" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="20" selection-start="3095" selection-end="3095" vertical-scroll-proportion="-5.0" vertical-offset="1980" max-vertical-offset="6750">
-          <folding />
-        </state>
+        <state line="80" column="20" selection-start="3095" selection-end="3095" vertical-scroll-proportion="-5.0" vertical-offset="1980" max-vertical-offset="6750" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/IWeiChat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="48" selection-start="515" selection-end="515" vertical-scroll-proportion="0.5862069" vertical-offset="126" max-vertical-offset="648">
-          <folding />
-        </state>
+        <state line="16" column="48" selection-start="515" selection-end="515" vertical-scroll-proportion="0.5862069" vertical-offset="126" max-vertical-offset="648" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/WeiChatUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="7" selection-start="1633" selection-end="1633" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="6804">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/Constellation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="154" column="23" selection-start="4936" selection-end="4936" vertical-scroll-proportion="0.0" vertical-offset="2835" max-vertical-offset="4077">
-          <folding />
-        </state>
+        <state line="42" column="7" selection-start="1633" selection-end="1633" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="6804" />
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/jre/lib/rt.jar!/sun/net/www/http/HttpClient.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="159" selection-end="159" vertical-scroll-proportion="0.2504638" vertical-offset="0" max-vertical-offset="3942">
-          <folding />
-        </state>
+        <state line="6" column="13" selection-start="159" selection-end="159" vertical-scroll-proportion="0.2504638" vertical-offset="0" max-vertical-offset="3942" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/XiaoI.java">
@@ -2164,29 +2200,12 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/cards/notangrycard.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/cards/notangry.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/controllers/CardController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="40" selection-start="1046" selection-end="1046" vertical-scroll-proportion="0.71681416" vertical-offset="0" max-vertical-offset="3807">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/cards/shoppingcard.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/cards/shopping.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -2196,17 +2215,7 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/cards/joke.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/cards/cloth.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/cards/kick.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -2216,13 +2225,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/YoYoUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="688" selection-end="688" vertical-scroll-proportion="0.0" vertical-offset="4" max-vertical-offset="567">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/util/Calendar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="635" column="28" selection-start="26142" selection-end="26142" vertical-scroll-proportion="0.0" vertical-offset="15540" max-vertical-offset="74493">
@@ -2230,16 +2232,177 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/db.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="47" selection-start="487" selection-end="487" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/cards/listen.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/cards/kick.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/cards/dinnercard.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/cards/joke.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/HttpUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="19" selection-start="251" selection-end="251" vertical-scroll-proportion="0.0" vertical-offset="205" max-vertical-offset="1431">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/YoYoUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="688" selection-end="688" vertical-scroll-proportion="0.0" vertical-offset="4" max-vertical-offset="567">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/common/BaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="188" column="16" selection-start="5744" selection-end="5744" vertical-scroll-proportion="0.0" vertical-offset="4578" max-vertical-offset="6237">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/cards/notangrycard.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/cards/shopping.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/controllers/CardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="133" column="59" selection-start="5515" selection-end="5515" vertical-scroll-proportion="0.71709234" vertical-offset="2794" max-vertical-offset="3807">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/commons-httpclient/commons-httpclient/3.1-osgi/commons-httpclient-3.1-osgi.jar!/org/apache/commons/httpclient/HttpClient.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="172" selection-end="172" vertical-scroll-proportion="-5.4" vertical-offset="0" max-vertical-offset="2214">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.2.4/httpcore-4.2.4.jar!/org/apache/http/protocol/HTTP.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="41" selection-start="1629" selection-end="1629" vertical-scroll-proportion="-7.68" vertical-offset="645" max-vertical-offset="2484">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/net/sf/json-lib/json-lib/2.4/json-lib-2.4-jdk15.jar!/net/sf/json/util/JSONTokener.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="11" selection-start="314" selection-end="314" vertical-scroll-proportion="-7.36" vertical-offset="113" max-vertical-offset="1512">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/Constellation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="84" column="31" selection-start="2542" selection-end="2542" vertical-scroll-proportion="0.0" vertical-offset="1463" max-vertical-offset="4077">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/Weather.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="126" column="42" selection-start="4337" selection-end="4354" vertical-scroll-proportion="0.0" vertical-offset="2797" max-vertical-offset="9369">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/net/sf/json-lib/json-lib/2.4/json-lib-2.4-jdk15.jar!/net/sf/json/JSONObject.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="41" selection-start="444" selection-end="444" vertical-scroll-proportion="-7.16" vertical-offset="91" max-vertical-offset="6075">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/weichat/request/QREvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="13" selection-start="114" selection-end="114" vertical-scroll-proportion="0.0" vertical-offset="98" max-vertical-offset="837">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/weichat/request/LocationEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="13" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0" vertical-offset="24" max-vertical-offset="1161">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/MessageUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="31" selection-start="1650" selection-end="1650" vertical-scroll-proportion="0.0" vertical-offset="1328" max-vertical-offset="5211">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/weichat/request/ImageRequestMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="48" selection-start="149" selection-end="149" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="702">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/weichat/request/BaseRequestMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="41" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="702">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/weichat/request/LinkRequestMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="13" selection-start="114" selection-end="114" vertical-scroll-proportion="0.24456522" vertical-offset="0" max-vertical-offset="1080">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/weichat/request/BaseEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="13" selection-start="114" selection-end="114" vertical-scroll-proportion="0.0" vertical-offset="81" max-vertical-offset="1269">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/weichat/request/PushEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="18" selection-start="329" selection-end="329" vertical-scroll-proportion="0.0" vertical-offset="194" max-vertical-offset="891">
+          <folding>
+            <element signature="e#341#342#0" expanded="true" />
+            <element signature="e#369#370#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="131" column="46" selection-start="6603" selection-end="6603" vertical-scroll-proportion="-0.5383104" vertical-offset="3811" max-vertical-offset="20925">
+        <state line="256" column="44" selection-start="15089" selection-end="15089" vertical-scroll-proportion="-0.6674584" vertical-offset="7193" max-vertical-offset="23274">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5837#5846#0" expanded="true" />
-            <element signature="e#7024#7033#0" expanded="true" />
-            <element signature="e#22646#22655#0" expanded="true" />
-            <element signature="e#33320#33329#0" expanded="true" />
-            <element signature="e#35617#35626#0" expanded="true" />
           </folding>
         </state>
       </provider>
