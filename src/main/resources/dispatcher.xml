@@ -36,11 +36,11 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
         <property name="cache" value="true"/>
         <property name="prefix" value=""/>
         <property name="suffix" value=".html"/>
-        <property name="contentType" value="text/html;charset=UTF-8"></property>
+        <property name="contentType" value="text/html;charset=UTF-8"/>
         <property name="requestContextAttribute" value="request"/>
         <property name="exposeSpringMacroHelpers" value="true"/>
         <property name="exposeRequestAttributes" value="true"/>
-        <property name="exposeSessionAttributes" value="true"/>
+        <property name="exposeSessionAttributes" value="false"/>
     </bean>
 
     <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">

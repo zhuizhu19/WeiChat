@@ -70,7 +70,7 @@ public class CardController extends BaseController {
     @RequestMapping(value = {"/loveuu/{cardName}/{person}"})
     public String showCard (Model model, @PathVariable String cardName, @PathVariable String person) {
         System.out.println("showcard" + person);
-        //if name contains chinese and so on,we may have a error
+        //if name contains chinese and so on,we may have an error
         try {
             person = java.net.URLEncoder.encode(person, "utf-8");
             System.out.println("showcard encode" + person);

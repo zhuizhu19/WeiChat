@@ -473,7 +473,7 @@ public class CoreService {
         } else {
             //we should handle the menu
             if (content.equals("0")) {
-                textResponseMessage.setContent("HoHo,退出模式【" + stage.getDes() + "】\r\n" + getMainMenu(weiChatUser));
+                textResponseMessage.setContent("啊,退出模式【" + stage.getDes() + "】你可以和来自星星的Yo交流了哦\r\n" + getMainMenu(weiChatUser));
                 stage = stageDao.getStagesByCategoryAndKey(1, "0");
                 weiChatUser.setStage(stage);
                 userDao.update(weiChatUser);
@@ -738,9 +738,11 @@ public class CoreService {
                         //姓名评价
                         content = content.trim();
                         if (content.equals("李尤")) {
-                            textResponseMessage.setContent(LIYOU_FORTURE);
+                            String result = LIYOU_FORTURE.replace("\\n", "\r\n");
+                            textResponseMessage.setContent(result);
                         } else if (content.equals("祁晓波")) {
-                            textResponseMessage.setContent(QIXIAOBO_FORTURE);
+                            String result = QIXIAOBO_FORTURE.replace("\\n", "\r\n");
+                            textResponseMessage.setContent(result);
                         } else {
                             HttpMethod getMethod = null;
                             try {
