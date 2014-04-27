@@ -89,8 +89,11 @@ public class CoreService {
     private static final DateFormat DATE_FORMAT = new SimpleDateFormat("yyyy年MM月dd日");
     private final String respContent = "呀，尤，我错了……网络问题么 \ue411";
     private IChat iChat = XiaoI.getInstance();
+    private static HttpClient client = new HttpClient();
 
     static {
+        client.getHttpConnectionManager().getParams()
+                .setConnectionTimeout(5000);
         sArticle = new Article();
         sArticle.setTitle("我的微博");
         sArticle.setDescription("我从星星来，要到星星去！");
@@ -230,7 +233,6 @@ public class CoreService {
                     ImageRequestMessage imageRequestMessage = (ImageRequestMessage) baseEvent;
                     HttpMethod getMethod = null;
                     try {
-                        HttpClient client = new HttpClient();
                         final String url = FACE_URL.replace("%KEYWORD%", imageRequestMessage.getPicUrl());
                         logger.info("getPicUrl;" + imageRequestMessage.getPicUrl());
                         getMethod = new GetMethod(url);
@@ -748,7 +750,6 @@ public class CoreService {
                             try {
                                 content = java.net.URLEncoder.encode(content, "UTF-8");
                                 final String url = FORTURE_URL.replace("%name%", content);
-                                HttpClient client = new HttpClient();
                                 getMethod = new GetMethod(url);
                                 int ret_code = client.executeMethod(getMethod);
                                 if (ret_code == 200) {
@@ -779,7 +780,6 @@ public class CoreService {
                     } else if (key.equals("6")) {
                         HttpMethod getMethod = null;
                         try {
-                            HttpClient client = new HttpClient();
                             getMethod = new GetMethod(JOKE_URL);
                             int ret_code = client.executeMethod(getMethod);
                             if (ret_code == 200) {
