@@ -7,14 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1a64b6c-8aa1-4b69-a0b2-5ae33d7103b7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java" afterPath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WeiChat.iml" afterPath="$PROJECT_DIR$/WeiChat.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/WeiChat_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/WeiChat_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/YoYoUtil.java" afterPath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/YoYoUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/db.properties" afterPath="$PROJECT_DIR$/src/main/resources/db.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="F:\workspace\WeiChat\.idea\libraries\Maven__commons_httpclient_commons_httpclient_3_1_osgi.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_httpclient_commons_httpclient_3_1.xml" />
     </list>
     <ignored path="WeiChat.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -93,21 +86,6 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/SignUtil.java" line="23" class="org.liyou.qixiaobo.utils.SignUtil" package="org.liyou.qixiaobo.utils">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
     </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
@@ -121,7 +99,7 @@
       <file leaf-file-name="db.properties" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/db.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="26" selection-start="175" selection-end="175" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
+            <state line="4" column="26" selection-start="175" selection-end="175" vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="540">
               <folding />
             </state>
           </provider>
@@ -131,10 +109,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="328" column="29" selection-start="19985" selection-end="19985" vertical-scroll-proportion="0.0" vertical-offset="8471" max-vertical-offset="25326">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#17405#17414#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -142,7 +117,7 @@
       <file leaf-file-name="SignUtil.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/SignUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="0" selection-start="556" selection-end="556" vertical-scroll-proportion="0.37826088" vertical-offset="393" max-vertical-offset="2133">
+            <state line="23" column="0" selection-start="556" selection-end="556" vertical-scroll-proportion="-0.06081081" vertical-offset="621" max-vertical-offset="2133">
               <folding />
             </state>
           </provider>
@@ -151,7 +126,7 @@
       <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="81" column="40" selection-start="3125" selection-end="3125" vertical-scroll-proportion="-0.0" vertical-offset="2187" max-vertical-offset="6750">
+            <state line="81" column="40" selection-start="3125" selection-end="3125" vertical-scroll-proportion="0.0" vertical-offset="2187" max-vertical-offset="6750">
               <folding />
             </state>
           </provider>
@@ -160,7 +135,7 @@
       <file leaf-file-name="CardController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/controllers/CardController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="59" selection-start="2671" selection-end="2671" vertical-scroll-proportion="0.0" vertical-offset="1944" max-vertical-offset="3807">
+            <state line="72" column="59" selection-start="2671" selection-end="2671" vertical-scroll-proportion="0.0" vertical-offset="1944" max-vertical-offset="4239">
               <folding />
             </state>
           </provider>
@@ -384,6 +359,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1086,7 +1062,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -1602,6 +1577,21 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="JettyConfiguration" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false" ALTERNATIVE_JRE_PATH="">
       <option name="OPEN_IN_BROWSER" value="false" />
       <option name="UPDATING_POLICY" value="restart-server" />
@@ -1622,19 +1612,10 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method />
     </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
+    <configuration default="true" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
+      <option name="VM_PARAMETERS" value="" />
+      <option name="USER_CFG_CLASS" />
+      <option name="CONTEXT_PROVIDER" />
       <method />
     </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -1654,12 +1635,6 @@
       <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <method />
-    </configuration>
-    <configuration default="true" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
-      <option name="VM_PARAMETERS" value="" />
-      <option name="USER_CFG_CLASS" />
-      <option name="CONTEXT_PROVIDER" />
       <method />
     </configuration>
     <configuration default="false" name="Just4Yo" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -1981,7 +1956,8 @@
       <workItem from="1398565864400" duration="404000" />
       <workItem from="1398568325986" duration="3289000" />
       <workItem from="1398581117437" duration="21421000" />
-      <workItem from="1398686215290" duration="2494000" />
+      <workItem from="1398686215290" duration="3340000" />
+      <workItem from="1398691106640" duration="602000" />
     </task>
     <task id="LOCAL-00001" summary="newsmessage">
       <created>1393762558085</created>
@@ -2107,11 +2083,15 @@
       <created>1398601483208</created>
       <updated>1398601483208</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="handle for timeout&#10;">
+      <created>1398689015783</created>
+      <updated>1398689015783</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="359876000" />
+    <option name="totallyTimeSpent" value="361324000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -2147,13 +2127,12 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861805" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294686" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4657236" sideWeight="0.49946582" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4657236" sideWeight="0.49946582" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24893162" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861805" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959402" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297062" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3264418" sideWeight="0.49947917" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24893162" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861805" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2168,6 +2147,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3373232" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3264418" sideWeight="0.49947917" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -2175,15 +2155,15 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861805" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24893162" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2013889" sideWeight="0.49908924" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861805" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294686" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861805" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959402" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297062" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2013889" sideWeight="0.50091076" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861805" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861805" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -2202,8 +2182,8 @@
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24893162" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33279914" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -2301,9 +2281,7 @@
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/util/Calendar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="635" column="28" selection-start="26142" selection-end="26142" vertical-scroll-proportion="0.0" vertical-offset="15540" max-vertical-offset="74493">
-          <folding />
-        </state>
+        <state line="635" column="28" selection-start="26142" selection-end="26142" vertical-scroll-proportion="0.0" vertical-offset="15540" max-vertical-offset="74493" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/cards/listen.jpg">
@@ -2328,16 +2306,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/HttpUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="19" selection-start="251" selection-end="251" vertical-scroll-proportion="0.0" vertical-offset="205" max-vertical-offset="1431">
-          <folding />
-        </state>
+        <state line="11" column="19" selection-start="251" selection-end="251" vertical-scroll-proportion="0.0" vertical-offset="205" max-vertical-offset="1431" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/common/BaseController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="188" column="16" selection-start="5744" selection-end="5744" vertical-scroll-proportion="0.0" vertical-offset="4578" max-vertical-offset="6237">
-          <folding />
-        </state>
+        <state line="188" column="16" selection-start="5744" selection-end="5744" vertical-scroll-proportion="0.0" vertical-offset="4578" max-vertical-offset="6237" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/cards/notangrycard.jpg">
@@ -2377,9 +2351,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/weichat/request/BaseRequestMessage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="41" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="702">
-          <folding />
-        </state>
+        <state line="5" column="41" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="702" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/weichat/request/LinkRequestMessage.java">
@@ -2399,16 +2371,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/weichat/request/BaseEvent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="114" selection-end="114" vertical-scroll-proportion="0.0" vertical-offset="81" max-vertical-offset="1269">
-          <folding />
-        </state>
+        <state line="5" column="13" selection-start="114" selection-end="114" vertical-scroll-proportion="0.0" vertical-offset="81" max-vertical-offset="1269" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/MessageUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="7" selection-start="1386" selection-end="1386" vertical-scroll-proportion="0.0" vertical-offset="1004" max-vertical-offset="5211">
-          <folding />
-        </state>
+        <state line="58" column="7" selection-start="1386" selection-end="1386" vertical-scroll-proportion="0.0" vertical-offset="1004" max-vertical-offset="5211" />
       </provider>
     </entry>
     <entry file="jar://D:/MyWork/apache-tomcat-8.0.3/lib/servlet-api.jar!/javax/servlet/http/HttpServletRequest.class">
@@ -2476,9 +2444,7 @@
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1-sources.jar!/org/apache/commons/httpclient/HttpClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="282" column="72" selection-start="10425" selection-end="10425" vertical-scroll-proportion="0.3320965" vertical-offset="6409" max-vertical-offset="12474">
-          <folding />
-        </state>
+        <state line="282" column="72" selection-start="10425" selection-end="10425" vertical-scroll-proportion="0.3320965" vertical-offset="6409" max-vertical-offset="12474" />
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/baidu/bae/baev3-sdk/1.0.1/baev3-sdk-1.0.1.jar!/com/baidu/bae/api/factory/BaeFactory.class">
@@ -2488,16 +2454,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/Constellation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="8" selection-start="2583" selection-end="2583" vertical-scroll-proportion="0.3320965" vertical-offset="1495" max-vertical-offset="4077">
-          <folding />
-        </state>
+        <state line="85" column="8" selection-start="2583" selection-end="2583" vertical-scroll-proportion="0.3320965" vertical-offset="1495" max-vertical-offset="4077" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/Weather.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="61" selection-start="3807" selection-end="3820" vertical-scroll-proportion="0.3320965" vertical-offset="2278" max-vertical-offset="9369">
-          <folding />
-        </state>
+        <state line="112" column="61" selection-start="3807" selection-end="3820" vertical-scroll-proportion="0.3320965" vertical-offset="2278" max-vertical-offset="9369" />
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/net/sf/json-lib/json-lib/2.4/json-lib-2.4-jdk15.jar!/net/sf/json/JSONArray.class">
@@ -2534,16 +2496,13 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="328" column="29" selection-start="19985" selection-end="19985" vertical-scroll-proportion="0.0" vertical-offset="8471" max-vertical-offset="25326">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#17405#17414#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/SignUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="556" selection-end="556" vertical-scroll-proportion="0.37826088" vertical-offset="393" max-vertical-offset="2133">
+        <state line="23" column="0" selection-start="556" selection-end="556" vertical-scroll-proportion="-0.06081081" vertical-offset="621" max-vertical-offset="2133">
           <folding />
         </state>
       </provider>
