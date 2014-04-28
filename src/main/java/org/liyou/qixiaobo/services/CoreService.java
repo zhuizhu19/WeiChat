@@ -1,5 +1,7 @@
 package org.liyou.qixiaobo.services;
 
+import net.sf.json.JSONArray;
+import net.sf.json.JSONException;
 import net.sf.json.JSONObject;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpException;
@@ -86,6 +88,7 @@ public class CoreService {
     private static int 德惠 = 101060103;
     private static int 南京 = 101190101;
     private static int 太原 = 101100101;
+    private final String BAIDU_PLACE_API_URL = "http://api.map.baidu.com/place/v2/search?ak=FuDNRht4COuEW5fNg0cGwbU1&output=json&query=%query%&page_size=10&page_num=0&scope=2&location=%location%&radius=500";
     private static final DateFormat DATE_FORMAT = new SimpleDateFormat("yyyy年MM月dd日");
     private final String respContent = "呀，尤，我错了……网络问题么 \ue411";
     private IChat iChat = XiaoI.getInstance();
@@ -272,11 +275,82 @@ public class CoreService {
                 } else if (baseEvent instanceof LinkRequestMessage) {
                     responseMessage = new TextResponseMessage();
                 } else if (baseEvent instanceof LocationRequestMessage) {
+                    NewsResponseMessage newsResponseMessage = new NewsResponseMessage();
+                    TextResponseMessage textResponseMessage = new TextResponseMessage();
                     LocationRequestMessage locationRequestMessage = (LocationRequestMessage) baseEvent;
-                    System.out.println("**********************");
-                    System.out.println(locationRequestMessage.toString());
-                    System.out.println("**********************");
-                    responseMessage = new TextResponseMessage();
+                    HttpMethod getMethod = null;
+                    try {
+                        String query = java.net.URLEncoder.encode("美食", "UTF-8");
+                        final String url = BAIDU_PLACE_API_URL.replace("%location%", locationRequestMessage.getLocation_X() +
+                                "," + locationRequestMessage.getLocation_Y()).replace("%query%", query);
+                        getMethod = new GetMethod(url);
+                        int ret_code = client.executeMethod(getMethod);
+                        if (ret_code == 200) {
+                            String result = getMethod.getResponseBodyAsString();
+                            JSONObject jsonObject = JSONObject.fromObject(result);
+                            JSONArray jsonArray = jsonObject.getJSONArray("results");
+                            List<Article> articles = new ArrayList<Article>(11);
+                            Article articleFirst = new Article();
+                            articleFirst.setTitle("美食");
+                            articleFirst.setDescription("附近500米美食");
+                            articleFirst.setPicUrl("");
+                            articleFirst.setUrl("");
+                            articles.add(articleFirst);
+                            for (int i = 0; jsonArray != null && i < jsonArray.size(); i++) {
+                                String name = null;
+                                String telephone = null;
+                                String address = null;
+                                int distance = 0;
+                                String detail_url = "";
+                                String price = null;
+                                double overall_rating = 0;
+                                try {
+                                    JSONObject object = jsonArray.getJSONObject(i);
+                                    name = object.getString("name");
+                                    telephone = object.getString("telephone");
+                                    address = object.getString("address");
+                                    String uid = object.getString("uid");
+                                    JSONObject detail_info = object.getJSONObject("detail_info");
+                                    distance = detail_info.getInt("distance");
+                                    detail_url = detail_info.getString("detail_url");
+                                    price = detail_info.getString("price");
+                                    overall_rating = detail_info.getDouble("overall_rating");
+                                    double service_rating = detail_info.getDouble("service_rating");
+                                    double environment_rating = detail_info.getDouble("environment_rating");
+                                } catch (JSONException ex) {
+                                    ex.printStackTrace();
+                                }
+                                Article article = new Article();
+                                article.setDescription("电话:" + telephone + "\r\n地址:" + address + "\r\n距离:" + distance + "价格:" + price + "评分:" + overall_rating);
+                                article.setTitle(name + "\r\n" + article.getDescription());
+                                article.setPicUrl("");
+                                article.setUrl(detail_url);
+                                articles.add(article);
+                            }
+                            newsResponseMessage.setArticles(articles);
+                            responseMessage = newsResponseMessage;
+                        } else {
+                            textResponseMessage.setContent(respContent);
+                            responseMessage = newsResponseMessage;
+                        }
+
+                    } catch (UnsupportedEncodingException e) {
+                        e.printStackTrace();
+                        textResponseMessage.setContent(respContent);
+                        responseMessage = newsResponseMessage;
+                    } catch (HttpException e) {
+                        e.printStackTrace();
+                        textResponseMessage.setContent(respContent);
+                        responseMessage = newsResponseMessage;
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        textResponseMessage.setContent(respContent);
+                        responseMessage = newsResponseMessage;
+                    } finally {
+                        if (getMethod != null) {
+                            getMethod.releaseConnection();
+                        }
+                    }
                 } else {
                     System.out.println("**********************");
                     System.out.println(baseEvent.toString());
