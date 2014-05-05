@@ -1,0 +1,10 @@
+<@liyou.html title="小尤日記">
+<table>
+    <#list evernotes as evernote>
+        <tr>
+            <td><a href="${evernote.url}">${evernote_index}:${evernote.title}</a></td>
+        </tr>
+    </#list>
+    <tr></tr>
+</table>
+</@liyou.html>

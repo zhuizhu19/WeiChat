@@ -1,15 +1,19 @@
 package org.liyou.qixiaobo.controllers;
 
 import org.liyou.qixiaobo.common.BaseController;
+import org.liyou.qixiaobo.daos.EvernoteDao;
+import org.liyou.qixiaobo.entities.hibernate.Evernote;
 import org.liyou.qixiaobo.services.CoreService;
 import org.liyou.qixiaobo.utils.SignUtil;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * Created by Administrator on 14-3-1.
@@ -18,6 +22,8 @@ import javax.servlet.http.HttpServletRequest;
 public class WeiChatController extends BaseController {
     @Resource
     private CoreService coreService;
+    @Resource
+    private EvernoteDao evernoteDao;
 
     /**
      * @param signature 随机字符串
@@ -42,6 +48,13 @@ public class WeiChatController extends BaseController {
         String response = coreService.processRequest(request);
         System.out.println(response);
         return response;
+    }
+
+    @RequestMapping(value = {"/evernote"})
+    public String evernote (Model model) {
+        List<Evernote> notes = evernoteDao.queryAllNotes();
+        model.addAttribute("evernotes",notes);
+        return "evernote";
     }
 
 }

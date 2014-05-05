@@ -37,5 +37,6 @@
         <mapping class="org.liyou.qixiaobo.entities.hibernate.Category"/>
         <mapping class="org.liyou.qixiaobo.entities.hibernate.Stage"/>
         <mapping class="org.liyou.qixiaobo.entities.hibernate.Aunties"/>
+        <mapping class="org.liyou.qixiaobo.entities.hibernate.Evernote"/>
     </session-factory>
 </hibernate-configuration>

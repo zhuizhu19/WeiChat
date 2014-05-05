@@ -659,13 +659,10 @@ public class CoreService {
                         return textResponseMessage;
                         //喜欢
                     } else if (key.equals("8")) {
-                        textResponseMessage.setContent("小尤的闺蜜啊……");
+                        textResponseMessage.setContent("小尤日记……回复任意非命令字符……");
                         return textResponseMessage;
-                        //朋友
-                    } else if (key.equals("9")) {
-                        textResponseMessage.setContent("小尤的家人啊……");
-                        //的家
-                    } else {
+                        //
+                    }  else {
                         return null;
                     }
                 } else {
@@ -887,9 +884,9 @@ public class CoreService {
                         //娱乐，面相评分
                     } else if (key.equals("8")) {
                         //朋友
-                    } else if (key.equals("9")) {
-                        //的家
-                    } else {
+                        textResponseMessage.setContent("<a href=\"/evernote\">小尤日记</a>");
+                        return textResponseMessage;
+                    }  else {
 
                     }
                 }
