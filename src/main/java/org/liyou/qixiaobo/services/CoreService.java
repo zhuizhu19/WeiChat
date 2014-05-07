@@ -662,7 +662,7 @@ public class CoreService {
                         textResponseMessage.setContent("小尤日记……回复任意非命令字符……");
                         return textResponseMessage;
                         //
-                    }  else {
+                    } else {
                         return null;
                     }
                 } else {
@@ -883,10 +883,10 @@ public class CoreService {
                         return textResponseMessage;
                         //娱乐，面相评分
                     } else if (key.equals("8")) {
-                        //朋友
-                        textResponseMessage.setContent("<a href=\"/evernote\">小尤日记</a>");
+                        //小尤日记
+                        textResponseMessage.setContent("<a href=\"" + YoYoUtil.WEBSITE_URL + "evernote\">小尤日记</a>");
                         return textResponseMessage;
-                    }  else {
+                    } else {
 
                     }
                 }

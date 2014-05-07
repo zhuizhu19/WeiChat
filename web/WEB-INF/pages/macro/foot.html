@@ -1,5 +1,18 @@
-<script src="/resource/js/vendor/jquery.js"></script>
-<script src="/resource/js/foundation.min.js"></script>
-<script>
-    $(document).foundation();
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+<script src="/resource/js/foundation.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).foundation({
+        reveal : {
+            animation_speed: 500
+        },
+        tooltip : {
+            disable_for_touch: true
+        },
+        topbar : {
+            custom_back_text: false,
+            is_hover: false,
+            mobile_show_parent_link: true
+        }
+    });
 </script>

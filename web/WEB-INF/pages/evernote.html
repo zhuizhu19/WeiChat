@@ -1,10 +1,10 @@
 <@liyou.html title="小尤日記">
-<table>
+<div class="row">
+    <div class="small-3 small-centered columns"><h1>小尤日記</h1></div>
+</div>
+<ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
     <#list evernotes as evernote>
-        <tr>
-            <td><a href="${evernote.url}">${evernote_index}:${evernote.title}</a></td>
-        </tr>
+        <li><a href="${evernote.url}">${evernote_index}:${evernote.title}</a></li>
     </#list>
-    <tr></tr>
-</table>
+</ul>
 </@liyou.html>
