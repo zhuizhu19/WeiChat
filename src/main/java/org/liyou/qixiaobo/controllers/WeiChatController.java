@@ -58,7 +58,7 @@ public class WeiChatController extends BaseController {
     }
     @RequestMapping(value="/")
     public String index(){
-        return redirect("http://qixiaobo.github.io/WeiChat/");
+        return forward("http://qixiaobo.github.io/WeiChat/");
     }
 
 }
