@@ -884,7 +884,7 @@ public class CoreService {
                         //娱乐，面相评分
                     } else if (key.equals("8")) {
                         //小尤日记
-                        textResponseMessage.setContent("<a href=\"" + YoYoUtil.WEBSITE_URL + "evernote\">小尤日记</a>");
+                        textResponseMessage.setContent("<a href=\"" + YoYoUtil.WEBSITE_URL + "evernote\">少年和她</a>");
                         return textResponseMessage;
                     } else {
 

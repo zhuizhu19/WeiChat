@@ -7,13 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1a64b6c-8aa1-4b69-a0b2-5ae33d7103b7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/resource/qrcode_for_gh_7cabdc4756f9_430.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java" afterPath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/YoYoUtil.java" afterPath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/YoYoUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/db.properties" afterPath="$PROJECT_DIR$/src/main/resources/db.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/pages/evernote.html" afterPath="$PROJECT_DIR$/web/WEB-INF/pages/evernote.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/pages/macro/foot.html" afterPath="$PROJECT_DIR$/web/WEB-INF/pages/macro/foot.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/pages/macro/head.html" afterPath="$PROJECT_DIR$/web/WEB-INF/pages/macro/head.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/controllers/WeiChatController.java" afterPath="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/controllers/WeiChatController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.jsp" afterPath="$PROJECT_DIR$/web/index.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WeiChat.iws" />
@@ -115,45 +112,41 @@
       <file leaf-file-name="CoreService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="136" column="63" selection-start="6982" selection-end="6982" vertical-scroll-proportion="0.0" vertical-offset="3672" max-vertical-offset="25245">
+            <state line="881" column="44" selection-start="49627" selection-end="49627" vertical-scroll-proportion="-12.790322" vertical-offset="22184" max-vertical-offset="24435">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layout.ftl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/macro/layout.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="18" selection-start="485" selection-end="485" vertical-scroll-proportion="0.0" vertical-offset="351" max-vertical-offset="702">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="spring.ftl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/macro/spring.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="10665">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="head.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/macro/head.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="0" selection-start="969" selection-end="969" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="702">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="evernote.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="evernote.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/evernote.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="14" selection-start="341" selection-end="341" vertical-scroll-proportion="0.29889297" vertical-offset="0" max-vertical-offset="813">
+            <state line="9" column="7" selection-start="334" selection-end="334" vertical-scroll-proportion="-6.75" vertical-offset="0" max-vertical-offset="405">
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/index.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="26" selection-start="31" selection-end="31" vertical-scroll-proportion="-0.75" vertical-offset="0" max-vertical-offset="621">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="qrcode_for_gh_7cabdc4756f9_430.jpg" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/qrcode_for_gh_7cabdc4756f9_430.jpg">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="qrcode_for_gh_7cabdc4756f9_430.jpg" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/resource/qrcode_for_gh_7cabdc4756f9_430.jpg">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
@@ -184,10 +177,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WeiChatController.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="WeiChatController.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/controllers/WeiChatController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="0" selection-start="1905" selection-end="1905" vertical-scroll-proportion="0.0" vertical-offset="1620" max-vertical-offset="1782">
+            <state line="61" column="5" selection-start="2028" selection-end="2028" vertical-scroll-proportion="0.835966" vertical-offset="608" max-vertical-offset="1539">
               <folding />
             </state>
           </provider>
@@ -206,7 +199,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/hibernate/Skill.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/daos/HeroDetailDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/hibernate/HeroDetail.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/daos/HeroDao.java" />
@@ -250,13 +242,14 @@
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/hibernate/Evernote.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/daos/EvernoteDao.java" />
         <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/controllers/WeiChatController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/YoYoUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/pages/macro/head.html" />
         <option value="$PROJECT_DIR$/web/WEB-INF/pages/macro/foot.html" />
         <option value="$PROJECT_DIR$/src/main/resources/db.properties" />
         <option value="$PROJECT_DIR$/web/WEB-INF/pages/evernote.html" />
+        <option value="$PROJECT_DIR$/web/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/controllers/WeiChatController.java" />
       </list>
     </option>
   </component>
@@ -385,7 +378,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -454,7 +446,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
+              <option name="myItemId" value="resource" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -477,10 +469,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="macro" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -702,6 +690,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -756,11 +745,11 @@
       <recent name="org.liyou.qixiaobo.servlets" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\workspace\WeiChat\web\WEB-INF\resource" />
+      <recent name="F:\workspace\WeiChat" />
       <recent name="F:\workspace\WeiChat\src\main\resources" />
       <recent name="F:\workspace\WeiChat\src\main\resources\font" />
       <recent name="F:\workspace\WeiChat\web\WEB-INF\resource\liyou" />
-      <recent name="F:\workspace\WeiChat\web\WEB-INF\cards" />
-      <recent name="F:\workspace\WeiChat\web\WEB-INF\resource\img\icons" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\workspace\WeiChat\web\WEB-INF\pages" />
@@ -1601,7 +1590,9 @@
       <workItem from="1399294707862" duration="6316000" />
       <workItem from="1399379468927" duration="380000" />
       <workItem from="1399379926825" duration="5988000" />
-      <workItem from="1399467994970" duration="114000" />
+      <workItem from="1399467994970" duration="800000" />
+      <workItem from="1399468834906" duration="597000" />
+      <workItem from="1399555680676" duration="1771000" />
     </task>
     <task id="LOCAL-00001" summary="newsmessage">
       <created>1393762558085</created>
@@ -1739,11 +1730,19 @@
       <created>1399298744030</created>
       <updated>1399298744030</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="evernote&#10;">
+      <created>1399468132554</created>
+      <updated>1399468132554</updated>
+    </task>
+    <task id="LOCAL-00036" summary="weichat qcode&#10;">
+      <created>1399555758011</created>
+      <updated>1399555758011</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="377179000" />
+    <option name="totallyTimeSpent" value="380233000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1785,6 +1784,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861805" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959402" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297062" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3264418" sideWeight="0.49947917" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24893162" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861805" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1799,7 +1799,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3373232" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3264418" sideWeight="0.49947917" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1872,7 +1871,9 @@
     <MESSAGE value="handle for bae&#10;" />
     <MESSAGE value="handle for timeout&#10;" />
     <MESSAGE value="handle for sae&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="handle for sae&#10;" />
+    <MESSAGE value="evernote&#10;" />
+    <MESSAGE value="weichat qcode&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="weichat qcode&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1886,21 +1887,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/weichat/request/PushEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="18" selection-start="329" selection-end="329" vertical-scroll-proportion="0.0" vertical-offset="194" max-vertical-offset="891" />
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-orm/4.0.2.RELEASE/spring-orm-4.0.2.RELEASE-sources.jar!/org/springframework/orm/hibernate4/support/OpenSessionInViewFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="159" column="82" selection-start="6643" selection-end="6643" vertical-scroll-proportion="1.6520787" vertical-offset="2539" max-vertical-offset="5157" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/entities/weichat/request/BaseEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="114" selection-end="114" vertical-scroll-proportion="0.0" vertical-offset="81" max-vertical-offset="1269" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/utils/MessageUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="58" column="7" selection-start="1386" selection-end="1386" vertical-scroll-proportion="0.0" vertical-offset="1004" max-vertical-offset="5211">
@@ -2024,11 +2010,6 @@
         <state line="16" column="0" selection-start="411" selection-end="434" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="756" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/showPicture.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="95" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="243" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/controllers/DotaController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="13" selection-start="710" selection-end="710" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1809" />
@@ -2108,13 +2089,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="136" column="63" selection-start="6982" selection-end="6982" vertical-scroll-proportion="0.0" vertical-offset="2457" max-vertical-offset="24435">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/macro/spring.ftl">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="10665">
@@ -2164,16 +2138,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/controllers/WeiChatController.java">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/evernote.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="0" selection-start="1905" selection-end="1905" vertical-scroll-proportion="0.0" vertical-offset="686" max-vertical-offset="1431">
+        <state line="9" column="7" selection-start="334" selection-end="334" vertical-scroll-proportion="-6.75" vertical-offset="0" max-vertical-offset="405">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/evernote.html">
+    <entry file="file://$PROJECT_DIR$/qrcode_for_gh_7cabdc4756f9_430.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/resource/qrcode_for_gh_7cabdc4756f9_430.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/pages/showPicture.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="14" selection-start="341" selection-end="341" vertical-scroll-proportion="0.29889297" vertical-offset="0" max-vertical-offset="813">
+        <state line="3" column="0" selection-start="96" selection-end="96" vertical-scroll-proportion="0.10125" vertical-offset="0" max-vertical-offset="800">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/services/CoreService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="881" column="44" selection-start="49627" selection-end="49627" vertical-scroll-proportion="-12.790322" vertical-offset="22184" max-vertical-offset="24435">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="26" selection-start="31" selection-end="31" vertical-scroll-proportion="-0.75" vertical-offset="0" max-vertical-offset="621">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/liyou/qixiaobo/controllers/WeiChatController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="5" selection-start="2028" selection-end="2028" vertical-scroll-proportion="0.835966" vertical-offset="608" max-vertical-offset="1539">
           <folding />
         </state>
       </provider>

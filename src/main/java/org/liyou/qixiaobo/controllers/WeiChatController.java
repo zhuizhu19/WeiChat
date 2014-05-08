@@ -56,5 +56,9 @@ public class WeiChatController extends BaseController {
         model.addAttribute("evernotes",notes);
         return "evernote";
     }
+    @RequestMapping(value="/")
+    public String index(){
+        return redirect("http://qixiaobo.github.io/WeiChat/");
+    }
 
 }

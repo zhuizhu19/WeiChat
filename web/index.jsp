@@ -12,5 +12,6 @@
 </head>
 <body>
 LiYou：UU
+<img src="/resource/qrcode_for_gh_7cabdc4756f9_430.jpg" title="微信扫描二维码哦"/>
 </body>
 </html>
