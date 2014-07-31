@@ -11,19 +11,19 @@
 					<key>kind</key>
 					<string>software-package</string>
 					<key>url</key>
-					<string>http://221.226.56.210:5281/smart_worker/download/youth-olympic.ipa</string>
+					<string>http://221.226.56.210:28380/smart_worker/download/smartwork.ipa</string>
 				</dict>
 			</array>
 			<key>metadata</key>
 			<dict>
 				<key>bundle-identifier</key>
-				<string>com.njdx.sszh</string>
+				<string>com.fnst.smartwork</string>
 				<key>bundle-version</key>
 				<string>1.0</string>
 				<key>kind</key>
 				<string>software</string>
 				<key>title</key>
-				<string>youth-olympic</string>
+				<string>smartwork.ipa</string>
 			</dict>
 		</dict>
 	</array>
